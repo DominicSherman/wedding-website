@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  padding: 15px;
 }
 
 .App-logo {
@@ -7,10 +8,12 @@
   height: 80px;
 }
 
+.App-nav {
+
+}
 .App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+  background-color: cornflowerblue;
+  height: 50px;
   color: white;
 }
 
