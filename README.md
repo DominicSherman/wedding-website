@@ -2,7 +2,7 @@
 
 A web application for information about the wedding
 
-### CREATE-REACT-APP
+# CREATE-REACT-APP
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
