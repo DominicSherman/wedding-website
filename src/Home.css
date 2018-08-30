@@ -2,15 +2,6 @@
   text-align: center;
 }
 
-.title {
-  font-size: 4em;
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-}
-
 .image {
   padding-top: 20px;
   height: 100%;

@@ -1,16 +1,21 @@
-.StickyHeader-padding {
-    background-color: white;
+.header {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
 }
 
-.StickyHeader-nav {
-    position: -webkit-sticky;
+.title {
+    top: 20%;
+    font-size: 4em;
+}
+
+.nav {
     position: relative;
-    top: 0;
     width: 100%;
 }
 
-.StickyHeader-color {
-    background-color: #ffCA00;
-    padding: 7px;
+.color {
+    background-color: grey;
     color: white;
 }

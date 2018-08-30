@@ -9,9 +9,9 @@ export default class StickyHeader extends Component {
         return (
             <div>
                 <img src={beach} alt=''/>
-                <span className={'title'}>Dominic + Mary</span>
-                <header className={"StickyHeader-nav"}>
-                    <Row horizontal={'space-between'} className={"StickyHeader-color"}>
+                <header className={'title header'}>Dominic + Mary</header>
+                <header className={"nav"}>
+                    <Row horizontal={'space-between'} className={"color"}>
                         <p>Home</p>
                         <p>Pictures</p>
                         <p>The Bridal Party</p>

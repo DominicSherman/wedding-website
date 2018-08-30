@@ -1,19 +1,18 @@
 import React, {Component} from 'react';
 import image from './assets/image.jpg';
 import './Home.css';
-import {Column, Row} from 'simple-flexbox';
 import StickyHeader from "./components/StickyHeader";
 import {Scroll} from 'react-scroll';
 
 export default class Home extends Component {
     render() {
         return (
-            <div class={"Home"}>
+            <div className={"Home"}>
                 <StickyHeader/>
-                <div class={'image'}>
+                <div className={'image'}>
                     <img src={image} alt=''/>
                 </div>
-                <div class={'body'}>
+                <div className={'body'}>
                     <h1><u>
                         {'Information'}
                     </u></h1>
