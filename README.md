@@ -1,6 +1,7 @@
-## wedding-website
+# wedding-website
 
 A web application for information about the wedding
+
 
 # CREATE-REACT-APP
 
