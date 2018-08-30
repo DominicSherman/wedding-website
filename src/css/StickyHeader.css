@@ -1,0 +1,16 @@
+.StickyHeader-padding {
+    background-color: white;
+}
+
+.StickyHeader-nav {
+    position: -webkit-sticky;
+    position: relative;
+    top: 0;
+    width: 100%;
+}
+
+.StickyHeader-color {
+    background-color: #ffCA00;
+    padding: 7px;
+    color: white;
+}
