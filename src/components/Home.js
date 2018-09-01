@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import capitol from '../assets/capitol.jpg';
+import beach from '../assets/beach-us.JPG';
 import '../css/Home.css';
 import headerImage from '../assets/header.png';
 import Header from "./Header";
@@ -25,10 +25,10 @@ export default class Home extends Component {
                 />
                 <Header isSticky={this.state.isSticky}/>
                 <div className={"body"} style={{
-                    paddingTop: this.state.isSticky ? '6%' : null
+                    paddingTop: this.state.isSticky ? '6%' : '2%'
                 }}>
                     <div className={'imageDiv'}>
-                        <img className={'image'} src={capitol} alt=''/>
+                        <img className={'image'} src={beach} alt=''/>
                     </div>
                     <div className={'left'}>
                         <h3>
