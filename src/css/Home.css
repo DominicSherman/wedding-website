@@ -1,0 +1,35 @@
+.headerImage {
+    width: 100%;
+    height: auto;
+}
+
+.body {
+    padding-top: 20px;
+    text-align: center;
+    top: 10%;
+}
+
+.image {
+    height: auto;
+    width: 100%;
+}
+
+.imageDiv {
+    position: absolute;
+    left: 10%;
+    width: 30%;
+}
+
+.left {
+    border-right: 1px solid black;
+    position: absolute;
+    width: 30%;
+    height: 200%;
+    left: 40%;
+}
+
+.right {
+    position: absolute;
+    width: 30%;
+    left: 70%;
+}

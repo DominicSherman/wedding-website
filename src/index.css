@@ -1,5 +1,13 @@
+@font-face {
+    font-family: 'Modern Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./assets/Modern_Sans_Light.otf');
+}
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Pacifico', cursive;
+    margin: 0;
+    padding: 0;
+    font-family: 'Modern Sans', normal;
+    letter-spacing: 1px;
 }
