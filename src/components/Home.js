@@ -24,7 +24,9 @@ export default class Home extends Component {
                     src={headerImage}
                 />
                 <Header isSticky={this.state.isSticky}/>
-                <div className={"body"}>
+                <div className={"body"} style={{
+                    paddingTop: this.state.isSticky ? '6%' : null
+                }}>
                     <div className={'imageDiv'}>
                         <img className={'image'} src={capitol} alt=''/>
                     </div>
