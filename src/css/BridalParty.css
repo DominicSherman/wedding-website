@@ -1,0 +1,15 @@
+.groomsmen {
+    width: 25%;
+    position: absolute;
+    border-right: 1px solid black;
+    padding-top: 5%;
+    left: 20%;
+    padding-right: 5%;
+}
+
+.bridesmaids {
+    width: 25%;
+    position: absolute;
+    padding-top: 5%;
+    left: 55%;
+}

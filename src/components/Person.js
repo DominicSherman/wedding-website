@@ -7,15 +7,16 @@ export default class Person extends Component {
         const {info} = this.props;
 
         return (
-            <div>
+            <div className={'wrapper'}>
                 <img
                     className={'image'}
                     src={info.image}
                 />
-                <p>{`${info.name}`}</p>
-                <p>{`${info.role}`}</p>
-                <p>{`${info.relation}`}</p>
-                <p>{`${info.bio}`}</p>
+                <div className={'text'}>
+                    <p><b>{`${info.name} - ${info.role}`}</b></p>
+                    <p>{`${info.relation}`}</p>
+                    <p>{`${info.bio}`}</p>
+                </div>
             </div>
         );
     }

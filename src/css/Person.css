@@ -1,5 +1,18 @@
+.wrapper {
+    padding-bottom: 15%;
+    font-size: 15px;
+}
+
 .image {
-    width: 30%;
-    height: auto;
+    height: 10%;
+    width: auto;
     border-radius: 50%;
+    position: absolute;
+    left: 0;
+}
+
+.text {
+    width: 80%;
+    left: 27%;
+    position: relative;
 }

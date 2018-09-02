@@ -49,3 +49,48 @@ export const groomsmen = [
         image: thomas
     }
 ];
+
+export const bridesmaids = [
+    {
+        name: 'Rose Edson',
+        role: 'Maid of Honor',
+        relation: 'Sister of the Bride',
+        bio: '',
+        image: gabe
+    },
+    {
+        name: 'Katherine Edson',
+        role: 'Bridesmaid',
+        relation: 'Sister of the Bride',
+        bio: '',
+        image: johnpaul
+    },
+    {
+        name: 'Regina Sherman',
+        role: 'Bridesmaid',
+        relation: 'Sister of the Groom',
+        bio: '',
+        image: michael
+    },
+    {
+        name: 'Valda Edson',
+        role: 'Bridesmaid',
+        relation: 'Cousin of the Bride',
+        bio: '',
+        image: spencer
+    },
+    {
+        name: 'Esther Edson',
+        role: 'Bridesmaid',
+        relation: 'Sister of the Bride',
+        bio: '',
+        image: janis
+    },
+    {
+        name: 'Maria Sherman',
+        role: 'Bridesmaid',
+        relation: 'Sister of the Groom',
+        bio: '',
+        image: thomas
+    }
+];
