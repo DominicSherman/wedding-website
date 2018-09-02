@@ -14,10 +14,14 @@ import BestManStory from "./screens/BestManStory";
 import HeaderLink from "./components/HeaderLink";
 
 export default class Main extends Component {
-    state = {
-        isSticky: false,
-        isLoading: true
-    };
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            isSticky: false,
+            isLoading: true
+        };
+    }
 
     componentDidMount() {
         const headerImage = document.getElementById('headerImage');
@@ -29,7 +33,6 @@ export default class Main extends Component {
             <LoadingScreen
                 loading={this.state.isLoading}
                 bgColor={'lightgrey'}
-                spinnerColor={'lightblue'}
             >
                 <Router>
                     <div>
