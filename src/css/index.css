@@ -2,7 +2,7 @@
     font-family: 'Modern Sans';
     font-style: normal;
     font-weight: 400;
-    src: url('./assets/Modern_Sans_Light.otf');
+    src: url('../assets/Modern_Sans_Light.otf');
 }
 
 body {

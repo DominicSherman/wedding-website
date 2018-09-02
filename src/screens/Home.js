@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import '../css/Home.css';
 import {holyRosaryLink, mcmenaminsLink} from "../assets/website-links";
-import homeImage from '../assets/images/homeImage.jpeg';
+import homeImage from '../assets/homeImage.jpeg';
 
 export default class Home extends Component {
     render() {

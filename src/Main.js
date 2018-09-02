@@ -2,15 +2,15 @@ import React, {Component} from 'react';
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import {Row} from "simple-flexbox";
 
-import headerImage from '../assets/images/header.png';
-import Home from "./Home";
-import '../css/Main.css';
-import BridalParty from "./BridalParty";
-import Pictures from "./Pictures";
-import HerStory from "./HerStory";
-import HisStory from "./HisStory";
-import BestManStory from "./BestManStory";
-import HeaderLink from "./HeaderLink";
+import headerImage from './assets/images/header.png';
+import Home from "./screens/Home";
+import './css/Main.css';
+import BridalParty from "./screens/BridalParty";
+import Pictures from "./screens/Pictures";
+import HerStory from "./screens/HerStory";
+import HisStory from "./screens/HisStory";
+import BestManStory from "./screens/BestManStory";
+import HeaderLink from "./components/HeaderLink";
 
 export default class Main extends Component {
     state = {

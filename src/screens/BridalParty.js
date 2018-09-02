@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import {bridesmaids, groomsmen} from '../assets/bridal-party';
 import '../css/BridalParty.css';
-import Person from "./Person";
+import Person from "../components/Person";
 import {Column} from "simple-flexbox";
 
 export default class BridalParty extends Component {
