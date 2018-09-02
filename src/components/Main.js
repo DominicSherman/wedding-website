@@ -10,6 +10,7 @@ import Pictures from "./Pictures";
 import HerStory from "./HerStory";
 import HisStory from "./HisStory";
 import BestManStory from "./BestManStory";
+import HeaderLink from "./HeaderLink";
 
 export default class Main extends Component {
     state = {
@@ -40,44 +41,30 @@ export default class Main extends Component {
                                 className={'navBar'}
                                 horizontal={'space-between'}
                             >
-                                <Link
-                                    className={'link'}
-                                    to='/'
-                                >
-                                    <p className={'headerText'}>
-                                        {'Home'}
-                                    </p>
-                                </Link>
-                                <Link
-                                    className={'link'}
-                                    to='/pictures'
-                                >
-                                    <p className={'headerText'}>Pictures</p>
-                                </Link>
-                                <Link
-                                    className={'link'}
-                                    to='/bridal-party'
-                                >
-                                    <p className={'headerText'}>The Bridal Party</p>
-                                </Link>
-                                <Link
-                                    className={'link'}
-                                    to='/her-story'
-                                >
-                                    <p className={'headerText'}>Her Story</p>
-                                </Link>
-                                <Link
-                                    className={'link'}
-                                    to='/his-story'
-                                >
-                                    <p className={'headerText'}>His Story</p>
-                                </Link>
-                                <Link
-                                    className={'link'}
-                                    to='/best-man-story'
-                                >
-                                    <p className={'headerText'}>The Best Man's Story</p>
-                                </Link>
+                                <HeaderLink
+                                    route={'/'}
+                                    text={'Home'}
+                                />
+                                <HeaderLink
+                                    route={'/pictures'}
+                                    text={'Pictures'}
+                                />
+                                <HeaderLink
+                                    route={'/bridal-party'}
+                                    text={'Bridal Party'}
+                                />
+                                <HeaderLink
+                                    route={'/her-story'}
+                                    text={'Her Story'}
+                                />
+                                <HeaderLink
+                                    route={'/his-story'}
+                                    text={'His Story'}
+                                />
+                                <HeaderLink
+                                    route={'/best-man-story'}
+                                    text={'Best Man\'s Story'}
+                                />
                             </Row>
                         </header>
                     </div>
