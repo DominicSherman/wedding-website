@@ -9,6 +9,7 @@ export default class Person extends Component {
         return (
             <div className={'wrapper'}>
                 <img
+                    alt={''}
                     className={'image'}
                     src={info.image}
                 />

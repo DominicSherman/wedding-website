@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 
-import beach from '../assets/images/beach.JPG';
 import '../css/Home.css';
 import {holyRosaryLink, mcmenaminsLink} from "../assets/website-links";
+import homeImage from '../assets/images/homeImage.jpeg';
 
 export default class Home extends Component {
     render() {
@@ -14,7 +14,11 @@ export default class Home extends Component {
                 style={{paddingTop: isSticky ? '6%' : '2%'}}
             >
                 <div className={'imageDiv'}>
-                    <img className={'image'} src={beach} alt=''/>
+                    <img
+                        alt={''}
+                        className={'image'}
+                        src={homeImage}
+                    />
                 </div>
                 <div className={'left'}>
                     <h3>
