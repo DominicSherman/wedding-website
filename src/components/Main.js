@@ -32,41 +32,39 @@ export default class Main extends Component {
                         id={'headerImage'}
                         src={headerImage}
                     />
-                    <div>
-                        <header className={'navBarContainer'} style={{
-                            position: this.state.isSticky ? 'fixed' : 'relative',
-                            top: 0
-                        }}>
-                            <Row
-                                className={'navBar'}
-                                horizontal={'space-between'}
-                            >
-                                <HeaderLink
-                                    route={'/'}
-                                    text={'Home'}
-                                />
-                                <HeaderLink
-                                    route={'/pictures'}
-                                    text={'Pictures'}
-                                />
-                                <HeaderLink
-                                    route={'/bridal-party'}
-                                    text={'Bridal Party'}
-                                />
-                                <HeaderLink
-                                    route={'/her-story'}
-                                    text={'Her Story'}
-                                />
-                                <HeaderLink
-                                    route={'/his-story'}
-                                    text={'His Story'}
-                                />
-                                <HeaderLink
-                                    route={'/best-man-story'}
-                                    text={'Best Man\'s Story'}
-                                />
-                            </Row>
-                        </header>
+                    <div className={'navBarContainer'} style={{
+                        position: this.state.isSticky ? 'fixed' : 'relative',
+                        top: 0
+                    }}>
+                        <Row
+                            className={'navBar'}
+                            horizontal={'space-between'}
+                        >
+                            <HeaderLink
+                                route={'/'}
+                                text={'Home'}
+                            />
+                            <HeaderLink
+                                route={'/pictures'}
+                                text={'Pictures'}
+                            />
+                            <HeaderLink
+                                route={'/bridal-party'}
+                                text={'Bridal Party'}
+                            />
+                            <HeaderLink
+                                route={'/her-story'}
+                                text={'Her Story'}
+                            />
+                            <HeaderLink
+                                route={'/his-story'}
+                                text={'His Story'}
+                            />
+                            <HeaderLink
+                                route={'/best-man-story'}
+                                text={'Best Man\'s Story'}
+                            />
+                        </Row>
                     </div>
 
                     <Route exact path="/" component={
