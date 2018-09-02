@@ -9,10 +9,10 @@ export default class HeaderLink extends Component{
 
         return (
             <Link
-                className={'link'}
+                className={'HeaderLink-link'}
                 to={`${route}`}
             >
-                <p className={'headerText'}>
+                <p className={'HeaderLink-headerText'}>
                     {`${text}`}
                 </p>
             </Link>

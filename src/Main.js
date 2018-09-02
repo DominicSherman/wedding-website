@@ -28,16 +28,16 @@ export default class Main extends Component {
                 <div>
                     <img
                         alt=''
-                        className={'headerImage'}
+                        className={'Main-headerImage'}
                         id={'headerImage'}
                         src={headerImage}
                     />
-                    <div className={'navBarContainer'} style={{
+                    <div className={'Main-navBarContainer'} style={{
                         position: this.state.isSticky ? 'fixed' : 'relative',
                         top: 0
                     }}>
                         <Row
-                            className={'navBar'}
+                            className={'Main-navBar'}
                             horizontal={'space-between'}
                         >
                             <HeaderLink

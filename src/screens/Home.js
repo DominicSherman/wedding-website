@@ -10,17 +10,17 @@ export default class Home extends Component {
 
         return (
             <div
-                className={"body"}
+                className={"Home-body"}
                 style={{paddingTop: isSticky ? '6%' : '2%'}}
             >
-                <div className={'imageDiv'}>
+                <div className={'Home-imageDiv'}>
                     <img
                         alt={''}
-                        className={'image'}
+                        className={'Home-image'}
                         src={homeImage}
                     />
                 </div>
-                <div className={'left'}>
+                <div className={'Home-left'}>
                     <h3>
                         {'Ceremony'}
                     </h3>
@@ -56,7 +56,7 @@ export default class Home extends Component {
                         </p>
                     </a>
                 </div>
-                <div className={'right'}>
+                <div className={'Home-right'}>
                 </div>
             </div>
         );

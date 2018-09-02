@@ -1,19 +1,19 @@
-.body {
+.Home-body {
     text-align: center;
 }
 
-.image {
+.Home-image {
     height: auto;
     width: 100%;
 }
 
-.imageDiv {
+.Home-imageDiv {
     position: absolute;
     left: 10%;
     width: 30%;
 }
 
-.left {
+.Home-left {
     border-right: 1px solid black;
     position: absolute;
     width: 30%;
@@ -21,7 +21,7 @@
     left: 40%;
 }
 
-.right {
+.Home-right {
     position: absolute;
     width: 30%;
     left: 70%;

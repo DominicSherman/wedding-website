@@ -13,10 +13,10 @@ export default class BridalParty extends Component {
 
         return (
             <div style={{paddingTop: isSticky ? '6%' : '2%'}}>
-                <Column className={'groomsmen'}>
+                <Column className={'BridalParty-groomsmen'}>
                     <GroomsmenDisplay/>
                 </Column>
-                <Column className={'bridesmaids'}>
+                <Column className={'BridalParty-bridesmaids'}>
                     <BridesmaidDisplay/>
                 </Column>
             </div>
