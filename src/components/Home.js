@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
 
-import beach from '../assets/beach-us.JPG';
+import beach from '../assets/images/beach.JPG';
 import '../css/Home.css';
 import {holyRosaryLink, mcmenaminsLink} from "../assets/website-links";
 
 export default class Home extends Component {
-
     render() {
         const {isSticky} = this.props;
 

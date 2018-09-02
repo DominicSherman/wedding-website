@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router, Link, Route} from "react-router-dom";
+import {BrowserRouter as Router, Route} from "react-router-dom";
 import {Row} from "simple-flexbox";
 
-import headerImage from '../assets/header.png';
+import headerImage from '../assets/images/header.png';
 import Home from "./Home";
 import '../css/Main.css';
 import BridalParty from "./BridalParty";
