@@ -6,7 +6,7 @@
 .Person-image {
     height: 10%;
     width: auto;
-    border-radius: 50%;
+    border-radius: 5%;
     position: absolute;
     left: 0;
 }
