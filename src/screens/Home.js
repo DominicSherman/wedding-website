@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 
 import '../css/Home.css';
 import {holyRosaryLink, mcmenaminsLink} from "../assets/website-links";
-import homeImage from '../assets/homeImage.jpeg';
+import homeImage from '../assets/images/homeImage.jpeg';
+import TimeLeft from '../components/TimeLeft';
 
 export default class Home extends Component {
     render() {
@@ -21,6 +22,7 @@ export default class Home extends Component {
                     />
                 </div>
                 <div className={'Home-left'}>
+                    <TimeLeft/>
                     <h3>
                         {'Ceremony'}
                     </h3>
