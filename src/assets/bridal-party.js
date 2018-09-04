@@ -4,6 +4,12 @@ import michael from '../assets/images/michael.jpg';
 import spencer from '../assets/images/spencer.jpg';
 import janis from '../assets/images/janis.png';
 import thomas from '../assets/images/thomas.jpg';
+import rose from '../assets/images/rose.png';
+import katherine from '../assets/images/katherine.png';
+import regina from '../assets/images/regina.png';
+import esther from '../assets/images/esther.png';
+import valda from '../assets/images/valda.png';
+import maria from '../assets/images/maria.png';
 
 export const groomsmen = [
     {
@@ -56,41 +62,41 @@ export const bridesmaids = [
         role: 'Maid of Honor',
         relation: 'Sister of the Bride',
         bio: '',
-        image: gabe
+        image: rose
     },
     {
         name: 'Katherine Edson',
         role: 'Bridesmaid',
         relation: 'Sister of the Bride',
         bio: '',
-        image: johnpaul
+        image: katherine
     },
     {
         name: 'Regina Sherman',
         role: 'Bridesmaid',
         relation: 'Sister of the Groom',
         bio: '',
-        image: michael
+        image: regina
     },
     {
         name: 'Valda Edson',
         role: 'Bridesmaid',
         relation: 'Cousin of the Bride',
         bio: '',
-        image: spencer
+        image: valda
     },
     {
         name: 'Esther Edson',
         role: 'Bridesmaid',
         relation: 'Sister of the Bride',
         bio: '',
-        image: janis
+        image: esther
     },
     {
         name: 'Maria Sherman',
         role: 'Bridesmaid',
         relation: 'Sister of the Groom',
         bio: '',
-        image: thomas
+        image: maria
     }
 ];
