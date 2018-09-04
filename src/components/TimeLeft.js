@@ -17,10 +17,10 @@ export default class TimeLeft extends Component {
         const oneHour = 60 * 60 * 1000;
         const oneMinute = 60 * 1000;
         const oneSecond = 1000;
-        const firstDate = new Date("2019-05-28T14:00:00-07:00");
-        const secondDate = Date.now();
-        const days = Math.floor(Math.abs((firstDate.getTime() - secondDate) / (oneDay)));
-        const hoursRemainder = Math.abs((firstDate.getTime() - secondDate)) % (oneDay);
+        const weddingDay = new Date("2019-05-28T14:00:00-07:00").getTime();
+        const now = Date.now();
+        const days = Math.floor(Math.abs((weddingDay - now) / (oneDay)));
+        const hoursRemainder = Math.abs((weddingDay - now)) % (oneDay);
         const hours = Math.floor(Math.abs(hoursRemainder / oneHour));
         const minutesRemainder = Math.abs(hoursRemainder % oneHour);
         const minutes = Math.floor(Math.abs(minutesRemainder / oneMinute));
