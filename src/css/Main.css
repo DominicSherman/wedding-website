@@ -4,14 +4,14 @@
 }
 
 .Main-navBarWrapper {
-    padding-top: 3%;
     width: 100%;
     z-index: 1;
     top: 0;
     opacity: 100%;
     display: flex;
     justify-content: center;
-    padding-bottom: 3%;
+    margin-top: 4%;
+    margin-bottom: 4%;
 }
 
 .Main-navBar {

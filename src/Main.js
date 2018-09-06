@@ -43,7 +43,9 @@ export default class Main extends Component {
                         />
                         <div
                             className={'Main-navBarWrapper'}
-                            style={{position: this.state.isSticky ? 'fixed' : 'relative'}}
+                            style={{
+                                position: this.state.isSticky ? 'fixed' : 'relative'
+                            }}
                         >
                             <div className={'Main-navBar'}>
                                 <HeaderLink
@@ -76,7 +78,12 @@ export default class Main extends Component {
                             () => <TheCouple isSticky={this.state.isSticky}/>
                         }/>
                         <Route exact path='/wedding-party' component={
-                            () => <WeddingParty isSticky={this.state.isSticky}/>
+                            () =>
+                                <div style={{
+                                    marginTop: this.state.isSticky ? '10%' : '0'
+                                }}>
+                                    <WeddingParty/>
+                                </div>
                         }/>
                         <Route exact path='/pictures' component={
                             () => <Pictures isSticky={this.state.isSticky}/>
