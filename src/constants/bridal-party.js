@@ -16,7 +16,7 @@ export const groomsmen = [
         name: 'Gabriel Sherman',
         role: 'Best Man',
         relation: 'Brother of the Groom',
-        bio: 'Very very weird, plays soccer',
+        bio: '',
         image: gabe
     },
     {
@@ -30,7 +30,7 @@ export const groomsmen = [
         name: 'Michael Sherman',
         role: 'Groomsman',
         relation: 'Brother of the Groom',
-        bio: 'Graphic Designer who is transitioning from being a soccer player to a big ol thick ol cyclist',
+        bio: '',
         image: michael
     },
     {
