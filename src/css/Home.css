@@ -1,5 +1,7 @@
 .Home-body {
     text-align: center;
+    background-color: lightgrey;
+    height: 100%;
 }
 
 .Home-image {
@@ -8,21 +10,18 @@
 }
 
 .Home-imageDiv {
-    position: absolute;
     left: 10%;
     width: 30%;
 }
 
 .Home-left {
     border-right: 1px solid black;
-    position: absolute;
     width: 30%;
     height: 200%;
     left: 40%;
 }
 
 .Home-right {
-    position: absolute;
     width: 30%;
     left: 70%;
 }

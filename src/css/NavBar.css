@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.navigation {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navigation:before, .navigation:after {
+    width: 50%;
+    content: '';
+    border-top: 2px solid darkslategrey;
+    border-bottom: 2px solid darkslategrey;
+}
+
+.navigation:before {
+    margin-left: -50%;
+}
+
+.navigation:after {
+    margin-right: -50%;
+}

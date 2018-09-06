@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 
 import '../css/Home.css';
-import {holyRosaryLink, mcmenaminsLink} from "../assets/website-links";
-import homeImage from '../assets/images/homeImage.jpeg';
+import {holyRosaryLink, mcmenaminsLink} from "../constants/website-links";
 import TimeLeft from '../components/TimeLeft';
 
 export default class Home extends Component {
@@ -14,13 +13,6 @@ export default class Home extends Component {
                 className={"Home-body"}
                 style={{paddingTop: isSticky ? '6%' : '2%'}}
             >
-                <div className={'Home-imageDiv'}>
-                    <img
-                        alt={''}
-                        className={'Home-image'}
-                        src={homeImage}
-                    />
-                </div>
                 <div className={'Home-left'}>
                     <TimeLeft/>
                     <h3>
