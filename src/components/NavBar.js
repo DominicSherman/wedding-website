@@ -9,27 +9,27 @@ export default class NavBar extends Component {
                 <div className={'Nav-navigation'}>
                     <HeaderLink
                         route={'/'}
-                        text={'Home'}
+                        text={'HOME'}
                     />
                     <HeaderLink
                         route={'/pictures'}
-                        text={'Pictures'}
+                        text={'PICTURES'}
                     />
                     <HeaderLink
                         route={'/bridal-party'}
-                        text={'Bridal Party'}
+                        text={'BRIDAL PARTY'}
                     />
                     <HeaderLink
                         route={'/her-story'}
-                        text={'Her Story'}
+                        text={'HER STORY'}
                     />
                     <HeaderLink
                         route={'/his-story'}
-                        text={'His Story'}
+                        text={'HIS STORY'}
                     />
                     <HeaderLink
                         route={'/best-man-story'}
-                        text={'Best Man\'s Story'}
+                        text={'BEST MAN\'S STORY'}
                     />
                 </div>
             </div>

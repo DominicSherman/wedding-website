@@ -1,13 +1,24 @@
 @font-face {
-    font-family: 'Modern Sans';
+    font-family: 'Lubalin';
     font-style: normal;
-    font-weight: 400;
-    src: url('../assets/Modern_Sans_Light.otf');
+    font-weight: 200;
+    src: local('ITC Lubalin Graph Std');
 }
 
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Modern Sans', normal;
+    font-family: 'Avenir Next Condensed';
+    font-size: 18px;
     background-color: lightgrey;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    margin: 0;
+    padding: 0;
 }

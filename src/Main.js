@@ -67,6 +67,9 @@ export default class Main extends Component {
                         <Route exact path='/best-man-story' component={
                             () => <BestManStory isSticky={this.state.isSticky}/>
                         }/>
+                        <div className={'Main-footer'}>
+                            <p>{'Built by Dominic Sherman | Designed by Michael Sherman'}</p>
+                        </div>
                     </div>
                 </Router>
             </LoadingScreen>

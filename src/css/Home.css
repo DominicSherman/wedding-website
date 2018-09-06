@@ -1,25 +1,11 @@
 .Home-body {
-    text-align: center;
+    /*text-align: left;*/
 }
 
-.Home-image {
-    height: auto;
-    width: 100%;
-}
-
-.Home-imageDiv {
-    left: 10%;
+.Home-ceremony {
     width: 30%;
-}
-
-.Home-left {
-    border-right: 1px solid black;
-    width: 30%;
-    height: 200%;
-    left: 40%;
-}
-
-.Home-right {
-    width: 30%;
-    left: 70%;
+    height: 25%;
+    margin-left: 15%;
+    background-color: white;
+    padding: 1%;
 }
