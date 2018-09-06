@@ -72,7 +72,7 @@ export default class Main extends Component {
                         </div>
 
                         <div style={{
-                            marginTop: this.state.isSticky ? '10%' : '0'
+                            marginTop: this.state.isSticky ? '9.6%' : '0'
                         }}>
                             <Route exact path='/' component={
                                 () => <Home/>
