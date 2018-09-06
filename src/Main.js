@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import LoadingScreen from 'react-loading-screen';
 
-import headerImage from './assets/images/header.jpg';
+import headerImage from './assets/header.jpg';
 import Home from './screens/Home';
 import './css/Main.css';
 import BridalParty from './screens/BridalParty';
@@ -68,7 +68,7 @@ export default class Main extends Component {
                             () => <BestManStory isSticky={this.state.isSticky}/>
                         }/>
                         <div className={'Main-footer'}>
-                            <p>{'Built by Dominic Sherman | Designed by Michael Sherman'}</p>
+                            <p>{'Website built by Dominic Sherman | Designed by Michael Sherman'}</p>
                         </div>
                     </div>
                 </Router>

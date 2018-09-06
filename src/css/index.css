@@ -5,6 +5,13 @@
     src: local('ITC Lubalin Graph Std');
 }
 
+@font-face {
+    font-family: 'Ananda';
+    font-style: normal;
+    font-weight: 200;
+    src: local('Ananda');
+}
+
 body {
     margin: 0;
     padding: 0;

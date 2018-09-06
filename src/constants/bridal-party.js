@@ -1,15 +1,15 @@
-import gabe from '../assets/images/gabe.jpg';
-import johnpaul from '../assets/images/johnpaul.jpg';
-import michael from '../assets/images/michael.jpg';
-import spencer from '../assets/images/spencer.jpg';
-import janis from '../assets/images/janis.png';
-import thomas from '../assets/images/thomas.jpg';
-import rose from '../assets/images/rose.png';
-import katherine from '../assets/images/katherine.png';
-import regina from '../assets/images/regina.png';
-import esther from '../assets/images/esther.png';
-import valda from '../assets/images/valda.png';
-import maria from '../assets/images/maria.png';
+import gabe from '../assets/gabe.jpg';
+import johnpaul from '../assets/johnpaul.jpg';
+import michael from '../assets/michael.jpg';
+import spencer from '../assets/spencer.jpg';
+import janis from '../assets/janis.png';
+import thomas from '../assets/thomas.jpg';
+import rose from '../assets/rose.png';
+import katherine from '../assets/katherine.png';
+import regina from '../assets/regina.png';
+import esther from '../assets/esther.png';
+import valda from '../assets/valda.png';
+import maria from '../assets/maria.png';
 
 export const groomsmen = [
     {
