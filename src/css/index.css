@@ -2,28 +2,28 @@
     font-family: 'Lubalin';
     font-style: normal;
     font-weight: 200;
-    src: local('ITC Lubalin Graph Std');
+    src: url('../assets/Lubalin.otf');
 }
 
 @font-face {
     font-family: 'Ananda';
     font-style: normal;
     font-weight: 200;
-    src: local('Ananda');
+    src: url('../assets/Ananda.ttf');
 }
 
 @font-face {
     font-family: 'Avenir';
     font-style: normal;
     font-weight: 200;
-    src: url('../assets/AvenirLTStd-Light.otf');
+    src: url('../assets/AvenirLight.otf');
 }
 
 @font-face {
     font-family: 'BigNoodle';
     font-style: normal;
     font-weight: 200;
-    src: url('../assets/big_noodle_titling.ttf');
+    src: url('../assets/BigNoodle.ttf');
 }
 
 body {
