@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import {bridesmaids, groomsmen} from '../constants/bridal-party';
-import '../css/BridalParty.css';
+import '../css/WeddingParty.css';
 import Person from "../components/Person";
 import {Column} from "simple-flexbox";
 
