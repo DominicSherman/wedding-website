@@ -24,13 +24,8 @@ export default class Home extends Component {
     }
 
     render() {
-        const {isSticky} = this.props;
-
         return (
-            <div
-                className={'Home-body'}
-                style={{paddingTop: isSticky ? '6%' : '2%'}}
-            >
+            <div className={'Home-body'}>
                 <div className={'Home-ceremony'}>
                     <p className={'Home-ceremonyText'}>{'CEREMONY'}</p>
                     <p>{'Holy Rosary Church'}</p>
@@ -41,7 +36,7 @@ export default class Home extends Component {
                 </div>
                 <div className={'Home-daysLeft'}>
                     <div className={'Home-weddingBegins'}>
-                    <p className={'Home-weddingBeginsText'}>{'Wedding begins in'}</p>
+                        <p className={'Home-weddingBeginsText'}>{'Wedding begins in'}</p>
                     </div>
                     <div className={'Home-days'}>
                         <p className={'Home-daysText'}>{`${this.state.days} DAYS`}</p>
