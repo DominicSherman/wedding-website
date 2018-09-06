@@ -9,6 +9,7 @@ import WeddingParty from './screens/WeddingParty';
 import Pictures from './screens/Pictures';
 import TheCouple from './screens/TheCouple';
 import HeaderLink from './components/HeaderLink';
+import Registry from './screens/Registry';
 
 export default class Main extends Component {
     constructor(props) {
