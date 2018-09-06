@@ -7,10 +7,8 @@ import Home from './screens/Home';
 import './css/Main.css';
 import BridalParty from './screens/BridalParty';
 import Pictures from './screens/Pictures';
-import HerStory from './screens/HerStory';
-import HisStory from './screens/HisStory';
-import BestManStory from './screens/BestManStory';
-import NavBar from './components/NavBar';
+import Stories from './screens/Stories';
+import HeaderLink from './components/HeaderLink';
 
 export default class Main extends Component {
     constructor(props) {
@@ -43,10 +41,27 @@ export default class Main extends Component {
                             src={headerImage}
                         />
                         <div
-                            className={'Main-navBar'}
+                            className={'Main-navBarWrapper'}
                             style={{position: this.state.isSticky ? 'fixed' : 'relative'}}
                         >
-                            <NavBar/>
+                            <div className={'Main-navBar'}>
+                                <HeaderLink
+                                    route={'/'}
+                                    text={'HOME'}
+                                />
+                                <HeaderLink
+                                    route={'/pictures'}
+                                    text={'PICTURES'}
+                                />
+                                <HeaderLink
+                                    route={'/bridal-party'}
+                                    text={'BRIDAL PARTY'}
+                                />
+                                <HeaderLink
+                                    route={'/stories'}
+                                    text={'BRIDE & GROOM\'S STORIES'}
+                                />
+                            </div>
                         </div>
 
                         <Route exact path='/' component={
@@ -58,14 +73,8 @@ export default class Main extends Component {
                         <Route exact path='/bridal-party' component={
                             () => <BridalParty isSticky={this.state.isSticky}/>
                         }/>
-                        <Route exact path='/her-story' component={
-                            () => <HerStory isSticky={this.state.isSticky}/>
-                        }/>
-                        <Route exact path='/his-story' component={
-                            () => <HisStory isSticky={this.state.isSticky}/>
-                        }/>
-                        <Route exact path='/best-man-story' component={
-                            () => <BestManStory isSticky={this.state.isSticky}/>
+                        <Route exact path='/stories' component={
+                            () => <Stories isSticky={this.state.isSticky}/>
                         }/>
                         <div className={'Main-footer'}>
                             <p>{'Website built by Dominic Sherman | Designed by Michael Sherman'}</p>

@@ -3,11 +3,37 @@
     height: auto;
 }
 
-.Main-navBar {
+.Main-navBarWrapper {
+    padding-top: 3%;
     width: 100%;
     z-index: 1;
     top: 0;
     opacity: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 3%;
+}
+
+.Main-navBar {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.Main-navBar:before, .Main-navBar:after {
+    width: 50%;
+    content: '';
+    border-top: 2px solid darkslategrey;
+    border-bottom: 2px solid darkslategrey;
+}
+
+.Main-navBar:before {
+    margin-left: -50%;
+}
+
+.Main-navBar:after {
+    margin-right: -50%;
 }
 
 .Main-footer {

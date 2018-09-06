@@ -44,7 +44,7 @@ export default class Home extends Component {
                     <p className={'Home-weddingBeginsText'}>{'Wedding begins in'}</p>
                     </div>
                     <div className={'Home-days'}>
-                        <p className={'Home-daysText'}>{`${this.state.days} days`}</p>
+                        <p className={'Home-daysText'}>{`${this.state.days} DAYS`}</p>
                     </div>
                 </div>
             </div>

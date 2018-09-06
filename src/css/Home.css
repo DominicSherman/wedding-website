@@ -6,7 +6,7 @@
 .Home-ceremony {
     width: 30%;
     height: 25%;
-    margin-left: 15%;
+    margin-left: 23%;
     background-color: white;
     padding: 1%;
 }
@@ -22,12 +22,12 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-left: 5%;
+    margin-left: 2%;
     width: 22%;
 }
 
 .Home-weddingBegins {
-    background-color: darkslateblue;
+    background-color: #678da2;
     text-align: center;
     padding: 3%;
     vertical-align: center;
@@ -41,7 +41,7 @@
 
 .Home-days {
     height: 30%;
-    background-color: coral;
+    background-color: #f2ac5e;
     text-align: center;
     padding: 5%;
     vertical-align: center;
