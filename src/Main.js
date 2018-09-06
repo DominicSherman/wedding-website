@@ -71,26 +71,25 @@ export default class Main extends Component {
                             </div>
                         </div>
 
-                        <Route exact path='/' component={
-                            () => <Home isSticky={this.state.isSticky}/>
-                        }/>
-                        <Route exact path='/couple' component={
-                            () => <TheCouple isSticky={this.state.isSticky}/>
-                        }/>
-                        <Route exact path='/wedding-party' component={
-                            () =>
-                                <div style={{
-                                    marginTop: this.state.isSticky ? '10%' : '0'
-                                }}>
-                                    <WeddingParty/>
-                                </div>
-                        }/>
-                        <Route exact path='/pictures' component={
-                            () => <Pictures isSticky={this.state.isSticky}/>
-                        }/>
-                        <Route exact path='/registry' component={
-                            () => <Registry isSticky={this.state.isSticky}/>
-                        }/>
+                        <div style={{
+                            marginTop: this.state.isSticky ? '10%' : '0'
+                        }}>
+                            <Route exact path='/' component={
+                                () => <Home/>
+                            }/>
+                            <Route exact path='/couple' component={
+                                () => <TheCouple/>
+                            }/>
+                            <Route exact path='/wedding-party' component={
+                                () => <WeddingParty/>
+                            }/>
+                            <Route exact path='/pictures' component={
+                                () => <Pictures/>
+                            }/>
+                            <Route exact path='/registry' component={
+                                () => <Registry/>
+                            }/>
+                        </div>
 
                         <div className={'Main-footer'}>
                             <p>{'Website built by Dominic Sherman | Designed by Michael Sherman'}</p>
