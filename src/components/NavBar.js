@@ -5,8 +5,8 @@ import '../css/NavBar.css';
 export default class NavBar extends Component {
     render() {
         return (
-            <div className={'container'}>
-                <div className={'navigation'}>
+            <div className={'Nav-container'}>
+                <div className={'Nav-navigation'}>
                     <HeaderLink
                         route={'/'}
                         text={'Home'}

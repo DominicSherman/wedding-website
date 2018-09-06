@@ -34,7 +34,7 @@ export default class Main extends Component {
                 bgColor={'lightgrey'}
             >
                 <Router>
-                    <div className={'page'}>
+                    <div>
                         <img
                             alt=''
                             className={'Main-headerImage'}
@@ -42,7 +42,10 @@ export default class Main extends Component {
                             onLoad={() => this.setState({isLoading: false})}
                             src={headerImage}
                         />
-                        <div style={{position: 'relative', paddingBottom: '5%', paddingTop: '1%'}}>
+                        <div
+                            className={'Main-navBar'}
+                            style={{position: this.state.isSticky ? 'fixed' : 'relative'}}
+                        >
                             <NavBar/>
                         </div>
 
