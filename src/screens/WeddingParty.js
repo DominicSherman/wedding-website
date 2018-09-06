@@ -5,7 +5,7 @@ import '../css/BridalParty.css';
 import Person from "../components/Person";
 import {Column} from "simple-flexbox";
 
-export default class BridalParty extends Component {
+export default class WeddingParty extends Component {
     render() {
         const {isSticky} = this.props;
         const GroomsmenDisplay = () => groomsmen.map((g) => <Person key={g.name} info={g}/>);
@@ -13,10 +13,10 @@ export default class BridalParty extends Component {
 
         return (
             <div style={{paddingTop: isSticky ? '6%' : '2%'}}>
-                <Column className={'BridalParty-groomsmen'}>
+                <Column className={'WeddingParty-groomsmen'}>
                     <GroomsmenDisplay/>
                 </Column>
-                <Column className={'BridalParty-bridesmaids'}>
+                <Column className={'WeddingParty-bridesmaids'}>
                     <BridesmaidDisplay/>
                 </Column>
             </div>

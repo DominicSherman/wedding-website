@@ -5,9 +5,9 @@ import LoadingScreen from 'react-loading-screen';
 import headerImage from './assets/header.jpg';
 import Home from './screens/Home';
 import './css/Main.css';
-import BridalParty from './screens/BridalParty';
+import WeddingParty from './screens/WeddingParty';
 import Pictures from './screens/Pictures';
-import Stories from './screens/Stories';
+import TheCouple from './screens/TheCouple';
 import HeaderLink from './components/HeaderLink';
 
 export default class Main extends Component {
@@ -50,16 +50,20 @@ export default class Main extends Component {
                                     text={'HOME'}
                                 />
                                 <HeaderLink
+                                    route={'/couple'}
+                                    text={'THE COUPLE'}
+                                />
+                                <HeaderLink
+                                    route={'/wedding-party'}
+                                    text={'WEDDING PARTY'}
+                                />
+                                <HeaderLink
                                     route={'/pictures'}
                                     text={'PICTURES'}
                                 />
                                 <HeaderLink
-                                    route={'/bridal-party'}
-                                    text={'BRIDAL PARTY'}
-                                />
-                                <HeaderLink
-                                    route={'/stories'}
-                                    text={'BRIDE & GROOM\'S STORIES'}
+                                    route={'/registry'}
+                                    text={'REGISTRY'}
                                 />
                             </div>
                         </div>
@@ -67,15 +71,19 @@ export default class Main extends Component {
                         <Route exact path='/' component={
                             () => <Home isSticky={this.state.isSticky}/>
                         }/>
+                        <Route exact path='/couple' component={
+                            () => <TheCouple isSticky={this.state.isSticky}/>
+                        }/>
+                        <Route exact path='/wedding-party' component={
+                            () => <WeddingParty isSticky={this.state.isSticky}/>
+                        }/>
                         <Route exact path='/pictures' component={
                             () => <Pictures isSticky={this.state.isSticky}/>
                         }/>
-                        <Route exact path='/bridal-party' component={
-                            () => <BridalParty isSticky={this.state.isSticky}/>
+                        <Route exact path='/registry' component={
+                            () => <Registry isSticky={this.state.isSticky}/>
                         }/>
-                        <Route exact path='/stories' component={
-                            () => <Stories isSticky={this.state.isSticky}/>
-                        }/>
+
                         <div className={'Main-footer'}>
                             <p>{'Website built by Dominic Sherman | Designed by Michael Sherman'}</p>
                         </div>
