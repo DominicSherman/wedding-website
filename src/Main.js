@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import LoadingScreen from 'react-loading-screen';
 
-import headerImage from './assets/header.jpg';
+import headerImage from './assets/simple-header.jpg';
 import Home from './screens/Home';
 import './css/Main.css';
 import WeddingParty from './screens/WeddingParty';
