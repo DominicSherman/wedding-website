@@ -18,7 +18,6 @@
     width: 50%;
     display: flex;
     justify-content: space-between;
-    position: relative;
 }
 
 .Main-navBar:before, .Main-navBar:after {
@@ -41,9 +40,49 @@
     left: 0;
     bottom: 0;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
     font-size: 0.8vw;
-    padding-top: 10%;
-    padding-bottom: 0.5%;
+    padding-top: 5%;
+    margin-bottom: 1%;
+}
+
+.Main-logoWrapper, .Main-marksWrapper, .Main-text {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.Main-logoWrapper {
+    width: 100%;
+}
+
+.Main-logoWrapper:before, .Main-logoWrapper:after {
+    width: 45%;
+    content: '';
+    height: 4px;
+    top: 51%;
+    position: absolute;
+    background-color: #f2ac5e;
+}
+
+.Main-logoWrapper:before {
+    left: 0;
+}
+
+.Main-logoWrapper:after {
+    right: 0;
+}
+
+.Main-images {
+    width: 10%;
+    height: 10%;
+}
+
+.Main-marksWrapper {
+    justify-content: space-evenly;
+    padding-left: 35%;
+    padding-right: 35%;
+    margin-bottom: 1%;
+    background-color: #678da2;
 }

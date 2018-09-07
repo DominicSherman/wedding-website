@@ -3,13 +3,16 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import LoadingScreen from 'react-loading-screen';
 
 import headerImage from './assets/header.jpg';
-import Home from './screens/Home';
-import './css/Main.css';
+import logo from './assets/D&M-logo.png';
+import oregonMark from './assets/Oregon-mark.png';
+import ringMark from './assets/Ring-mark.png';
 import WeddingParty from './screens/WeddingParty';
 import Pictures from './screens/Pictures';
 import TheCouple from './screens/TheCouple';
 import HeaderLink from './components/HeaderLink';
 import Registry from './screens/Registry';
+import Home from './screens/Home';
+import './css/Main.css';
 
 export default class Main extends Component {
     constructor(props) {
@@ -92,7 +95,26 @@ export default class Main extends Component {
                         </div>
 
                         <div className={'Main-footer'}>
-                            <p>{'Website built by Dominic Sherman | Designed by Michael Sherman'}</p>
+                            <div className={'Main-logoWrapper'}>
+                                <img
+                                    alt={''}
+                                    className={'Main-images'}
+                                    src={logo}
+                                />
+                            </div>
+                            <div className={'Main-marksWrapper'}>
+                                <img
+                                    alt={''}
+                                    className={'Main-images'}
+                                    src={ringMark}
+                                />
+                                <img
+                                    alt={''}
+                                    className={'Main-images'}
+                                    src={oregonMark}
+                                />
+                            </div>
+                            <p className={'Main-text'}>{'Website built by Dominic Sherman | Designed by Michael Sherman'}</p>
                         </div>
                     </div>
                 </Router>
