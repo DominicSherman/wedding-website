@@ -1,0 +1,27 @@
+.Couple-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.Couple-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.Couple-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 2%
+}
+
+.Couple-images {
+    width: 50%;
+    height: 50%;
+}
+
+.Couple-headerText {
+    font-family: 'BigNoodle';
+    font-size: 2.3vw;
+}
