@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
+import ImageGallery from 'react-image-gallery';
 
-import bride from '../assets/Bride.jpg';
-import groom from '../assets/Groom.jpg';
+import bride from '../assets/bride.jpg';
+import groom from '../assets/groom.jpg';
 import '../css/TheCouple.css';
 import loremIpsum from '../constants/lorem-ipsum-text';
+import {photos} from '../constants/photo-gallery';
 
 export default class TheCouple extends Component {
     render() {
@@ -43,9 +45,9 @@ export default class TheCouple extends Component {
                 </div>
                 <hr
                     className={'Couple-divider'}
-                    noshade
+                    noshade="true"
                 />
-                
+                <p className={'Couple-headerText'}>{'PHOTOS'}</p>
             </div>
         );
     }

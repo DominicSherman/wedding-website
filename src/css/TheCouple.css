@@ -6,18 +6,21 @@
 .Couple-headerText {
     font-family: 'BigNoodle';
     font-size: 2.3vw;
+    padding-top: 1%;
 }
 
 .Couple-bodyText {
     color: #5e5e5e;
     white-space: pre-wrap;
+    padding: 3%;
 }
 
 .Couple-divider {
-    height: 2px;
+    height: 1px;
     width: 80%;
     color: lightgrey;
     background-color: lightgrey;
+    border-color: lightgrey;
     margin-top: 2%;
     margin-bottom: 2%;
 }
