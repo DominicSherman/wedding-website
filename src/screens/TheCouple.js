@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import bride from '../assets/Bride.jpg';
 import groom from '../assets/Groom.jpg';
 import '../css/TheCouple.css';
-import {loremIpsum} from '../constants/lorem-ipsum';
+import loremIpsum from '../constants/lorem-ipsum-text';
 
 export default class TheCouple extends Component {
     render() {
@@ -21,7 +21,7 @@ export default class TheCouple extends Component {
                         <p className={'Couple-headerText'}>{'THE BRIDE'}</p>
                     </div>
                     <div className={'Couple-row'}>
-                        <p className={'Couple-bodyText'}>{loremIpsum}</p>
+                        <div className={'Couple-bodyText'}>{loremIpsum} </div>
                     </div>
                 </div>
                 <div className={'Couple-column'}>
@@ -36,7 +36,7 @@ export default class TheCouple extends Component {
                         <p className={'Couple-headerText'}>{'THE GROOM'}</p>
                     </div>
                     <div className={'Couple-row'}>
-                        <p className={'Couple-bodyText'}>{loremIpsum}</p>
+                        <div className={'Couple-bodyText'}>{loremIpsum} </div>
                     </div>
                     <hr/>
                 </div>
