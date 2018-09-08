@@ -48,6 +48,16 @@ export default class TheCouple extends Component {
                     noshade="true"
                 />
                 <p className={'Couple-headerText'}>{'PHOTOS'}</p>
+                <ImageGallery
+                    items={photos}
+                    renderItem={(item) =>
+                        <div className={'Couple-images'}>
+                            <img
+                                src={item.original}
+                            />
+                        </div>
+                    }
+                />
             </div>
         );
     }

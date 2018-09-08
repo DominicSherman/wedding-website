@@ -16,7 +16,7 @@ import fourteen from '../assets/gallery/14.jpg';
 export const photos = [
     {
         original: one,
-        thumbnail: one,
+        thumbnail: one
     },
     {
         original: two,
