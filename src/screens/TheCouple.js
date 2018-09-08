@@ -45,6 +45,7 @@ export default class TheCouple extends Component {
                     className={'Couple-divider'}
                     noshade
                 />
+                
             </div>
         );
     }

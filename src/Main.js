@@ -26,8 +26,8 @@ export default class Main extends Component {
     }
 
     componentDidMount() {
-        const headerImage = document.getElementById('headerImage');
-        window.addEventListener('scroll', () => this.setState({isSticky: window.scrollY > headerImage.clientHeight}));
+        const headerImageWrapper = document.getElementById('headerImageWrapper');
+        window.addEventListener('scroll', () => this.setState({isSticky: window.scrollY > headerImageWrapper.clientHeight}));
     }
 
     render() {
@@ -38,13 +38,17 @@ export default class Main extends Component {
             >
                 <Router>
                     <div>
-                        <img
-                            alt=''
-                            className={'Main-headerImage'}
-                            id={'headerImage'}
-                            onLoad={() => this.setState({isLoading: false})}
-                            src={headerImage}
-                        />
+                        <div
+                            id={'headerImageWrapper'}
+                            className={'Main-headerImageWrapper'}
+                        >
+                            <img
+                                alt=''
+                                className={'Main-headerImage'}
+                                onLoad={() => this.setState({isLoading: false})}
+                                src={headerImage}
+                            />
+                        </div>
                         <div
                             className={'Main-navBarWrapper center'}
                             style={{
@@ -76,7 +80,7 @@ export default class Main extends Component {
                         </div>
 
                         <div style={{
-                            marginTop: this.state.isSticky ? '9.6%' : '0'
+                            marginTop: this.state.isSticky ? '7.68%' : '0'
                         }}>
                             <Route exact path='/' component={
                                 () => <Home/>
