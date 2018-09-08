@@ -1,13 +1,7 @@
-.WeddingParty-wrapper {
-    display: flex;
-    flex-direction: row;
-}
-
 .WeddingParty-groomsmen, .WeddingParty-bridesmaids {
-    display: flex;
-    flex-direction: column;
     width: 25%;
 }
+
 .WeddingParty-groomsmen {
     border-right: 1px solid black;
     margin-left: 25%;

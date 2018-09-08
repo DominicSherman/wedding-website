@@ -8,16 +8,12 @@
     width: 100%;
     z-index: 10;
     top: 0;
-    display: flex;
-    justify-content: center;
     margin-top: 4%;
     margin-bottom: 4%;
 }
 
 .Main-navBar {
     width: 50%;
-    display: flex;
-    justify-content: space-between;
 }
 
 .Main-navBar:before, .Main-navBar:after {
@@ -39,16 +35,12 @@
     width: 100%;
     left: 0;
     bottom: 0;
-    display: flex;
-    flex-direction: column;
     font-size: 0.8vw;
     padding-top: 5%;
     margin-bottom: 1%;
 }
 
 .Main-logoWrapper, .Main-marksWrapper, .Main-text {
-    display: flex;
-    justify-content: center;
     position: relative;
     overflow: hidden;
 }
@@ -80,7 +72,6 @@
 }
 
 .Main-marksWrapper {
-    justify-content: space-evenly;
     padding-left: 35%;
     padding-right: 35%;
     margin-bottom: 1%;

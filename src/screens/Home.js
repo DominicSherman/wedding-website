@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
-import '../css/Home.css';
 import {holyRosaryLink} from '../constants/website-links';
+import '../css/Home.css';
 
 export default class Home extends Component {
     constructor(props) {
@@ -25,7 +25,7 @@ export default class Home extends Component {
 
     render() {
         return (
-            <div className={'Home-body'}>
+            <div className={'row'}>
                 <div className={'Home-ceremony'}>
                     <p className={'Home-ceremonyText'}>{'CEREMONY'}</p>
                     <p>{'Holy Rosary Church'}</p>
@@ -34,7 +34,7 @@ export default class Home extends Component {
                         <p>{'375 NE Clackamas St. Portland, OR 97232'}</p>
                     </a>
                 </div>
-                <div className={'Home-daysLeft'}>
+                <div className={'Home-daysLeft column spaceBetween'}>
                     <div className={'Home-weddingBegins'}>
                         <p className={'Home-weddingBeginsText'}>{'Wedding begins in'}</p>
                     </div>

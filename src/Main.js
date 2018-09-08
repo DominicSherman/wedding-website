@@ -13,6 +13,7 @@ import HeaderLink from './components/HeaderLink';
 import Registry from './screens/Registry';
 import Home from './screens/Home';
 import './css/Main.css';
+import './css/Flex.css';
 
 export default class Main extends Component {
     constructor(props) {
@@ -45,12 +46,12 @@ export default class Main extends Component {
                             src={headerImage}
                         />
                         <div
-                            className={'Main-navBarWrapper'}
+                            className={'Main-navBarWrapper center'}
                             style={{
                                 position: this.state.isSticky ? 'fixed' : 'relative'
                             }}
                         >
-                            <div className={'Main-navBar'}>
+                            <div className={'Main-navBar spaceBetween'}>
                                 <HeaderLink
                                     route={'/'}
                                     text={'HOME'}
@@ -94,15 +95,15 @@ export default class Main extends Component {
                             }/>
                         </div>
 
-                        <div className={'Main-footer'}>
-                            <div className={'Main-logoWrapper'}>
+                        <div className={'Main-footer column'}>
+                            <div className={'Main-logoWrapper center'}>
                                 <img
                                     alt={''}
                                     className={'Main-images'}
                                     src={logo}
                                 />
                             </div>
-                            <div className={'Main-marksWrapper'}>
+                            <div className={'Main-marksWrapper spaceEvenly'}>
                                 <img
                                     alt={''}
                                     className={'Main-images'}
@@ -114,7 +115,7 @@ export default class Main extends Component {
                                     src={oregonMark}
                                 />
                             </div>
-                            <p className={'Main-text'}>{'Website built by Dominic Sherman | Designed by Michael Sherman'}</p>
+                            <p className={'Main-text center'}>{'Website built by Dominic Sherman | Designed by Michael Sherman'}</p>
                         </div>
                     </div>
                 </Router>

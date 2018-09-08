@@ -1,8 +1,3 @@
-.Home-body {
-    display: flex;
-    flex-direction: row;
-}
-
 .Home-ceremony {
     width: 30%;
     height: 25%;
@@ -19,9 +14,6 @@
 }
 
 .Home-daysLeft {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     margin-left: 2%;
     width: 22%;
 }

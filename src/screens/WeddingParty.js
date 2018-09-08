@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 
 import {bridesmaids, groomsmen} from '../constants/bridal-party';
+import Person from '../components/Person';
 import '../css/WeddingParty.css';
-import Person from "../components/Person";
 
 export default class WeddingParty extends Component {
     render() {
@@ -10,11 +10,11 @@ export default class WeddingParty extends Component {
         const BridesmaidDisplay = () => bridesmaids.map((b) => <Person key={b.name} info={b}/>);
 
         return (
-            <div className={'WeddingParty-wrapper'}>
-                <div className={'WeddingParty-groomsmen'}>
+            <div className={'row'}>
+                <div className={'WeddingParty-groomsmen column'}>
                     <GroomsmenDisplay/>
                 </div>
-                <div className={'WeddingParty-bridesmaids'}>
+                <div className={'WeddingParty-bridesmaids column'}>
                     <BridesmaidDisplay/>
                 </div>
             </div>
