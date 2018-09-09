@@ -7,8 +7,7 @@ import '../css/TheCouple.css';
 import loremIpsum from '../constants/lorem-ipsum-text';
 import {photos} from '../constants/photo-gallery';
 
-export default class TheCouple extends Component {
-    render() {
+export default class TheCouple extends Component {render() {
         return (
             <div>
                 <div className={'row'}>
@@ -47,17 +46,16 @@ export default class TheCouple extends Component {
                     className={'Couple-divider'}
                     noshade="true"
                 />
-                <p className={'Couple-headerText'}>{'PHOTOS'}</p>
-                <ImageGallery
-                    items={photos}
-                    renderItem={(item) =>
-                        <div className={'Couple-images'}>
-                            <img
-                                src={item.original}
-                            />
-                        </div>
-                    }
-                />
+                <p className={'Couple-headerText2'}>{'PHOTOS'}</p>
+                <div
+                    className={'row center'}
+                >
+                    <ImageGallery
+                        additionalClass={'Couple-imageGallery'}
+                        items={photos}
+                        showBullets
+                    />
+                </div>
             </div>
         );
     }
