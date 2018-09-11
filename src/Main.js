@@ -28,7 +28,10 @@ class Main extends Component {
 
     componentDidUpdate(prevProps) {
         if (prevProps.location !== this.props.location) {
-            window.scrollTo(0, headerImageRef.clientHeight);
+            window.scrollTo({
+                top: headerImageRef.clientHeight,
+                behavior: 'smooth'
+            });
         }
     }
 
