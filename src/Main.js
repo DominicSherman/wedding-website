@@ -25,11 +25,6 @@ export default class Main extends Component {
         };
     }
 
-    componentDidMount() {
-        const headerImageWrapper = document.getElementById('headerImageWrapper');
-        window.addEventListener('scroll', () => this.setState({isSticky: window.scrollY > headerImageWrapper.clientHeight}));
-    }
-
     render() {
         return (
             <LoadingScreen

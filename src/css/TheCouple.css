@@ -3,6 +3,10 @@
     height: 50%;
 }
 
+.Couple-wrapper {
+    width: 50%;
+}
+
 .Couple-headerText, .Couple-headerText2 {
     font-family: 'BigNoodle';
     font-size: 2.3vw;
