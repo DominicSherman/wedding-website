@@ -6,6 +6,7 @@ import groom from '../assets/groom.jpg';
 import '../css/OurStory.css';
 import loremIpsum from '../constants/lorem-ipsum-text';
 import maryStory from '../constants/mary-story';
+import dominicStory from '../constants/dominic-story';
 import {photos} from '../constants/photo-gallery';
 
 export default class OurStory extends Component {
@@ -40,7 +41,7 @@ export default class OurStory extends Component {
                             <p className={'OurStory-headerText'}>{'THE GROOM'}</p>
                         </div>
                         <div className={'row center'}>
-                            <div className={'OurStory-bodyText'}>{loremIpsum}</div>
+                            <div className={'OurStory-bodyText'}>{dominicStory}</div>
                         </div>
                     </div>
                 </div>
