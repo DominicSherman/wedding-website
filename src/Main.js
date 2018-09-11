@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router} from 'react-router-dom';
 
 import headerImage from './assets/header.jpg';
 import './css/HeaderImage.css';
@@ -7,24 +6,38 @@ import './css/Flex.css';
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';
 import Routing from './Routing';
+import {withRouter} from 'react-router-dom';
+import LoadingScreen from 'react-loading-screen';
 
-export default class Main extends Component {
+let headerImageRef;
+
+class Main extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            isSticky: false
+            isSticky: false,
+            isLoading: true
         };
     }
 
     componentDidMount() {
-        const headerImageWrapper = document.getElementById('headerImageWrapper');
-        window.addEventListener('scroll', () => this.setState({isSticky: window.scrollY > headerImageWrapper.clientHeight}));
+        headerImageRef = document.getElementById('headerImageWrapper');
+        window.addEventListener('scroll', () => this.setState({isSticky: window.scrollY > headerImageRef.clientHeight}));
+    }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.location !== this.props.location) {
+            window.scrollTo(0, headerImageRef.clientHeight);
+        }
     }
 
     render() {
         return (
-            <Router>
+            <LoadingScreen
+                loading={this.state.isLoading}
+                bgColor={'lightgrey'}
+            >
                 <div>
                     <div
                         id={'headerImageWrapper'}
@@ -33,6 +46,7 @@ export default class Main extends Component {
                         <img
                             alt=''
                             className={'HeaderImage-image'}
+                            onLoad={() => this.setState({isLoading: false})}
                             src={headerImage}
                         />
                     </div>
@@ -40,7 +54,9 @@ export default class Main extends Component {
                     <Routing isSticky={this.state.isSticky}/>
                     <Footer/>
                 </div>
-            </Router>
+            </LoadingScreen>
         );
     }
 }
+
+export default withRouter(Main);
