@@ -8,7 +8,7 @@ import oregonMark from './assets/Oregon-mark.png';
 import ringMark from './assets/Ring-mark.png';
 import WeddingParty from './screens/WeddingParty';
 import Pictures from './screens/Pictures';
-import TheCouple from './screens/TheCouple';
+import OurStory from './screens/OurStory';
 import HeaderLink from './components/HeaderLink';
 import Registry from './screens/Registry';
 import Home from './screens/Home';
@@ -56,8 +56,8 @@ export default class Main extends Component {
                                     text={'HOME'}
                                 />
                                 <HeaderLink
-                                    route={'/couple'}
-                                    text={'THE COUPLE'}
+                                    route={'/our-story'}
+                                    text={'OUR STORY'}
                                 />
                                 <HeaderLink
                                     route={'/wedding-party'}
@@ -80,8 +80,8 @@ export default class Main extends Component {
                             <Route exact path='/' component={
                                 () => <Home/>
                             }/>
-                            <Route exact path='/couple' component={
-                                () => <TheCouple/>
+                            <Route exact path='/our-story' component={
+                                () => <OurStory/>
                             }/>
                             <Route exact path='/wedding-party' component={
                                 () => <WeddingParty/>

@@ -1,25 +1,25 @@
-.Couple-images {
+.OurStory-images {
     width: 50%;
     height: 50%;
 }
 
-.Couple-wrapper {
+.OurStory-wrapper {
     width: 50%;
 }
 
-.Couple-headerText, .Couple-headerText2 {
+.OurStory-headerText, .OurStory-headerText2 {
     font-family: 'BigNoodle';
     font-size: 2.3vw;
     padding-top: 1%;
 }
 
-.Couple-bodyText {
+.OurStory-bodyText {
     color: #5e5e5e;
     white-space: pre-wrap;
     padding: 3%;
 }
 
-.Couple-divider {
+.OurStory-divider {
     height: 1px;
     width: 80%;
     color: lightgrey;
@@ -29,11 +29,11 @@
     margin-bottom: 2%;
 }
 
-.Couple-headerText2 {
+.OurStory-headerText2 {
     padding: 3%;
 }
 
-.Couple-imageGallery {
+.OurStory-imageGallery {
     margin-left: 25%;
     margin-right: 25%;
     width: 38%;
