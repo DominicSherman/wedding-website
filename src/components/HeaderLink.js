@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 import '../css/HeaderLink.css';
 
@@ -8,14 +8,14 @@ export default class HeaderLink extends Component{
         const {route, text} = this.props;
 
         return (
-            <Link
+            <NavLink
                 className={'HeaderLink-link'}
                 to={`${route}`}
             >
                 <p className={'HeaderLink-headerText'}>
                     {`${text}`}
                 </p>
-            </Link>
+            </NavLink>
         );
     }
 }

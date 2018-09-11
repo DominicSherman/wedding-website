@@ -49,14 +49,20 @@ export default class OurStory extends Component {
                     noshade="true"
                 />
                 <p className={'OurStory-headerText2'}>{'PHOTOS'}</p>
-                <div
-                    className={'row center'}
-                >
+                <div className={'row center'}>
                     <ImageGallery
                         additionalClass={'OurStory-imageGallery'}
                         items={photos}
                         showIndex
                     />
+                </div>
+                <hr
+                    className={'OurStory-divider'}
+                    noshade="true"
+                />
+                <p className={'OurStory-headerText2'}>{'THE BEST MAN'}</p>
+                <div className={'row'}>
+                    <div className={'OurStory-bodyText'}>{loremIpsum}</div>
                 </div>
             </div>
         );

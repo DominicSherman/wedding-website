@@ -1,0 +1,46 @@
+.Footer {
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    font-size: 0.8vw;
+    padding-top: 5%;
+    margin-bottom: 1%;
+}
+
+.Footer-logoWrapper, .Footer-marksWrapper, .Footer-text {
+    position: relative;
+    overflow: hidden;
+}
+
+.Footer-logoWrapper {
+    width: 100%;
+}
+
+.Footer-logoWrapper:before, .Footer-logoWrapper:after {
+    width: 45%;
+    content: '';
+    height: 4px;
+    top: 51%;
+    position: absolute;
+    background-color: #f2ac5e;
+}
+
+.Footer-logoWrapper:before {
+    left: 0;
+}
+
+.Footer-logoWrapper:after {
+    right: 0;
+}
+
+.Footer-images {
+    width: 10%;
+    height: 10%;
+}
+
+.Footer-marksWrapper {
+    padding-left: 35%;
+    padding-right: 35%;
+    margin-bottom: 1%;
+    background-color: #678da2;
+}

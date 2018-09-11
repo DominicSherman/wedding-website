@@ -1,0 +1,28 @@
+.NavBar-wrapper {
+    background-color: #ebebeb;
+    width: 100%;
+    z-index: 10;
+    top: 0;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-bottom: 3%;
+}
+
+.NavBar-body {
+    width: 50%;
+}
+
+.NavBar-body:before, .NavBar-body:after {
+    width: 50%;
+    content: '';
+    border-top: 2px solid darkslategrey;
+    border-bottom: 2px solid darkslategrey;
+}
+
+.NavBar-body:before {
+    margin-left: -50%;
+}
+
+.NavBar-body:after {
+    margin-right: -50%;
+}

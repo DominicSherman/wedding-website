@@ -1,124 +1,46 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
-import LoadingScreen from 'react-loading-screen';
+import {BrowserRouter as Router} from 'react-router-dom';
 
 import headerImage from './assets/header.jpg';
-import logo from './assets/D&M-logo.png';
-import oregonMark from './assets/Oregon-mark.png';
-import ringMark from './assets/Ring-mark.png';
-import WeddingParty from './screens/WeddingParty';
-import Pictures from './screens/Pictures';
-import OurStory from './screens/OurStory';
-import HeaderLink from './components/HeaderLink';
-import Registry from './screens/Registry';
-import Home from './screens/Home';
-import './css/Main.css';
+import './css/HeaderImage.css';
 import './css/Flex.css';
+import Footer from './components/Footer';
+import NavBar from './components/NavBar';
+import Routing from './Routing';
 
 export default class Main extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            isSticky: false,
-            isLoading: true
+            isSticky: false
         };
+    }
+
+    componentDidMount() {
+        const headerImageWrapper = document.getElementById('headerImageWrapper');
+        window.addEventListener('scroll', () => this.setState({isSticky: window.scrollY > headerImageWrapper.clientHeight}));
     }
 
     render() {
         return (
-            <LoadingScreen
-                loading={this.state.isLoading}
-                bgColor={'lightgrey'}
-            >
-                <Router>
-                    <div>
-                        <div
-                            id={'headerImageWrapper'}
-                            className={'Main-headerImageWrapper'}
-                        >
-                            <img
-                                alt=''
-                                className={'Main-headerImage'}
-                                onLoad={() => this.setState({isLoading: false})}
-                                src={headerImage}
-                            />
-                        </div>
-                        <div
-                            className={'Main-navBarWrapper center'}
-                            style={{
-                                position: this.state.isSticky ? 'fixed' : 'relative'
-                            }}
-                        >
-                            <div className={'Main-navBar spaceBetween'}>
-                                <HeaderLink
-                                    route={'/'}
-                                    text={'HOME'}
-                                />
-                                <HeaderLink
-                                    route={'/our-story'}
-                                    text={'OUR STORY'}
-                                />
-                                <HeaderLink
-                                    route={'/wedding-party'}
-                                    text={'WEDDING PARTY'}
-                                />
-                                <HeaderLink
-                                    route={'/pictures'}
-                                    text={'PICTURES'}
-                                />
-                                <HeaderLink
-                                    route={'/registry'}
-                                    text={'REGISTRY'}
-                                />
-                            </div>
-                        </div>
-
-                        <div style={{
-                            marginTop: this.state.isSticky ? '7.68%' : '0'
-                        }}>
-                            <Route exact path='/' component={
-                                () => <Home/>
-                            }/>
-                            <Route exact path='/our-story' component={
-                                () => <OurStory/>
-                            }/>
-                            <Route exact path='/wedding-party' component={
-                                () => <WeddingParty/>
-                            }/>
-                            <Route exact path='/pictures' component={
-                                () => <Pictures/>
-                            }/>
-                            <Route exact path='/registry' component={
-                                () => <Registry/>
-                            }/>
-                        </div>
-
-                        <div className={'Main-footer column'}>
-                            <div className={'Main-logoWrapper center'}>
-                                <img
-                                    alt={''}
-                                    className={'Main-images'}
-                                    src={logo}
-                                />
-                            </div>
-                            <div className={'Main-marksWrapper spaceEvenly'}>
-                                <img
-                                    alt={''}
-                                    className={'Main-images'}
-                                    src={ringMark}
-                                />
-                                <img
-                                    alt={''}
-                                    className={'Main-images'}
-                                    src={oregonMark}
-                                />
-                            </div>
-                            <p className={'Main-text center'}>{'Website built by Dominic Sherman | Designed by Michael Sherman'}</p>
-                        </div>
+            <Router>
+                <div>
+                    <div
+                        id={'headerImageWrapper'}
+                        className={'HeaderImage-wrapper'}
+                    >
+                        <img
+                            alt=''
+                            className={'HeaderImage-image'}
+                            src={headerImage}
+                        />
                     </div>
-                </Router>
-            </LoadingScreen>
+                    <NavBar isSticky={this.state.isSticky}/>
+                    <Routing isSticky={this.state.isSticky}/>
+                    <Footer/>
+                </div>
+            </Router>
         );
     }
 }
