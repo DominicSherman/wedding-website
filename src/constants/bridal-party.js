@@ -1,5 +1,5 @@
-import gabe from '../assets/gabe.jpg';
-import johnpaul from '../assets/johnpaul.jpg';
+import gabe from '../assets/wedding-party/gabe.jpg';
+import johnpaul from '../assets/wedding-party/johnpaul.jpg';
 import michael from '../assets/michael.jpg';
 import spencer from '../assets/spencer.jpg';
 import janis from '../assets/janis.png';
@@ -7,7 +7,7 @@ import thomas from '../assets/thomas.jpg';
 import rose from '../assets/rose.png';
 import katherine from '../assets/katherine.png';
 import regina from '../assets/regina.png';
-import esther from '../assets/esther.png';
+import esther from '../assets/wedding-party/esther.png';
 import valda from '../assets/valda.png';
 import maria from '../assets/maria.png';
 

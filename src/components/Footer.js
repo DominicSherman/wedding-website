@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import logo from '../assets/D&M-logo.png';
-import oregonMark from '../assets/Oregon-mark.png';
-import ringMark from '../assets/Ring-mark.png';
+import logo from '../assets/logos/D&M-logo.png';
+import oregonMark from '../assets/logos/Oregon-mark.png';
+import ringMark from '../assets/logos/Ring-mark.png';
 import '../css/Footer.css';
 
 export default class Footer extends Component {
