@@ -1,15 +1,14 @@
-.Home-ceremony {
+.Home-welcome {
     width: 30%;
-    height: 25%;
     margin-left: 23%;
     background-color: white;
     padding: 1%;
 }
 
-.Home-ceremonyText {
+.Home-welcomeHeaderText {
     font-size: 2vw;
     font-family: Lubalin;
-    color: lightblue;
+    color: #678da2;
     padding-bottom: 1%;
 }
 
@@ -21,7 +20,7 @@
 .Home-weddingBegins {
     background-color: #678da2;
     text-align: center;
-    padding: 3%;
+    padding: 5%;
     vertical-align: center;
 }
 
@@ -35,13 +34,45 @@
     height: 30%;
     background-color: #f2ac5e;
     text-align: center;
-    padding: 5%;
+    padding: 7%;
     vertical-align: center;
     bottom: 0;
 }
 
 .Home-daysText {
     color: white;
-    font-size: 2.5vw;
+    font-size: 3vw;
     font-family: Lubalin;
+}
+
+.Home-information {
+    width: 54%;
+    height: 25%;
+    margin-left: 23%;
+    margin-top: 3%;
+    background-color: white;
+    padding: 2%;
+    border-left: 1px solid black;
+}
+
+.Home-informationHeaderText {
+    font-size: 3vw;
+    font-family: Lubalin;
+    color: #678da2;
+    padding-bottom: 1%;
+}
+
+.Home-logo {
+    height: 40%;
+    width: 40%;
+    margin-bottom: 3%;
+}
+
+.Home-locationText {
+    font-family: 'BigNoodle';
+    font-size: 2.3vw;
+}
+
+.right {
+    text-align: right;
 }
