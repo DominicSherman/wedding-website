@@ -56,22 +56,27 @@ p {
     margin-top: 2%;
     background-color: white;
     padding: 6%;
+    position: relative;
+}
+
+.Home-informationTextWrapper {
+    padding-top: 10%;
+    position: relative;
 }
 
 .Home-informationHeaderText {
-    font-size: 3vw;
+    font-size: 2.6vw;
     font-family: Lubalin;
     color: #678da2;
 }
 
-.Home-textWrapper {
-    padding-top: 5%;
-}
 
 .Home-logoWrapper {
     height: 50%;
     width: 50%;
+    position: relative;
 }
+
 .Home-logo {
     height: 100%;
     width: 100%;
@@ -79,15 +84,32 @@ p {
 
 .Home-locationText {
     font-family: 'BigNoodle';
-    font-size: 2.1vw;
+    font-size: 2vw;
 }
 
 .Home-topRightBorder {
-    width: 6%;
-    height: 35%;
-    border-top: 3px solid #678da2;
-    border-right: 3px solid #678da2;
-    margin-left: 37%;
-    margin-top: 2%;
+    width: 30%;
+    height: 70%;
+    border-top: 0.2vw solid #678da2;
+    border-right: 0.2vw solid #678da2;
+    right: 0;
+    top: 0;
+    position: absolute;
+}
+
+.Home-bottomRightBorder {
+    width: 75%;
+    height: 25%;
+    right: 0;
+    bottom: 0;
+    border-bottom: 0.2vw solid #678da2;
+    border-right: 0.2vw solid #678da2;
+    position: absolute;
+}
+
+.Home-leftBorder {
+    height: 40%;
+    border-left: 0.2vw solid #678da2;
+    left: 11%;
     position: absolute;
 }

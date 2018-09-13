@@ -45,7 +45,7 @@ export default class Home extends Component {
 
                 <div className={'Home-information column center'}>
                     <div className={'row spaceBetween'}>
-                        <div className={'Home-textWrapper column'}>
+                        <div className={'Home-informationTextWrapper column'}>
                             <p className={'Home-informationHeaderText'}>{'THE CEREMONY'}</p>
                             <p className={'Home-locationText'}>{'Holy Rosary Church'}</p>
                             <p>{'May 28th, 2019 at 2PM'}</p>
@@ -53,17 +53,18 @@ export default class Home extends Component {
                                 <p>{'375 NE Clackamas St. Portland, OR 97232'}</p>
                             </a>
                         </div>
-                        <span className={'Home-topRightBorder'}/>
                         <div className={'Home-logoWrapper row'}>
                             <img
                                 alt={''}
                                 className={'Home-logo'}
                                 src={church}
                             />
+                            <span className={'Home-topRightBorder'}/>
                         </div>
                     </div>
+                    <span className={'Home-leftBorder'}/>
                     <div className={'row spaceBetween'}>
-                        <div className={'row'}>
+                        <div className={'Home-logoWrapper row'}>
                             <img
                                 alt={''}
                                 className={'Home-logo'}
@@ -71,17 +72,18 @@ export default class Home extends Component {
                             />
                         </div>
                         <div
-                            className={'Home-textWrapper column right'}
+                            className={'Home-informationTextWrapper column right'}
                             style={{textAlign: 'right'}}
                         >
                             <p className={'Home-informationHeaderText'}>
                                 {'THE RECEPTION'}
                             </p>
-                            <p className={'Home-locationText'}>{'MCMENAMIN\'S CORNELIUS PASS ROADHOUSE'}</p>
+                            <p className={'Home-locationText'}>{'MCMENAMIN\'S CORNELIUS PASS'}</p>
                             <p>{'May 28th, 2019 at 3:30PM'}</p>
                             <a href={mcmenaminsLink} target={'_blank'}>
                                 <p>{'4045 NE Cornelius Pass Rd. Hillsboro, OR 97124'}</p>
                             </a>
+                            <span className={'Home-bottomRightBorder'}/>
                         </div>
                     </div>
                 </div>
