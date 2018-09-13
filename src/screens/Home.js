@@ -4,6 +4,7 @@ import {holyRosaryLink, mcmenaminsLink} from '../constants/website-links';
 import '../css/Home.css';
 import church from '../assets/graphics/church.png';
 import cake from '../assets/graphics/cake.png';
+import bells from '../assets/graphics/weddingsbells.png';
 
 export default class Home extends Component {
     constructor(props) {
@@ -30,7 +31,18 @@ export default class Home extends Component {
             <div className={'column'}>
                 <div className={'row'}>
                     <div className={'Home-welcome column'}>
-                        <p className={'Home-welcomeHeaderText'}>{'Welcome to our website!'}</p>
+                        <div className={'row spaceBetween'}>
+                            <div className={'column'}>
+                                <p className={'Home-welcomeHeaderText'}>{'Welcome to our website!'}</p>
+                                <p><b>{'Greetings from Dominic and Mary!'}</b></p>
+                            </div>
+                            <img
+                                alt={''}
+                                className={'Home-bells'}
+                                src={bells}
+                            />
+                            <span className={'Home-bellBorder'}/>
+                        </div>
                         <p>{'Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. '}</p>
                     </div>
                     <div className={'Home-daysLeft column spaceBetween'}>
@@ -43,51 +55,74 @@ export default class Home extends Component {
                     </div>
                 </div>
 
-                <div className={'Home-information column center'}>
-                    <div className={'row spaceBetween'}>
-                        <div className={'Home-informationTextWrapper column'}>
-                            <p className={'Home-informationHeaderText'}>{'THE CEREMONY'}</p>
-                            <p className={'Home-locationText'}>{'Holy Rosary Church'}</p>
-                            <p>{'May 28th, 2019 at 2PM'}</p>
-                            <a href={holyRosaryLink} target={'_blank'}>
-                                <p>{'375 NE Clackamas St. Portland, OR 97232'}</p>
-                            </a>
+                < div
+                    className={'Home-information column center'}>
+                    < div
+                        className={'row spaceBetween'}>
+                        < div
+                            className={'Home-informationTextWrapper column'}>
+                            < p
+                                className={'Home-informationHeaderText'}> {'THE CEREMONY'}
+                            </p>
+                            <
+                                p
+                                className={'Home-locationText'}> {'Holy Rosary Church'}
+                            </p>
+                            <
+                                p> {'May 28th, 2019 at 2PM'}
+                            </p>
+                            <
+                                a
+                                href={holyRosaryLink}
+                                target={'_blank'}>
+                                < p> {'375 NE Clackamas St. Portland, OR 97232'}
+                                </p>
+                                <
+                                /a>
                         </div>
-                        <div className={'Home-logoWrapper row'}>
-                            <img
+                        <
+                            div
+                            className={'Home-logoWrapper row'}>
+                            < img
                                 alt={''}
                                 className={'Home-logo'}
                                 src={church}
                             />
                             <span className={'Home-topRightBorder'}/>
+                            <
+                            /div>
                         </div>
+                        <
+                            span
+                            className={'Home-leftBorder'}
+                        />
+                        <div className={'row spaceBetween'}>
+                            <div className={'Home-logoWrapper row'}>
+                                <img
+                                    alt={''}
+                                    className={'Home-logo'}
+                                    src={cake}
+                                />
+                            </div>
+                            <div
+                                className={'Home-informationTextWrapper column right'}
+                                style={{textAlign: 'right'}}
+                            >
+                                <p className={'Home-informationHeaderText'}>
+                                    {'THE RECEPTION'}
+                                </p>
+                                <p className={'Home-locationText'}>{'MCMENAMIN\'S CORNELIUS PASS'}</p>
+                                <p>{'May 28th, 2019 at 3:30PM'}</p>
+                                <a href={mcmenaminsLink} target={'_blank'}>
+                                    <p>{'4045 NE Cornelius Pass Rd. Hillsboro, OR 97124'}</p>
+                                </a>
+                                <span className={'Home-bottomRightBorder'}/>
+                            </div>
+                        </div>
+                        <
+                        /div>
                     </div>
-                    <span className={'Home-leftBorder'}/>
-                    <div className={'row spaceBetween'}>
-                        <div className={'Home-logoWrapper row'}>
-                            <img
-                                alt={''}
-                                className={'Home-logo'}
-                                src={cake}
-                            />
-                        </div>
-                        <div
-                            className={'Home-informationTextWrapper column right'}
-                            style={{textAlign: 'right'}}
-                        >
-                            <p className={'Home-informationHeaderText'}>
-                                {'THE RECEPTION'}
-                            </p>
-                            <p className={'Home-locationText'}>{'MCMENAMIN\'S CORNELIUS PASS'}</p>
-                            <p>{'May 28th, 2019 at 3:30PM'}</p>
-                            <a href={mcmenaminsLink} target={'_blank'}>
-                                <p>{'4045 NE Cornelius Pass Rd. Hillsboro, OR 97124'}</p>
-                            </a>
-                            <span className={'Home-bottomRightBorder'}/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        );
-    }
-}
+                    )
+                    ;
+                    }
+                    }

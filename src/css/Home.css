@@ -8,13 +8,28 @@ p {
     margin-left: 23%;
     background-color: white;
     padding: 1%;
+    position: relative;
 }
 
 .Home-welcomeHeaderText {
-    font-size: 2vw;
+    font-size: 1.6vw;
     font-family: Lubalin;
     color: #678da2;
     padding-bottom: 1%;
+}
+
+.Home-bells {
+    width: 15%;
+    height: 15%;
+    z-index: 1;
+}
+
+.Home-bellBorder {
+    position: absolute;
+    left: 72%;
+    top: 16%;
+    width: 25%;
+    border-top: 0.2vw solid #678da2;
 }
 
 .Home-daysLeft {
