@@ -1,3 +1,7 @@
+p {
+    padding-top:1%;
+}
+
 .Home-welcome {
     width: 30%;
     margin-left: 23%;
@@ -46,33 +50,44 @@
 }
 
 .Home-information {
-    width: 54%;
+    width: 44%;
     height: 25%;
     margin-left: 23%;
-    margin-top: 3%;
+    margin-top: 2%;
     background-color: white;
-    padding: 2%;
-    border-left: 1px solid black;
+    padding: 6%;
 }
 
 .Home-informationHeaderText {
     font-size: 3vw;
     font-family: Lubalin;
     color: #678da2;
-    padding-bottom: 1%;
 }
 
+.Home-textWrapper {
+    padding-top: 5%;
+}
+
+.Home-logoWrapper {
+    height: 50%;
+    width: 50%;
+}
 .Home-logo {
-    height: 40%;
-    width: 40%;
-    margin-bottom: 3%;
+    height: 100%;
+    width: 100%;
 }
 
 .Home-locationText {
     font-family: 'BigNoodle';
-    font-size: 2.3vw;
+    font-size: 2.1vw;
 }
 
-.right {
-    text-align: right;
+.Home-topRightBorder {
+    width: 6%;
+    height: 35%;
+    border-top: 3px solid #678da2;
+    border-right: 3px solid #678da2;
+    margin-left: 37%;
+    margin-top: 2%;
+    position: absolute;
 }

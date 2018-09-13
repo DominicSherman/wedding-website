@@ -43,9 +43,9 @@ export default class Home extends Component {
                     </div>
                 </div>
 
-                <div className={'Home-information'}>
-                    <div className={'row center'}>
-                        <div className={'column'}>
+                <div className={'Home-information column center'}>
+                    <div className={'row spaceBetween'}>
+                        <div className={'Home-textWrapper column'}>
                             <p className={'Home-informationHeaderText'}>{'THE CEREMONY'}</p>
                             <p className={'Home-locationText'}>{'Holy Rosary Church'}</p>
                             <p>{'May 28th, 2019 at 2PM'}</p>
@@ -53,20 +53,30 @@ export default class Home extends Component {
                                 <p>{'375 NE Clackamas St. Portland, OR 97232'}</p>
                             </a>
                         </div>
-                        <img
-                            alt={''}
-                            className={'Home-logo'}
-                            src={church}
-                        />
+                        <span className={'Home-topRightBorder'}/>
+                        <div className={'Home-logoWrapper row'}>
+                            <img
+                                alt={''}
+                                className={'Home-logo'}
+                                src={church}
+                            />
+                        </div>
                     </div>
-                    <div className={'row center'}>
-                        <img
-                            alt={''}
-                            className={'Home-logo'}
-                            src={cake}
-                        />
-                        <div className={'column right'}>
-                            <p className={'Home-informationHeaderText'}>{'THE RECEPTION'}</p>
+                    <div className={'row spaceBetween'}>
+                        <div className={'row'}>
+                            <img
+                                alt={''}
+                                className={'Home-logo'}
+                                src={cake}
+                            />
+                        </div>
+                        <div
+                            className={'Home-textWrapper column right'}
+                            style={{textAlign: 'right'}}
+                        >
+                            <p className={'Home-informationHeaderText'}>
+                                {'THE RECEPTION'}
+                            </p>
                             <p className={'Home-locationText'}>{'MCMENAMIN\'S CORNELIUS PASS ROADHOUSE'}</p>
                             <p>{'May 28th, 2019 at 3:30PM'}</p>
                             <a href={mcmenaminsLink} target={'_blank'}>
