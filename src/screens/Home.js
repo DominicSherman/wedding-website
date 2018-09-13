@@ -43,7 +43,7 @@ export default class Home extends Component {
                             />
                             <span className={'Home-bellBorder'}/>
                         </div>
-                        <p>{'Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. Text here. '}</p>
+                        <p>{'You can find information about the wedding, get directions, RSVP, and afterwards you can view pictures from the day here!'}</p>
                     </div>
                     <div className={'Home-daysLeft column spaceBetween'}>
                         <div className={'Home-weddingBegins'}>
