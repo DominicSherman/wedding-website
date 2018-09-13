@@ -1,6 +1,5 @@
 p {
     padding-top: 2%;
-    font-size: 1vw;
 }
 
 .Home-welcome {
@@ -66,12 +65,12 @@ p {
 }
 
 .Home-information {
-    width: 44%;
+    width: 50%;
     height: 25%;
     margin-left: 23%;
     margin-top: 2%;
     background-color: white;
-    padding: 6%;
+    padding: 3%;
     position: relative;
 }
 
@@ -109,7 +108,7 @@ p {
     border-top: 0.2vw solid #678da2;
     border-right: 0.2vw solid #678da2;
     right: 0;
-    top: 0;
+    top: 5%;
     position: absolute;
 }
 
@@ -117,7 +116,7 @@ p {
     width: 85%;
     height: 25%;
     right: 0;
-    bottom: 0;
+    bottom: 0.6%;
     border-bottom: 0.2vw solid #678da2;
     border-right: 0.2vw solid #678da2;
     position: absolute;
@@ -126,6 +125,6 @@ p {
 .Home-leftBorder {
     height: 40%;
     border-left: 0.2vw solid #678da2;
-    left: 11%;
+    left: 6%;
     position: absolute;
 }

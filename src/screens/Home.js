@@ -55,7 +55,7 @@ export default class Home extends Component {
                     </div>
                 </div>
 
-                < div
+                <div
                     className={'Home-information column center'}>
                     < div
                         className={'row spaceBetween'}>
