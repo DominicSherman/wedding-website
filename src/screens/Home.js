@@ -46,7 +46,7 @@ export default class Home extends Component {
                             />
                             <span className={'Home-bellBorder'}/>
                         </div>
-                        <p>{'You can find information about the wedding, get directions, RSVP, and afterwards you can view pictures from the day here! '}</p>
+                        <p>{'You can find information about the wedding, get directions, and RSVP! After the day, pictures will be uploaded to the photos tab.'}</p>
                     </div>
 
                     <div className={'Home-countdown column spaceBetween'}>

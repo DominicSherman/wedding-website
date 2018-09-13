@@ -96,8 +96,8 @@ p {
 }
 
 .Home-logoWrapper {
-    height: 46%;
-    width: 46%;
+    height: 47%;
+    width: 47%;
     position: relative;
 }
 
@@ -155,6 +155,7 @@ p {
     color: white;
     text-align: center;
     margin-top: 5%;
+    border: none;
 }
 
 .Home-button {
