@@ -2,6 +2,10 @@ p {
     padding-top: 2%;
 }
 
+input {
+    width: 50%;
+}
+
 /*Welcome*/
 .Home-welcome {
     width: 30%;
@@ -169,5 +173,24 @@ p {
 .Home-rsvpGraphic {
     width: 7%;
     height: 7%;
+}
+/**/
+
+/*Modal*/
+.Home-overlay {
+    background: rgba(235, 235, 235, 0.7);
+}
+
+.Home-modal {
+    background: white;
+    width: 100%;
+}
+
+.Home-formRow {
+    padding: 2%;
+    width: 50%;
+    margin-left: 22%;
+    font-size: 1.6vw;
+    font-family: Lubalin;
 }
 /**/

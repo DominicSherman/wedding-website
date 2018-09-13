@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Modal from 'react-responsive-modal';
 
 import {holyRosaryLink, mcmenaminsLink} from '../constants/website-links';
 import '../css/Home.css';
@@ -13,7 +14,10 @@ export default class Home extends Component {
         super(props);
 
         this.state = {
-            days: 0
+            days: 0,
+            modalVisible: false,
+            name: null,
+            numberOfGuests: null
         };
     }
 
@@ -112,7 +116,12 @@ export default class Home extends Component {
                             className={'Home-rsvpGraphic'}
                             src={leftGraphic}
                         />
-                        <button className={'Home-button'}>{'RSVP'}</button>
+                        <button
+                            className={'Home-button'}
+                            onClick={() => this.setState({modalVisible: true})}
+                        >
+                            {'RSVP'}
+                        </button>
                         <button className={'Home-button2'}>{'Download the App'}</button>
                         <img
                             alt={''}
@@ -121,6 +130,35 @@ export default class Home extends Component {
                         />
                     </div>
 
+                    <Modal
+                        classNames={{overlay: 'Home-overlay', modal: 'Home-modal'}}
+                        open={this.state.modalVisible}
+                        onClose={() => this.setState({modalVisible: false})}
+                    >
+                        <form onSubmit={() => console.log(`SUBMITTED ${this.state.name}`)}>
+                            <div className={'column center'}>
+                                <div className={'Home-formRow row spaceBetween'}>
+                                    <a>{'Name: '}</a>
+                                    <input
+                                        type={'text'}
+                                        value={this.state.name}
+                                        onChange={(event) => this.setState({name: event.target.value})}
+                                    />
+                                </div>
+                                <div className={'Home-formRow row spaceBetween'}>
+                                    <a>{'# of guests:'}</a>
+                                    <input
+                                        type={'text'}
+                                        value={this.state.numberOfGuests}
+                                        onChange={(event) => this.setState({numberOfGuests: event.target.value})}
+                                    />
+                                </div>
+                                <div className={'Home-formRow row center'}>
+                                    <button type={'submit'} className={'Home-button2'}>{'SUBMIT'}</button>
+                                </div>
+                            </div>
+                        </form>
+                    </Modal>
                 </div>
             </div>
         );
