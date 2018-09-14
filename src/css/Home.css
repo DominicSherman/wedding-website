@@ -3,7 +3,7 @@ p {
 }
 
 input {
-    width: 50%;
+    width: 60%;
 }
 
 /*Welcome*/
@@ -176,7 +176,7 @@ input {
 }
 /**/
 
-/*Modal*/
+/*RSVP Modal*/
 .Home-overlay {
     background: rgba(235, 235, 235, 0.7);
 }

@@ -146,7 +146,7 @@ export default class Home extends Component {
                                     />
                                 </div>
                                 <div className={'Home-formRow row spaceBetween'}>
-                                    <a>{'# of guests:'}</a>
+                                    <a>{'# in Party:'}</a>
                                     <input
                                         type={'text'}
                                         value={this.state.numberOfGuests}
