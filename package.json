@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "firebase-tools": "^4.2.1",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-image-gallery": "^0.8.11",
