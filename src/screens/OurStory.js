@@ -10,6 +10,15 @@ import dominicStory from '../constants/dominic-story';
 import {photos} from '../constants/photo-gallery';
 
 export default class OurStory extends Component {
+    getImageStyle = () => {
+        if (!window.screenTop && !window.screenY) {
+            return {
+                height: '50%',
+                width: '50%'
+            };
+        }
+    };
+
     render() {
         return (
             <div>
@@ -54,6 +63,14 @@ export default class OurStory extends Component {
                     <ImageGallery
                         additionalClass={'OurStory-imageGallery'}
                         items={photos}
+                        renderItem={(item) =>
+                            <div style={this.getImageStyle()}>
+                                <img
+                                    alt={''}
+                                    src={item.original}
+                                />
+                            </div>
+                        }
                         showIndex
                     />
                 </div>

@@ -159,7 +159,15 @@ input {
     color: white;
     text-align: center;
     margin-top: 5%;
-    border: none;
+    border: #678da2;
+    border-radius: 6px;
+}
+
+.Home-button:hover, .Home-button2:hover {
+    background-color: white;
+    color: #678da2;
+    border: #678da2 solid 2px;
+    cursor: pointer;
 }
 
 .Home-button {
