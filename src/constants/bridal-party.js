@@ -9,7 +9,7 @@ import katherine from '../assets/wedding-party/katherine.png';
 import regina from '../assets/wedding-party/regina.png';
 import esther from '../assets/wedding-party/esther.jpg';
 import valda from '../assets/wedding-party/valda.png';
-import maria from '../assets/wedding-party/maria.png';
+import maria from '../assets/wedding-party/maria.jpg';
 
 export const groomsmen = [
     {
