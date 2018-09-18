@@ -14,23 +14,19 @@ export default class Home extends Component {
         super(props);
 
         this.state = {
-            days: 0,
             modalVisible: false,
             name: null,
             numberOfGuests: null
         };
     }
 
-    componentDidMount() {
+    calculateDaysLeft = () => {
         const oneDay = 24 * 60 * 60 * 1000;
         const weddingDay = new Date("2019-05-28T14:00:00-07:00").getTime();
         const now = Date.now();
-        const days = Math.floor(Math.abs((weddingDay - now) / (oneDay)));
 
-        this.setState({
-            days
-        });
-    }
+        return Math.floor(Math.abs((weddingDay - now) / (oneDay)));
+    };
 
     render() {
         return (
@@ -50,7 +46,7 @@ export default class Home extends Component {
                             />
                             <span className={'Home-bellBorder'}/>
                         </div>
-                        <p>{'You can find information about the wedding, get directions, and RSVP! After the day, pictures will be uploaded to the photos tab.'}</p>
+                        <p>{'You can find information about the wedding, get directions, and RSVP. After the day, pictures uploaded using the app will be viewable in the photos tab.'}</p>
                     </div>
 
                     <div className={'Home-countdown column spaceBetween'}>
@@ -58,7 +54,7 @@ export default class Home extends Component {
                             <p className={'Home-weddingBeginsText'}>{'Wedding begins in'}</p>
                         </div>
                         <div className={'Home-daysLeft'}>
-                            <p className={'Home-daysLeftText'}>{`${this.state.days} DAYS`}</p>
+                            <p className={'Home-daysLeftText'}>{`${this.calculateDaysLeft()} DAYS`}</p>
                         </div>
                     </div>
 
