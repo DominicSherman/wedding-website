@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
+import '../css/Pictures.css';
 
 export default class Pictures extends Component {
     render() {
         return(
-            <p>Pictures</p>
+            <div className={'row center'}>
+                <p className={'ComingSoon'}>{'Coming soon!'}</p>
+            </div>
         );
     }
 }
