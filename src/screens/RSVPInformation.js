@@ -17,9 +17,10 @@ export default class RSVPInformation extends Component {
         const dataRef = getRSVPData();
         dataRef.on('value', (snapshot) => {
             const dataObject = snapshot.val();
-            const data = Object.keys(dataObject).map((key) => dataObject[key]);
 
-            if (data) {
+            if (dataObject) {
+                const data = Object.keys(dataObject).map((key) => dataObject[key]);
+
                 data.sort((a, b) => a.date < b.date ? 1 : -1);
                 const totalRSVPs = data.reduce((accum, item) => accum + Number(item.numberInParty), 0);
 

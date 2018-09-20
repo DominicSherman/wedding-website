@@ -14,7 +14,7 @@ export const insertRSVP = async (name, numberInParty) => {
 
     const child = `${name.replace(/[^a-zA-Z0-9]/g, '')}-${Date.now()}`;
 
-    await firebase.database().ref(ENV).child(child).set(payload,
+    await firebase.database().ref(`${ENV}/rsvps`).child(child).set(payload,
         (error) => {
             if (error) {
                 console.log('ERROR', error);
@@ -24,4 +24,4 @@ export const insertRSVP = async (name, numberInParty) => {
         });
 };
 
-export const getRSVPData = () => firebase.database().ref(ENV);
+export const getRSVPData = () => firebase.database().ref(`${ENV}/rsvps`);
