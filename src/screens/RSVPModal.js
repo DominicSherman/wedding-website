@@ -19,8 +19,8 @@ export default class RSVPModal extends Component {
     handleSubmit = async (event) => {
         event.preventDefault();
         await insertRSVP(this.state.name, this.state.numberInParty);
-        this.props.setModalVisible(false);
         this.resetState();
+        this.props.setModalVisible(false);
     };
 
     render() {

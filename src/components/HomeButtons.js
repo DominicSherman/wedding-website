@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import leftGraphic from '../assets/graphics/rsvpleft.png';
 import rightGraphic from '../assets/graphics/rsvpright.png';
-import RSVPModal from './RSVPModal';
+import RSVPModal from '../screens/RSVPModal';
 
 export default class HomeButtons extends Component {
     constructor(props) {

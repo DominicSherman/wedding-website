@@ -7,8 +7,8 @@ import Footer from './components/Footer';
 import NavBar from './components/NavBar';
 import Routing from './Routing';
 import {withRouter} from 'react-router-dom';
-import LoadingScreen from 'react-loading-screen';
 import {initializeFirebase} from './services/firebase-service';
+import RSVPInformation from './screens/RSVPInformation';
 
 let headerImageRef;
 
@@ -18,15 +18,17 @@ class Main extends Component {
 
         this.state = {
             isSticky: false,
-            isLoading: true
+            presses: 10
         };
+    }
+
+    componentWillMount() {
+        initializeFirebase();
     }
 
     componentDidMount() {
         headerImageRef = document.getElementById('headerImageWrapper');
         window.addEventListener('scroll', () => this.setState({isSticky: window.scrollY > headerImageRef.clientHeight}));
-
-        initializeFirebase();
     }
 
     componentDidUpdate(prevProps) {
@@ -38,29 +40,32 @@ class Main extends Component {
         }
     }
 
+    incrementPresses = () => this.setState({presses: this.state.presses + 1});
+
+    resetPresses = () => this.setState({presses: 0});
+
     render() {
         return (
-            <LoadingScreen
-                loading={this.state.isLoading}
-                bgColor={'lightgrey'}
-            >
-                <div>
-                    <div
-                        id={'headerImageWrapper'}
-                        className={'HeaderImage-wrapper'}
-                    >
-                        <img
-                            alt=''
-                            className={'HeaderImage-image'}
-                            onLoad={() => this.setState({isLoading: false})}
-                            src={headerImage}
-                        />
-                    </div>
-                    <NavBar isSticky={this.state.isSticky}/>
-                    <Routing isSticky={this.state.isSticky}/>
-                    <Footer/>
+            <div>
+                <div
+                    id={'headerImageWrapper'}
+                    className={'HeaderImage-wrapper'}
+                    onClick={this.incrementPresses}
+                >
+                    <img
+                        alt=''
+                        className={'HeaderImage-image'}
+                        src={headerImage}
+                    />
                 </div>
-            </LoadingScreen>
+                <NavBar isSticky={this.state.isSticky}/>
+                <Routing isSticky={this.state.isSticky}/>
+                <Footer/>
+                <RSVPInformation
+                    presses={this.state.presses}
+                    resetPresses={this.resetPresses}
+                />
+            </div>
         );
     }
 }

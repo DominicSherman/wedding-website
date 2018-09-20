@@ -1,16 +1,18 @@
 import firebase from 'firebase/app';
 import 'firebase/database';
 import {config, ENV} from '../config';
+import {getCurrentTime} from '../constants/helper-functions';
 
 export const initializeFirebase = () => firebase.initializeApp(config);
 
 export const insertRSVP = async (name, numberInParty) => {
     const payload = {
         name,
-        numberInParty
+        numberInParty,
+        date: getCurrentTime()
     };
 
-    const child = name.replace(/[^a-zA-Z0-9]/g, '');
+    const child = `${name.replace(/[^a-zA-Z0-9]/g, '')}-${Date.now()}`;
 
     await firebase.database().ref(ENV).child(child).set(payload,
         (error) => {
@@ -21,3 +23,5 @@ export const insertRSVP = async (name, numberInParty) => {
             }
         });
 };
+
+export const getRSVPData = () => firebase.database().ref(ENV);

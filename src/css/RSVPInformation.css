@@ -1,0 +1,27 @@
+.RSVP-overlay {
+    background: rgba(235, 235, 235, 0.7);
+}
+
+.RSVP-modal {
+    background: white;
+    width: 100%;
+}
+
+.RSVP-header {
+
+}
+
+.RSVP-body {
+    width: 90%;
+    margin-left: 5%;
+}
+
+.RSVP-divider {
+    height: 1px;
+    width: 100%;
+    color: lightgrey;
+    background-color: lightgrey;
+    border-color: lightgrey;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
