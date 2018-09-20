@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import LoadingScreen from 'react-loading-screen';
+import Gallery from 'react-photo-gallery';
 
 import '../css/Pictures.css';
 import {getImages} from '../services/firebase-service';
@@ -10,7 +11,7 @@ export default class Pictures extends Component {
 
         this.state = {
             images: {},
-            isLoading: true
+            isLoading: false
         };
     }
 
@@ -21,17 +22,17 @@ export default class Pictures extends Component {
         );
     }
 
-    checkImagesLoaded = (parentNode) => {
-        const imgElements = [...parentNode.querySelectorAll("img")];
-        for (let i = 0; i < imgElements.length; i += 1) {
-            const img = imgElements[i];
-            if (!img.complete) {
-                return;
-            }
-        }
-
-        this.setState({isLoading: false})
-    };
+    // checkImagesLoaded = (parentNode) => {
+    //     const imgElements = [...parentNode.querySelectorAll("img")];
+    //     for (let i = 0; i < imgElements.length; i += 1) {
+    //         const img = imgElements[i];
+    //         if (!img.complete) {
+    //             return;
+    //         }
+    //     }
+    //
+    //     this.setState({isLoading: false})
+    // };
 
     render() {
         let urls = [];
@@ -42,15 +43,13 @@ export default class Pictures extends Component {
         });
         imageSets.forEach((imageSet) => imageSet.forEach((image) => urls = [...urls, image]));
 
-        const renderedImages = urls.map((url) =>
-            <div className={'Pictures-imageWrapper'}>
-                <img
-                    className={'Pictures-image'}
-                    src={url}
-                    onLoad={() => this.checkImagesLoaded(this.galleryElement)}
-                />
-            </div>
-        );
+        const photoSet = urls.map((url) => {
+            return {
+                src: url,
+                width: 1,
+                height: 1
+            };
+        });
 
         return (
             <LoadingScreen
@@ -58,12 +57,10 @@ export default class Pictures extends Component {
                 bgColor='#f1f1f1'
                 spinnerColor='#9ee5f8'
             >
-                <div
-                    className={'row center'}
-                    ref={(r) => this.galleryElement = r}
-                >
-                    {renderedImages}
-                </div>
+                <Gallery
+                    columns={4}
+                    photos={photoSet}
+                />
             </LoadingScreen>
         );
     }
