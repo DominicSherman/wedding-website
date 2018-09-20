@@ -18,7 +18,7 @@ class Main extends Component {
 
         this.state = {
             isSticky: false,
-            presses: 10
+            presses: 0
         };
     }
 
