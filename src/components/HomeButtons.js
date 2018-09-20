@@ -15,7 +15,6 @@ export default class HomeButtons extends Component {
     setModalVisible = (modalVisible) => this.setState({modalVisible});
 
     render() {
-        console.log('this.state', this.state);
         return (
             <div className={'Home-buttons row spaceBetween'}>
                 <img

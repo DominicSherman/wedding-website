@@ -1,15 +1,27 @@
 import React, {Component} from 'react';
 import Modal from 'react-responsive-modal';
+import {insertRSVP} from '../services/firebase-service';
 
 export default class RSVPModal extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            name: null,
-            numberOfGuests: null
+        this.initialState = {
+            name: '',
+            numberInParty: ''
         };
+
+        this.state = this.initialState;
     }
+
+    resetState = () => this.setState(this.initialState);
+
+    handleSubmit = async (event) => {
+        event.preventDefault();
+        await insertRSVP(this.state.name, this.state.numberInParty);
+        this.props.setModalVisible(false);
+        this.resetState();
+    };
 
     render() {
         return (
@@ -18,7 +30,7 @@ export default class RSVPModal extends Component {
                 open={this.props.modalVisible}
                 onClose={() => this.props.setModalVisible(false)}
             >
-                <form onSubmit={() => {}}>
+                <form onSubmit={this.handleSubmit}>
                     <div className={'column center'}>
                         <div className={'Home-formRow row spaceBetween'}>
                             <a>{'Name: '}</a>
@@ -32,8 +44,8 @@ export default class RSVPModal extends Component {
                             <a>{'# in Party:'}</a>
                             <input
                                 type={'text'}
-                                value={this.state.numberOfGuests}
-                                onChange={(event) => this.setState({numberOfGuests: event.target.value})}
+                                value={this.state.numberInParty}
+                                onChange={(event) => this.setState({numberInParty: event.target.value})}
                             />
                         </div>
                         <div className={'Home-formRow row center'}>

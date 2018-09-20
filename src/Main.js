@@ -8,6 +8,7 @@ import NavBar from './components/NavBar';
 import Routing from './Routing';
 import {withRouter} from 'react-router-dom';
 import LoadingScreen from 'react-loading-screen';
+import {initializeFirebase} from './services/firebase-service';
 
 let headerImageRef;
 
@@ -24,6 +25,8 @@ class Main extends Component {
     componentDidMount() {
         headerImageRef = document.getElementById('headerImageWrapper');
         window.addEventListener('scroll', () => this.setState({isSticky: window.scrollY > headerImageRef.clientHeight}));
+
+        initializeFirebase();
     }
 
     componentDidUpdate(prevProps) {
