@@ -21,7 +21,7 @@ export default class RSVPInformation extends Component {
 
             if (data) {
                 data.sort((a, b) => a.date < b.date ? 1 : -1);
-                const totalRSVPs = data.reduce((accum, item) => accum + item.numberInParty, 0);
+                const totalRSVPs = data.reduce((accum, item) => accum + Number(item.numberInParty), 0);
 
                 this.setState({data});
                 this.setState({totalRSVPs});
