@@ -10,7 +10,7 @@ export default class Pictures extends Component {
         super(props);
 
         this.state = {
-            images: {},
+            images: null,
             isLoading: false
         };
     }
@@ -35,21 +35,23 @@ export default class Pictures extends Component {
     // };
 
     render() {
-        let urls = [];
+        let images = [],
+            photoSet = [];
 
-        const imageSets = Object.keys(this.state.images).map((key) => {
-            const sessionImages = this.state.images[key];
-            return Object.keys(sessionImages).map((key) => sessionImages[key].url);
-        });
-        imageSets.forEach((imageSet) => imageSet.forEach((image) => urls = [...urls, image]));
-
-        const photoSet = urls.map((url) => {
-            return {
-                src: url,
-                width: 1,
-                height: 1
-            };
-        });
+        if (this.state.images) {
+            const imageSets = Object.keys(this.state.images).map((key) => {
+                const sessionImages = this.state.images[key];
+                return Object.keys(sessionImages).map((key) => sessionImages[key]);
+            });
+            imageSets.forEach((imageSet) => imageSet.forEach((image) => images = [...images, image]));
+            photoSet = images.map(({url, width, height}) => {
+                return {
+                    src: url,
+                    width,
+                    height
+                };
+            });
+        }
 
         return (
             <LoadingScreen
@@ -58,7 +60,6 @@ export default class Pictures extends Component {
                 spinnerColor='#9ee5f8'
             >
                 <Gallery
-                    columns={4}
                     photos={photoSet}
                 />
             </LoadingScreen>
