@@ -69,6 +69,7 @@ export default class OurStory extends Component {
                                     alt={''}
                                     src={item.original}
                                 />
+                                <div className={'OurStory-caption row center'}>{item.description}</div>
                             </div>
                         }
                         showIndex
