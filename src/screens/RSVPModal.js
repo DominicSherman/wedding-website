@@ -30,6 +30,7 @@ export default class RSVPModal extends Component {
                 open={this.props.modalVisible}
                 onClose={() => this.props.setModalVisible(false)}
             >
+                <button>{'View RSVPs'}</button>
                 <form onSubmit={this.handleSubmit}>
                     <div className={'column center'}>
                         <div className={'Home-formRow row spaceBetween'}>

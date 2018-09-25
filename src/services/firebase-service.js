@@ -25,3 +25,5 @@ export const insertRSVP = async (name, numberInParty) => {
 };
 
 export const getRSVPData = () => firebase.database().ref(`${ENV}/rsvps`);
+
+export const getImages = () => firebase.database().ref(`${ENV}/images`);

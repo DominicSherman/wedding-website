@@ -9,6 +9,7 @@ import Routing from './Routing';
 import {withRouter} from 'react-router-dom';
 import {initializeFirebase} from './services/firebase-service';
 import RSVPInformation from './screens/RSVPInformation';
+import {withRedux} from './redux-factory';
 
 let headerImageRef;
 
@@ -37,6 +38,7 @@ class Main extends Component {
                 top: headerImageRef.clientHeight,
                 behavior: 'smooth'
             });
+            this.resetPresses();
         }
     }
 
@@ -70,4 +72,4 @@ class Main extends Component {
     }
 }
 
-export default withRouter(Main);
+export default withRedux(withRouter(Main));
