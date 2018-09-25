@@ -37,6 +37,7 @@ class Main extends Component {
                 top: headerImageRef.clientHeight,
                 behavior: 'smooth'
             });
+            this.resetPresses();
         }
     }
 

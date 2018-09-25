@@ -30,7 +30,6 @@ export default class RSVPInformation extends Component {
         });
     }
 
-
     render() {
         const {data} = this.state;
 
