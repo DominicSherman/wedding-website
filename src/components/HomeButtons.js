@@ -5,25 +5,28 @@ import * as ActionCreators from '../actions';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 
+import '../css/components/HomeButtons.css';
+import '../css/Buttons.css';
+
 class HomeButtons extends Component {
     render() {
         return (
-            <div className={'Home-buttons row spaceBetween'}>
+            <div className={'HomeButtons-wrapper row spaceBetween'}>
                 <img
                     alt={''}
-                    className={'Home-rsvpGraphic'}
+                    className={'HomeButtons-graphics'}
                     src={leftGraphic}
                 />
                 <button
-                    className={'Home-button'}
+                    className={'Buttons-largeFont'}
                     onClick={this.props.actions.toggleRSVPModal}
                 >
                     {'RSVP'}
                 </button>
-                <button className={'Home-button2'}>{'Download the App'}</button>
+                <button className={'Buttons-mediumFont'}>{'Download the App'}</button>
                 <img
                     alt={''}
-                    className={'Home-rsvpGraphic'}
+                    className={'HomeButtons-graphics'}
                     src={rightGraphic}
                 />
             </div>

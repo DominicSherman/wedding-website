@@ -1,0 +1,32 @@
+.WeddingBeginsIn-wrapper {
+    margin-left: 2%;
+    width: 22%;
+}
+
+.WeddingBeginsIn-weddingBegins {
+    background-color: #678da2;
+    text-align: center;
+    padding: 5%;
+    vertical-align: center;
+}
+
+.WeddingBeginsIn-weddingBeginsText {
+    font-family: 'Ananda';
+    font-size: 2vw;
+    color: white;
+}
+
+.WeddingBeginsIn-daysLeft {
+    height: 30%;
+    background-color: #f2ac5e;
+    text-align: center;
+    padding: 7%;
+    vertical-align: center;
+    bottom: 0;
+}
+
+.WeddingBeginsIn-daysLeftText {
+    color: white;
+    font-size: 3vw;
+    font-family: Lubalin;
+}

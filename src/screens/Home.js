@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 
-import '../css/Home.css';
+import '../css/screens/Home.css';
 import Welcome from '../components/Welcome';
 import WeddingBeginsIn from '../components/WeddingBeginsIn';
-import CeremonyReceptionInfo from '../components/CeremonyReceptionInfo';
+import HomeInfo from '../components/HomeInfo';
 import HomeButtons from '../components/HomeButtons';
 
 export default class Home extends Component {
@@ -15,7 +15,7 @@ export default class Home extends Component {
                     <WeddingBeginsIn/>
                 </div>
                 <div className={'Home-information column center'}>
-                    <CeremonyReceptionInfo/>
+                    <HomeInfo/>
                     <HomeButtons/>
                 </div>
             </div>

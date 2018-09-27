@@ -3,6 +3,8 @@ import Modal from 'react-responsive-modal';
 import RSVPForm from '../components/RSVPForm';
 import RSVPView from '../components/RSVPView';
 
+import '../css/modals/Modals.css';
+
 export default class RSVPModal extends Component {
     constructor(props) {
         super(props);
@@ -21,7 +23,7 @@ export default class RSVPModal extends Component {
 
         return (
             <Modal
-                classNames={{overlay: 'Home-overlay', modal: 'Home-modal'}}
+                classNames={{overlay: 'Overlay', modal: 'Modal'}}
                 open={this.props.modalVisible}
                 onClose={this.props.actions.toggleRSVPModal}
             >

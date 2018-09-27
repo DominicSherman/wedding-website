@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+import '../css/Buttons.css';
+
 export default class RSVPView extends Component {
     render() {
         const {data, count} = this.props;
@@ -18,7 +20,7 @@ export default class RSVPView extends Component {
 
         return (
             <div>
-                <button className={'Home-button3'} onClick={this.props.toggleFormVisible}>{'View Form'}</button>
+                <button className={'Buttons-smallFont'} onClick={this.props.toggleFormVisible}>{'View Form'}</button>
                 <div className={'RSVP-header row center'}>
                     <h2>{`Total RSVPs: ${count}`}</h2>
                 </div>

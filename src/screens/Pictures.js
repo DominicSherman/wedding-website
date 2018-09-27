@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Gallery from 'react-photo-gallery';
 
-import '../css/Pictures.css';
+import '../css/screens/Pictures.css';
 import * as ActionCreators from '../actions';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';

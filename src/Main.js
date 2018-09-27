@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import headerImage from './assets/header.jpg';
-import './css/HeaderImage.css';
+import './css/Main.css';
 import './css/Flex.css';
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';
@@ -79,12 +79,12 @@ class Main extends Component {
             <div>
                 <div
                     id={'headerImageWrapper'}
-                    className={'HeaderImage-wrapper'}
+                    className={'Main-wrapper'}
                     onClick={this.incrementPresses}
                 >
                     <img
                         alt=''
-                        className={'HeaderImage-image'}
+                        className={'Main-image'}
                         src={headerImage}
                     />
                 </div>

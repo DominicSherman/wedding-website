@@ -1,0 +1,42 @@
+.Buttons-largeFont, .Buttons-mediumFont {
+    font-family: Lubalin;
+    width: 30%;
+    height: 80%;
+    padding: 2% 5% 1% 5%;
+    position: relative;
+    background-color: #678da2;
+    color: white;
+    text-align: center;
+    margin-top: 5%;
+    border: #678da2;
+    border-radius: 6px;
+}
+
+.Buttons-largeFont:hover, .Buttons-mediumFont:hover, .Buttons-smallFont:hover {
+    background-color: white;
+    color: #678da2;
+    border: #678da2 solid 2px;
+    cursor: pointer;
+}
+
+.Buttons-largeFont {
+    font-size: 3vw;
+}
+
+.Buttons-mediumFont {
+    font-size: 1.5vw;
+}
+
+.Buttons-smallFont {
+    font-family: Lubalin;
+    width: 15%;
+    height: 50%;
+    padding: 1%;
+    position: relative;
+    background-color: #678da2;
+    color: white;
+    text-align: center;
+    border: #678da2;
+    border-radius: 6px;
+    font-size: 1.0vw;
+}

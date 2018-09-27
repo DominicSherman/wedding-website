@@ -1,0 +1,9 @@
+.RSVPForm {
+    display: flex;
+    flex-direction: row;
+    padding: 2%;
+    width: 50%;
+    margin-left: 22%;
+    font-size: 1.6vw;
+    font-family: Lubalin;
+}

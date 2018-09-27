@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {NavLink} from 'react-router-dom';
 
-import '../css/HeaderLink.css';
+import '../css/components/HeaderLink.css';
 
 export default class HeaderLink extends Component{
     render() {

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import '../css/Registry.css';
+import '../css/screens/Registry.css';
 
 export default class Registry extends Component {
     render() {

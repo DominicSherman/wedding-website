@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import {insertRSVP} from '../services/firebase-service';
 
+import '../css/components/RSVPForm.css';
+import '../css/Buttons.css';
+
 export default class RSVPForm extends Component {
     constructor(props) {
         super(props);
@@ -24,10 +27,10 @@ export default class RSVPForm extends Component {
     render() {
         return (
             <div>
-                <button className={'Home-button3'} onClick={this.props.toggleFormVisible}>{'View RSVPs'}</button>
+                <button className={'Buttons-smallFont'} onClick={this.props.toggleFormVisible}>{'View RSVPs'}</button>
                 <form onSubmit={this.handleSubmit}>
                     <div className={'column center'}>
-                        <div className={'Home-formRow row spaceBetween'}>
+                        <div className={'RSVPForm spaceBetween'}>
                             <a>{'Name: '}</a>
                             <input
                                 type={'text'}
@@ -35,7 +38,7 @@ export default class RSVPForm extends Component {
                                 onChange={(event) => this.setState({name: event.target.value})}
                             />
                         </div>
-                        <div className={'Home-formRow row spaceBetween'}>
+                        <div className={'RSVPForm spaceBetween'}>
                             <a>{'# in Party:'}</a>
                             <input
                                 type={'text'}
@@ -43,8 +46,8 @@ export default class RSVPForm extends Component {
                                 onChange={(event) => this.setState({numberInParty: event.target.value})}
                             />
                         </div>
-                        <div className={'Home-formRow row center'}>
-                            <button type={'submit'} className={'Home-button2'}>{'SUBMIT'}</button>
+                        <div className={'RSVPForm center'}>
+                            <button type={'submit'} className={'Buttons-mediumFont'}>{'SUBMIT'}</button>
                         </div>
                     </div>
                 </form>

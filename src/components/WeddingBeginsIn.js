@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+import '../css/components/WeddingBeginsIn.css';
+
 export default class WeddingBeginsIn extends Component {
     calculateDaysLeft = () => {
         const oneDay = 24 * 60 * 60 * 1000;
@@ -11,12 +13,12 @@ export default class WeddingBeginsIn extends Component {
 
     render() {
         return (
-            <div className={'Home-countdown column spaceBetween'}>
-                <div className={'Home-weddingBegins'}>
-                    <p className={'Home-weddingBeginsText'}>{'Wedding begins in'}</p>
+            <div className={'WeddingBeginsIn-wrapper column spaceBetween'}>
+                <div className={'WeddingBeginsIn-weddingBegins'}>
+                    <p className={'WeddingBeginsIn-weddingBeginsText'}>{'Wedding begins in'}</p>
                 </div>
-                <div className={'Home-daysLeft'}>
-                    <p className={'Home-daysLeftText'}>{`${this.calculateDaysLeft()} DAYS`}</p>
+                <div className={'WeddingBeginsIn-daysLeft'}>
+                    <p className={'WeddingBeginsIn-daysLeftText'}>{`${this.calculateDaysLeft()} DAYS`}</p>
                 </div>
             </div>
         );
