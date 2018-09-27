@@ -1,19 +1,11 @@
 import React, {Component} from 'react';
 import leftGraphic from '../assets/graphics/rsvpleft.png';
 import rightGraphic from '../assets/graphics/rsvpright.png';
-import RSVPModal from '../screens/RSVPModal';
+import * as ActionCreators from '../actions';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
 
-export default class HomeButtons extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            modalVisible: false
-        };
-    }
-
-    setModalVisible = (modalVisible) => this.setState({modalVisible});
-
+class HomeButtons extends Component {
     render() {
         return (
             <div className={'Home-buttons row spaceBetween'}>
@@ -24,7 +16,7 @@ export default class HomeButtons extends Component {
                 />
                 <button
                     className={'Home-button'}
-                    onClick={() => this.setModalVisible(true)}
+                    onClick={this.props.actions.toggleRSVPModal}
                 >
                     {'RSVP'}
                 </button>
@@ -34,11 +26,13 @@ export default class HomeButtons extends Component {
                     className={'Home-rsvpGraphic'}
                     src={rightGraphic}
                 />
-                <RSVPModal
-                    setModalVisible={this.setModalVisible}
-                    modalVisible={this.state.modalVisible}
-                />
             </div>
         );
     }
 }
+
+const mapDispatchToProps = (dispatch) => ({actions: bindActionCreators(ActionCreators, dispatch)});
+
+const mapStateToProps = (state) => state;
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomeButtons)

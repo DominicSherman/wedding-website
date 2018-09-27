@@ -8,7 +8,11 @@ import NavBar from './components/NavBar';
 import Routing from './Routing';
 import {withRouter} from 'react-router-dom';
 import {initializeFirebase} from './services/firebase-service';
-import RSVPInformation from './screens/RSVPInformation';
+import ModalContainer from './screens/ModalContainer';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+
+import * as ActionCreators from './actions';
 
 let headerImageRef;
 
@@ -28,7 +32,14 @@ class Main extends Component {
 
     componentDidMount() {
         headerImageRef = document.getElementById('headerImageWrapper');
-        window.addEventListener('scroll', () => this.setState({isSticky: window.scrollY > headerImageRef.clientHeight}));
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > headerImageRef.clientHeight && !this.state.isSticky) {
+                this.setState({isSticky: true});
+            } else if (window.scrollY < headerImageRef.clientHeight && this.state.isSticky) {
+                this.setState({isSticky: false});
+            }
+
+        });
     }
 
     componentDidUpdate(prevProps) {
@@ -37,6 +48,15 @@ class Main extends Component {
                 top: headerImageRef.clientHeight,
                 behavior: 'smooth'
             });
+        }
+
+        if (this.state.presses === 1 && (prevProps !== this.props)) {
+            setTimeout(() => this.setState({presses: 1}),
+                5000);
+        }
+
+        if (this.state.presses === 10) {
+            this.props.actions.toggleAdminMenu();
             this.resetPresses();
         }
     }
@@ -62,13 +82,17 @@ class Main extends Component {
                 <NavBar isSticky={this.state.isSticky}/>
                 <Routing isSticky={this.state.isSticky}/>
                 <Footer/>
-                <RSVPInformation
+                <ModalContainer
                     presses={this.state.presses}
-                    resetPresses={this.resetPresses}
+                    {...this.props}
                 />
             </div>
         );
     }
 }
 
-export default withRouter(Main);
+const mapDispatchToProps = (dispatch) => ({actions: bindActionCreators(ActionCreators, dispatch)});
+
+const mapStateToProps = (state) => state;
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));

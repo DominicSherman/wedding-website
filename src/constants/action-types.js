@@ -1,1 +1,4 @@
 export const SET_RSVP_MODAL_VISIBLE = 'SET_RSVP_MODAL_VISIBLE';
+export const SET_ADMIN_MENU_VISIBLE = 'SET_ADMIN_MENU_VISIBLE';
+export const SET_ENV = 'SET_ENV';
+export const SET_RSVPS = 'SET_RSVPS';

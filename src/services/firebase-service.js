@@ -1,11 +1,17 @@
 import firebase from 'firebase/app';
 import 'firebase/database';
-import {config, ENV} from '../config';
+import {config} from '../config';
 import {getCurrentTime} from '../constants/helper-functions';
 
-export const initializeFirebase = () => firebase.initializeApp(config);
+let isInitialized = false;
+export const initializeFirebase = () => {
+    if (!isInitialized) {
+        firebase.initializeApp(config);
+        isInitialized = true;
+    }
+};
 
-export const insertRSVP = async (name, numberInParty) => {
+export const insertRSVP = async (name, numberInParty, env) => {
     const payload = {
         name,
         numberInParty,
@@ -14,7 +20,7 @@ export const insertRSVP = async (name, numberInParty) => {
 
     const child = `${name.replace(/[^a-zA-Z0-9]/g, '')}-${Date.now()}`;
 
-    await firebase.database().ref(`${ENV}/rsvps`).child(child).set(payload,
+    await firebase.database().ref(`${env}/rsvps`).child(child).set(payload,
         (error) => {
             if (error) {
                 console.log('ERROR', error);
@@ -24,6 +30,6 @@ export const insertRSVP = async (name, numberInParty) => {
         });
 };
 
-export const getRSVPData = () => firebase.database().ref(`${ENV}/rsvps`);
+export const getRSVPData = (env) => firebase.database().ref(`${env}/rsvps`);
 
-export const getImages = () => firebase.database().ref(`${ENV}/images`);
+export const getImages = (env) => firebase.database().ref(`${env}/images`);

@@ -6,6 +6,3 @@ export const config = {
     storageBucket: "wedding-website-46644.appspot.com",
     messagingSenderId: "303197686125"
 };
-
-export const ENV = 'dev';
-// export const ENV = 'prod';

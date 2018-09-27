@@ -5,9 +5,8 @@ import Welcome from '../components/Welcome';
 import WeddingBeginsIn from '../components/WeddingBeginsIn';
 import CeremonyReceptionInfo from '../components/CeremonyReceptionInfo';
 import HomeButtons from '../components/HomeButtons';
-import {withRedux} from '../redux-factory';
 
-class Home extends Component {
+export default class Home extends Component {
     render() {
         return (
             <div className={'column'}>
@@ -23,5 +22,3 @@ class Home extends Component {
         );
     }
 }
-
-export default withRedux(Home);
