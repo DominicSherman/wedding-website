@@ -19,9 +19,8 @@ export default class RSVPModal extends Component {
 
     handleSubmit = async (event) => {
         event.preventDefault();
-        await insertRSVP(this.state.name, this.state.numberInParty);
+        await insertRSVP(this.state.name, this.state.numberInParty, this.props.env);
         this.resetState();
-        this.props.setModalVisible(false);
     };
 
     toggleFormVisible = () => {

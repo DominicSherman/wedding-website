@@ -33,6 +33,4 @@ class HomeButtons extends Component {
 
 const mapDispatchToProps = (dispatch) => ({actions: bindActionCreators(ActionCreators, dispatch)});
 
-const mapStateToProps = (state) => state;
-
-export default connect(mapStateToProps, mapDispatchToProps)(HomeButtons)
+export default connect(null, mapDispatchToProps)(HomeButtons)

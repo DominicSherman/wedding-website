@@ -15,6 +15,7 @@ export default class ModalContainer extends Component {
                 />
                 <RSVPModal
                     actions={actions}
+                    env={config.env}
                     RSVP={RSVP}
                     modalVisible={rsvpModalVisible}
                 />

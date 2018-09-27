@@ -40,6 +40,9 @@ class Main extends Component {
             }
 
         });
+
+        this.props.actions.setRSVPData();
+        this.props.actions.setPictures();
     }
 
     componentDidUpdate(prevProps) {
@@ -58,6 +61,12 @@ class Main extends Component {
         if (this.state.presses === 10) {
             this.props.actions.toggleAdminMenu();
             this.resetPresses();
+        }
+
+        if (prevProps.config.env !== this.props.config.env) {
+            console.log('here');
+            this.props.actions.setRSVPData();
+            this.props.actions.setPictures();
         }
     }
 

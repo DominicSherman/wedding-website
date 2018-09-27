@@ -1,7 +1,13 @@
 import {action} from './constants/action';
-import {SET_ADMIN_MENU_VISIBLE, SET_ENV, SET_RSVP_MODAL_VISIBLE, SET_RSVPS} from './constants/action-types';
+import {
+    SET_ADMIN_MENU_VISIBLE,
+    SET_ENV,
+    SET_PICTURES,
+    SET_RSVP_MODAL_VISIBLE,
+    SET_RSVPS
+} from './constants/action-types';
 import {reverseEnum} from './constants/constants';
-import {getRSVPData} from './services/firebase-service';
+import {getImages, getRSVPData} from './services/firebase-service';
 
 export const toggleRSVPModal = () => (dispatch, getState) => {
     const {rsvpModalVisible} = getState();
@@ -15,17 +21,10 @@ export const toggleAdminMenu = () => (dispatch, getState) => {
     dispatch(action(SET_ADMIN_MENU_VISIBLE, !adminMenuVisible));
 };
 
-export const toggleEnv = () => (dispatch, getState) => {
-    const {config: {env}} = getState();
-
-    dispatch(action(SET_ENV, reverseEnum[env]));
-};
-
 export const setRSVPData = () => (dispatch, getState) => {
     const {config: {env}} = getState();
-    const dataRef = getRSVPData(env);
 
-    dataRef.on('value', (snapshot) => {
+    getRSVPData(env).on('value', (snapshot) => {
         const dataObject = snapshot.val();
 
         if (dataObject) {
@@ -37,6 +36,63 @@ export const setRSVPData = () => (dispatch, getState) => {
                 data,
                 count
             }))
+        } else {
+            dispatch(action(SET_RSVPS, {
+                data: [],
+                count: 0
+            }))
         }
     });
+};
+
+export const setPictures = () => (dispatch, getState) => {
+    const {config: {env}} = getState();
+    let all = [],
+        photos = [],
+        videos = [];
+
+    getImages(env).on('value',
+        (snapshot) => {
+            const images = snapshot.val();
+
+            if (images) {
+                const sets = Object.keys(images).map((key) => {
+                    const sessionImages = images[key];
+                    return Object.keys(sessionImages).map((key) => sessionImages[key]);
+                });
+                sets.forEach((set) => set.forEach((item) => all = [...all, item]));
+
+                all.forEach(({url, width, height, isVideo}) => {
+                    if (isVideo) {
+                        videos = [
+                            ...videos,
+                            {
+                                src: url,
+                                width,
+                                height
+                            }
+                        ];
+                    } else {
+                        photos = [
+                            ...photos,
+                            {
+                                src: url,
+                                width,
+                                height
+                            }
+                        ]
+                    }
+                });
+
+                dispatch(action(SET_PICTURES, photos));
+            } else {
+                dispatch(action(SET_PICTURES, []));
+            }
+        });
+};
+
+export const toggleEnv = () => (dispatch, getState) => {
+    const {config: {env}} = getState();
+
+    dispatch(action(SET_ENV, reverseEnum[env]));
 };
