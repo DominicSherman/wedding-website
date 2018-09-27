@@ -8,6 +8,7 @@ import loremIpsum from '../constants/lorem-ipsum-text';
 import maryStory from '../constants/mary-story';
 import dominicStory from '../constants/dominic-story';
 import {photos} from '../constants/photo-gallery';
+import BrideGroom from '../components/BrideGroom';
 
 export default class OurStory extends Component {
     getImageStyle = () => {
@@ -24,34 +25,18 @@ export default class OurStory extends Component {
             <div>
                 <div className={'row'}>
                     <div className={'OurStory-wrapper column'}>
-                        <div className={'row center'}>
-                            <img
-                                alt={''}
-                                className={'OurStory-images'}
-                                src={bride}
-                            />
-                        </div>
-                        <div className={'row center'}>
-                            <p className={'OurStory-headerText'}>{'THE BRIDE'}</p>
-                        </div>
-                        <div className={'row center'}>
-                            <div className={'OurStory-bodyText'}>{maryStory}</div>
-                        </div>
+                        <BrideGroom
+                            image={bride}
+                            header={'THE BRIDE'}
+                            story={maryStory}
+                        />
                     </div>
                     <div className={'OurStory-wrapper column'}>
-                        <div className={'row center'}>
-                            <img
-                                alt={''}
-                                className={'OurStory-images'}
-                                src={groom}
-                            />
-                        </div>
-                        <div className={'row center'}>
-                            <p className={'OurStory-headerText'}>{'THE GROOM'}</p>
-                        </div>
-                        <div className={'row center'}>
-                            <div className={'OurStory-bodyText'}>{dominicStory}</div>
-                        </div>
+                        <BrideGroom
+                            image={groom}
+                            header={'THE GROOM'}
+                            story={dominicStory}
+                        />
                     </div>
                 </div>
                 <hr
