@@ -1,0 +1,14 @@
+.RSVPView-body {
+    width: 90%;
+    margin-left: 5%;
+}
+
+.RSVPView-divider {
+    height: 1px;
+    width: 100%;
+    color: lightgrey;
+    background-color: lightgrey;
+    border-color: lightgrey;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}

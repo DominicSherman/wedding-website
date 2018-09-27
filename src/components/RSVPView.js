@@ -21,14 +21,14 @@ export default class RSVPView extends Component {
         return (
             <div>
                 <button className={'Buttons-smallFont'} onClick={this.props.toggleFormVisible}>{'View Form'}</button>
-                <div className={'RSVP-header row center'}>
+                <div className={'row center'}>
                     <h2>{`Total RSVPs: ${count}`}</h2>
                 </div>
                 < hr
-                    className={'RSVP-divider'}
+                    className={'RSVPView-divider'}
                     noshade="true"
                 />
-                <div className={'RSVP-body row spaceBetween'}>
+                <div className={'RSVPView-body row spaceBetween'}>
                     <div className={'column spaceEvenly'}>
                         <h3>{'Name'}</h3>
                         {renderedNames}

@@ -1,23 +1,31 @@
 import React, {Component} from 'react';
 import Gallery from 'react-photo-gallery';
-
-import '../css/screens/Pictures.css';
-import * as ActionCreators from '../actions';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
+
+import * as ActionCreators from '../actions';
+import '../css/screens/Pictures.css';
 
 class Pictures extends Component {
     render() {
         const {config: {picturesVisible}, pictures} = this.props;
 
+        if (!picturesVisible) {
+            return (
+                <div className={'Pictures-wrapper'}>
+                    <p className={'Pictures-text'}>{'🎉 Pictures from the wedding day can be viewed here starting on May 28th! 🎉'}</p>
+                </div>
+            );
+        }
+
         return (
-            picturesVisible ?
+            pictures.length ?
                 <Gallery
                     photos={pictures}
                 />
                 :
                 <div className={'Pictures-wrapper'}>
-                    <p className={'Pictures-text'}>{'Pictures from the wedding day can be viewed here starting on May 28th.'}</p>
+                    <p className={'Pictures-text'}>{'No pictures have been uploaded yet 😕'}</p>
                 </div>
         );
     }
