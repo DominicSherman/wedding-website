@@ -2,7 +2,7 @@ import {action} from './constants/action';
 import {
     SET_ADMIN_MENU_VISIBLE,
     SET_ENV,
-    SET_PICTURES,
+    SET_PICTURES, SET_PICTURES_VISIBLE,
     SET_RSVP_MODAL_VISIBLE,
     SET_RSVPS
 } from './constants/action-types';
@@ -95,4 +95,10 @@ export const toggleEnv = () => (dispatch, getState) => {
     const {config: {env}} = getState();
 
     dispatch(action(SET_ENV, reverseEnum[env]));
+};
+
+export const togglePicturesVisible = () => (dispatch, getState) => {
+    const {config: {picturesVisible}} = getState();
+
+    dispatch(action(SET_PICTURES_VISIBLE, !picturesVisible));
 };

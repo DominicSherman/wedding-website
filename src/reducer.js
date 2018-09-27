@@ -1,7 +1,7 @@
 import {
     SET_ADMIN_MENU_VISIBLE,
     SET_ENV, SET_PICTURES,
-    SET_RSVP_MODAL_VISIBLE, SET_RSVPS
+    SET_RSVP_MODAL_VISIBLE, SET_RSVPS, SET_PICTURES_VISIBLE
 } from './constants/action-types';
 
 const defaultState = {
@@ -36,6 +36,14 @@ const setEnv = (state, env) => ({
     }
 });
 
+const setPicturesVisible = (state, picturesVisible) => ({
+    ...state,
+    config: {
+        ...state.config,
+        picturesVisible
+    }
+});
+
 const setRSVPs = (state, RSVP) => ({
     ...state,
     RSVP
@@ -51,7 +59,8 @@ const reducerMap = {
     [SET_ENV]: setEnv,
     [SET_ADMIN_MENU_VISIBLE]: setAdminMenuVisible,
     [SET_RSVPS]: setRSVPs,
-    [SET_PICTURES]: setPictures
+    [SET_PICTURES]: setPictures,
+    [SET_PICTURES_VISIBLE]: setPicturesVisible
 };
 
 export default (state = defaultState, {type, data}) => {

@@ -164,7 +164,7 @@ input {
     border-radius: 6px;
 }
 
-.Home-button:hover, .Home-button2:hover {
+.Home-button:hover, .Home-button2:hover, .Home-button3:hover {
     background-color: white;
     color: #678da2;
     border: #678da2 solid 2px;
@@ -177,6 +177,20 @@ input {
 
 .Home-button2 {
     font-size: 1.5vw;
+}
+
+.Home-button3 {
+    font-family: Lubalin;
+    width: 15%;
+    height: 50%;
+    padding: 1%;
+    position: relative;
+    background-color: #678da2;
+    color: white;
+    text-align: center;
+    border: #678da2;
+    border-radius: 6px;
+    font-size: 1.0vw;
 }
 
 .Home-rsvpGraphic {

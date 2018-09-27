@@ -1,9 +1,12 @@
-.Pictures-imageWrapper {
-    width: auto;
-    height: 50%;
+.Pictures-wrapper {
+    width: 50%;
+    margin: 0 25% 0 25%;
+    justify-content: center;
+    align-items: center;
 }
 
-.Pictures-image {
-    width: 100%;
-    height: auto;
+.Pictures-text {
+    font-family: Lubalin;
+    font-size: 2.7vw;
+    color: black;
 }

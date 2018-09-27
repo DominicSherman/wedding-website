@@ -8,13 +8,17 @@ import {connect} from 'react-redux';
 
 class Pictures extends Component {
     render() {
-        console.log('this.props', this.props);
-        const {pictures} = this.props;
+        const {config: {picturesVisible}, pictures} = this.props;
 
         return (
-            <Gallery
-                photos={pictures}
-            />
+            picturesVisible ?
+                <Gallery
+                    photos={pictures}
+                />
+                :
+                <div className={'Pictures-wrapper'}>
+                    <p className={'Pictures-text'}>{'Pictures from the wedding day can be viewed here starting on May 28th.'}</p>
+                </div>
         );
     }
 }

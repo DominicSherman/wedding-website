@@ -8,7 +8,7 @@ import NavBar from './components/NavBar';
 import Routing from './Routing';
 import {withRouter} from 'react-router-dom';
 import {initializeFirebase} from './services/firebase-service';
-import ModalContainer from './screens/ModalContainer';
+import ModalContainer from './modals/ModalContainer';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 
