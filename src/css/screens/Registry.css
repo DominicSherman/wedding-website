@@ -1,4 +1,22 @@
-.ComingSoon {
+.Registry-wrapper {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    align-items: center;
+}
+
+.Registry-logoWrapper {
+    width: 40%;
+    height: auto;
+    padding-top: 3%;
+}
+
+.Registry-logo {
+    width: 100%;
+    height: 100%;
+}
+
+.Registry-linkText {
     font-size: 2.6vw;
     font-family: Lubalin;
     color: black;
