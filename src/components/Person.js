@@ -7,7 +7,7 @@ export default class Person extends Component {
         const {info} = this.props;
 
         return (
-            <div className={'Person-wrapper'}>
+            <div className={'Person-wrapper row'}>
                 <div className={'Person-imageWrapper'}>
                     <img
                         alt={''}
@@ -15,7 +15,7 @@ export default class Person extends Component {
                         src={info.image}
                     />
                 </div>
-                <div className={'Person-text'}>
+                <div className={'Person-text column spaceEvenly'}>
                     <p><b>{`${info.name} - ${info.role}`}</b></p>
                     <p>{`${info.relation}`}</p>
                     <p>{`${info.bio}`}</p>

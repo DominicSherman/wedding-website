@@ -16,21 +16,21 @@ export const groomsmen = [
         name: 'Gabriel Sherman',
         role: 'Best Man',
         relation: 'Brother of the Groom',
-        bio: 'Fancy college boy studying something smart. Is only the best man because the groom doesn’t have any friends.',
+        bio: 'Modern day Paul Bunyan. Is only the best man because the groom doesn’t have any friends.',
         image: gabe
     },
     {
         name: 'John Paul Foxhoven',
         role: 'Groomsman',
         relation: 'Uncle of the Groom',
-        bio: 'Nurse practitioner in New Jersey. Has won a lot of candy in poker.',
+        bio: 'Nurse practitioner in New Jersey. Many people ask him if his beard makes him hot in the summer. Really it makes him hot all year long.',
         image: johnpaul
     },
     {
         name: 'Michael Sherman',
         role: 'Groomsman',
         relation: 'Brother of the Groom',
-        bio: 'Graphic designer in Dallas. Big ole thick ole boy and assistant to the best man.',
+        bio: 'Assistant to the best man. Child at heart, man at everything else. Coworkers say he laughs too much.',
         image: michael
     },
     {
@@ -75,7 +75,7 @@ export const bridesmaids = [
         name: 'Regina Sherman',
         role: 'Bridesmaid',
         relation: 'Sister of the Groom',
-        bio: 'FedEx print supervisor.  Adult in training. Loves potatoes and will definitely cry at this wedding.',
+        bio: 'FedEx print supervisor/mother.  Adult in training. Loves potatoes and will definitely cry at this wedding.',
         image: regina
     },
     {
