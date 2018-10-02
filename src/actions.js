@@ -54,7 +54,6 @@ export const setMedia = () => (dispatch, getState) => {
     getMedia(env).on('value',
         (snapshot) => {
             const media = snapshot.val();
-            console.log('media', media);
 
             if (media) {
                 const sets = Object.keys(media).map((key) => {
