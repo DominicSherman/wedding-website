@@ -16,7 +16,7 @@ export const groomsmen = [
         name: 'Gabriel Sherman',
         role: 'Best Man',
         relation: 'Brother of the Groom',
-        bio: 'Modern day Paul Bunyan. Is only the best man because the groom doesn’t have any friends.',
+        bio: 'Not responsible for lost or stolen items. Or filling up the gas tank.',
         image: gabe
     },
     {
@@ -68,7 +68,7 @@ export const bridesmaids = [
         name: 'Katherine Edson',
         role: 'Bridesmaid',
         relation: 'Sister of the Bride',
-        bio: 'Professional administrative assistant. Basically planned this wedding.',
+        bio: 'Professional administrative assistant. Basically planned this wedding. Loves her siblings but not afraid to inflict pain.',
         image: katherine
     },
     {
