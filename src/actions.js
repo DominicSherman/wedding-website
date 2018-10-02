@@ -53,11 +53,12 @@ export const setMedia = () => (dispatch, getState) => {
 
     getMedia(env).on('value',
         (snapshot) => {
-            const images = snapshot.val();
+            const media = snapshot.val();
+            console.log('media', media);
 
-            if (images) {
-                const sets = Object.keys(images).map((key) => {
-                    const sessionImages = images[key];
+            if (media) {
+                const sets = Object.keys(media).map((key) => {
+                    const sessionImages = media[key];
                     return Object.keys(sessionImages).map((key) => sessionImages[key]);
                 });
                 sets.forEach((set) => set.forEach((item) => all = [...all, item]));
