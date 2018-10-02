@@ -18,7 +18,7 @@ export default class Welcome extends Component {
                     />
                     <span className={'Welcome-bellBorder'}/>
                 </div>
-                <p>{'You can find information about the wedding, get directions, and RSVP. After the day, pictures uploaded using the app will be viewable in the photos tab.'}</p>
+                <p>{'You can find information about the wedding, get directions, and RSVP. After the day, pictures uploaded using the app will be viewable in the pictures tab.'}</p>
             </div>
         );
     }

@@ -2,13 +2,15 @@ import React, {Component} from 'react';
 import Gallery from 'react-photo-gallery';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
+import ReactPlayer from 'react-player';
 
 import * as ActionCreators from '../actions';
 import '../css/screens/Pictures.css';
 
 class Pictures extends Component {
     render() {
-        const {config: {picturesVisible}, pictures} = this.props;
+        const {config: {picturesVisible}, pictures, videos} = this.props;
+        console.log('videos[0]', videos[0]);
 
         if (!picturesVisible) {
             return (
@@ -20,9 +22,15 @@ class Pictures extends Component {
 
         return (
             pictures.length ?
-                <Gallery
-                    photos={pictures}
-                />
+                <div>
+                    <Gallery
+                        photos={pictures}
+                    />
+                    <ReactPlayer
+                        url={'https://www.youtube.com/watch?v=l3gaZT9ixk4'}
+                        playing
+                    />
+                </div>
                 :
                 <div className={'Pictures-wrapper'}>
                     <p className={'Pictures-text'}>{'No pictures have been uploaded yet 😕'}</p>

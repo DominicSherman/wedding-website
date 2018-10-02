@@ -16,7 +16,7 @@ export const groomsmen = [
         name: 'Gabriel Sherman',
         role: 'Best Man',
         relation: 'Brother of the Groom',
-        bio: 'Not responsible for lost or stolen items. Or filling up the gas tank.',
+        bio: 'Not responsible for lost or stolen items. Or filling up the gas tank. Or anything else he doesn\'t really want to do.',
         image: gabe
     },
     {

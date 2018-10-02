@@ -4,7 +4,7 @@ import {
     SET_ENV,
     SET_PICTURES, SET_PICTURES_VISIBLE,
     SET_RSVP_MODAL_VISIBLE,
-    SET_RSVPS
+    SET_RSVPS, SET_VIDEOS
 } from './constants/action-types';
 import {reverseEnum} from './constants/constants';
 import {getImages, getRSVPData} from './services/firebase-service';
@@ -85,8 +85,10 @@ export const setPictures = () => (dispatch, getState) => {
                 });
 
                 dispatch(action(SET_PICTURES, photos));
+                dispatch(action(SET_VIDEOS, videos));
             } else {
                 dispatch(action(SET_PICTURES, []));
+                dispatch(action(SET_VIDEOS, []));
             }
         });
 };

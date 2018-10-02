@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {holyRosaryLink, mcmenaminsLink} from '../constants/website-links';
+import {holyRosaryLink, mcmenaminsLink} from '../constants/constants';
 import church from '../assets/graphics/church.png';
 import cake from '../assets/graphics/cake.png';
 

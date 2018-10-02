@@ -53,9 +53,11 @@ class Main extends Component {
             });
         }
 
-        if (this.state.presses === 1 && (prevProps !== this.props)) {
-            setTimeout(() => this.setState({presses: 1}),
-                5000);
+        if (this.state.presses > 0) {
+            setTimeout(
+                () => this.setState({presses: 0}),
+                5000
+            );
         }
 
         if (this.state.presses === 10) {
@@ -64,7 +66,6 @@ class Main extends Component {
         }
 
         if (prevProps.config.env !== this.props.config.env) {
-            console.log('here');
             this.props.actions.setRSVPData();
             this.props.actions.setPictures();
         }
@@ -91,10 +92,7 @@ class Main extends Component {
                 <NavBar isSticky={this.state.isSticky}/>
                 <Routing isSticky={this.state.isSticky}/>
                 <Footer/>
-                <ModalContainer
-                    presses={this.state.presses}
-                    {...this.props}
-                />
+                <ModalContainer {...this.props}/>
             </div>
         );
     }
