@@ -7,7 +7,7 @@ import {
     SET_RSVPS, SET_VIDEOS
 } from './constants/action-types';
 import {reverseEnum} from './constants/constants';
-import {getImages, getRSVPData} from './services/firebase-service';
+import {getMedia, getRSVPData} from './services/firebase-service';
 
 export const toggleRSVPModal = () => (dispatch, getState) => {
     const {rsvpModalVisible} = getState();
@@ -45,13 +45,13 @@ export const setRSVPData = () => (dispatch, getState) => {
     });
 };
 
-export const setPictures = () => (dispatch, getState) => {
+export const setMedia = () => (dispatch, getState) => {
     const {config: {env}} = getState();
     let all = [],
         photos = [],
         videos = [];
 
-    getImages(env).on('value',
+    getMedia(env).on('value',
         (snapshot) => {
             const images = snapshot.val();
 

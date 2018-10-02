@@ -10,7 +10,6 @@ import '../css/screens/Pictures.css';
 class Pictures extends Component {
     render() {
         const {config: {picturesVisible}, pictures, videos} = this.props;
-        console.log('videos[0]', videos[0]);
 
         if (!picturesVisible) {
             return (

@@ -42,7 +42,7 @@ class Main extends Component {
         });
 
         this.props.actions.setRSVPData();
-        this.props.actions.setPictures();
+        this.props.actions.setMedia();
     }
 
     componentDidUpdate(prevProps) {
@@ -67,7 +67,7 @@ class Main extends Component {
 
         if (prevProps.config.env !== this.props.config.env) {
             this.props.actions.setRSVPData();
-            this.props.actions.setPictures();
+            this.props.actions.setMedia();
         }
     }
 

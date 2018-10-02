@@ -32,4 +32,4 @@ export const insertRSVP = async (name, numberInParty, env) => {
 
 export const getRSVPData = (env) => firebase.database().ref(`${env}/rsvps`);
 
-export const getImages = (env) => firebase.database().ref(`${env}/images`);
+export const getMedia = (env) => firebase.database().ref(`${env}/media`);
