@@ -11,6 +11,7 @@ import {initializeFirebase} from './services/firebase-service';
 import ModalContainer from './modals/ModalContainer';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
+import LoadingScreen from 'react-loading-screen';
 
 import * as ActionCreators from './actions';
 
@@ -22,7 +23,8 @@ class Main extends Component {
 
         this.state = {
             isSticky: false,
-            presses: 0
+            presses: 0,
+            loading: true
         };
     }
 
@@ -77,23 +79,29 @@ class Main extends Component {
 
     render() {
         return (
-            <div>
-                <div
-                    id={'headerImageWrapper'}
-                    className={'Main-wrapper'}
-                    onClick={this.incrementPresses}
-                >
-                    <img
-                        alt=''
-                        className={'Main-image'}
-                        src={headerImage}
-                    />
+            <LoadingScreen
+                loading={this.state.loading}
+                bgColor={'#ebebeb'}
+            >
+                <div>
+                    <div
+                        id={'headerImageWrapper'}
+                        className={'Main-wrapper'}
+                        onClick={this.incrementPresses}
+                    >
+                        <img
+                            alt=''
+                            className={'Main-image'}
+                            src={headerImage}
+                            onLoad={() => this.setState({loading: false})}
+                        />
+                    </div>
+                    <NavBar isSticky={this.state.isSticky} location={this.props.location}/>
+                    <Routing isSticky={this.state.isSticky}/>
+                    <Footer/>
+                    <ModalContainer {...this.props}/>
                 </div>
-                <NavBar isSticky={this.state.isSticky} location={this.props.location}/>
-                <Routing isSticky={this.state.isSticky}/>
-                <Footer/>
-                <ModalContainer {...this.props}/>
-            </div>
+            </LoadingScreen>
         );
     }
 }
