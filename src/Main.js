@@ -89,7 +89,7 @@ class Main extends Component {
                         src={headerImage}
                     />
                 </div>
-                <NavBar isSticky={this.state.isSticky}/>
+                <NavBar isSticky={this.state.isSticky} location={this.props.location}/>
                 <Routing isSticky={this.state.isSticky}/>
                 <Footer/>
                 <ModalContainer {...this.props}/>

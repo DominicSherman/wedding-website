@@ -5,14 +5,19 @@ import '../css/components/HeaderLink.css';
 
 export default class HeaderLink extends Component{
     render() {
-        const {route, text} = this.props;
+        const {selected, route, text} = this.props;
 
         return (
             <NavLink
                 className={'HeaderLink-link'}
                 to={`${route}`}
             >
-                <p className={'HeaderLink-headerText'}>
+                <p
+                    className={'HeaderLink-headerText'}
+                    style={{
+                        color: selected === route ? '#f2ac5e' : null
+                    }}
+                >
                     {`${text}`}
                 </p>
             </NavLink>

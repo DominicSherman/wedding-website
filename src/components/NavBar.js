@@ -13,22 +13,27 @@ export default class NavBar extends Component {
             >
                 <div className={'NavBar-body spaceBetween'}>
                     <HeaderLink
+                        selected={this.props.location.pathname}
                         route={'/'}
                         text={'HOME'}
                     />
                     <HeaderLink
+                        selected={this.props.location.pathname}
                         route={'/our-story'}
                         text={'OUR STORY'}
                     />
                     <HeaderLink
+                        selected={this.props.location.pathname}
                         route={'/wedding-party'}
                         text={'WEDDING PARTY'}
                     />
                     <HeaderLink
+                        selected={this.props.location.pathname}
                         route={'/pictures'}
                         text={'PICTURES'}
                     />
                     <HeaderLink
+                        selected={this.props.location.pathname}
                         route={'/registry'}
                         text={'REGISTRY'}
                     />
