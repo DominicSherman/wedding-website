@@ -2,7 +2,7 @@
 
 A web application for information about the wedding
 
-dominicandmarywedding.com
+[dominicandmarywedding.com](dominicandmarywedding.com)
 
 This project was bootstrapped with [Create React Home](https://github.com/facebookincubator/create-react-app).
 
