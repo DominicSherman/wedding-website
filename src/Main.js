@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-
 import headerImage from './assets/header.jpg';
 import './css/Main.css';
 import './css/Flex.css';
