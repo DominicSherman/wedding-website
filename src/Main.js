@@ -16,7 +16,7 @@ import * as ActionCreators from './actions';
 
 let headerImageRef;
 
-class Main extends Component {
+export class Main extends Component {
     constructor(props) {
         super(props);
 
