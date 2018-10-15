@@ -5,8 +5,8 @@ import * as ActionCreators from '../actions';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 
-import '../scss/components/HomeButtons.scss';
-import '../scss/Buttons.scss';
+import '../css/components/HomeButtons.css';
+import '../css/Buttons.css';
 
 class HomeButtons extends Component {
     render() {

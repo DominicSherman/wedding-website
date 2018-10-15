@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import ReactPlayer from 'react-player';
 
 import * as ActionCreators from '../actions';
-import '../scss/screens/Pictures.scss';
+import '../css/screens/Pictures.css';
 
 class Pictures extends Component {
     render() {

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import bells from '../assets/graphics/weddingsbells.png';
-import '../scss/components/Welcome.scss';
+import '../css/components/Welcome.css';
 
 export default class Welcome extends Component {
     render() {

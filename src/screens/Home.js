@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import '../scss/screens/Home.scss';
+import '../css/screens/Home.css';
 import Welcome from '../components/Welcome';
 import WeddingBeginsIn from '../components/WeddingBeginsIn';
 import HomeInfo from '../components/HomeInfo';

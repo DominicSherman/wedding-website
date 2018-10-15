@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './scss/index.scss';
+import './css/index.css';
 import Main from './Main';
 import registerServiceWorker from './registerServiceWorker';
 import {BrowserRouter as Router} from 'react-router-dom';
@@ -14,7 +14,7 @@ const store = createStore(reducer, applyMiddleware(thunk));
 ReactDOM.render(
     <Provider store={store}>
         <Router>
-            <Main />
+            <Main/>
         </Router>
     </Provider>,
     document.getElementById('root'));

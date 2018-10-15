@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import '../scss/components/WeddingBeginsIn.scss';
+import '../css/components/WeddingBeginsIn.css';
 
 export default class WeddingBeginsIn extends Component {
     calculateDaysLeft = () => {

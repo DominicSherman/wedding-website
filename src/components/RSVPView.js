@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import '../scss/Buttons.scss';
+import '../css/Buttons.css';
 
 export default class RSVPView extends Component {
     render() {

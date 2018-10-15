@@ -3,7 +3,7 @@ import Modal from 'react-responsive-modal';
 import RSVPForm from '../components/RSVPForm';
 import RSVPView from '../components/RSVPView';
 
-import '../scss/modals/RSVPModal.scss';
+import '../css/modals/RSVPModal.css';
 
 export default class RSVPModal extends Component {
     constructor(props) {

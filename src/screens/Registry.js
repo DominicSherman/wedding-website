@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import '../scss/screens/Registry.scss';
+import '../css/screens/Registry.css';
 import macy from '../assets/macy.png';
 import crate from '../assets/crateandbarrel.png';
 import {crateAndBarrelLink, macyLink} from '../constants/constants';

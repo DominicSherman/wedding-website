@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {insertRSVP} from '../services/firebase-service';
 
-import '../scss/components/RSVPForm.scss';
-import '../scss/Buttons.scss';
+import '../css/components/RSVPForm.css';
+import '../css/Buttons.css';
 
 export default class RSVPForm extends Component {
     constructor(props) {

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import HeaderLink from './HeaderLink';
-import '../scss/components/NavBar.scss';
+import '../css/components/NavBar.css';
 
 export default class NavBar extends Component {
     render() {
