@@ -18,6 +18,8 @@ describe('Main', () => {
     let expectedProps,
         expectedScrollY,
         expectedClientHeight,
+        getElementByIdSpy,
+        eventListener,
 
         renderedInstance,
         renderedComponent,
@@ -58,26 +60,13 @@ describe('Main', () => {
     };
 
     beforeEach(() => {
-        expectedScrollY = chance.natural();
-        expectedClientHeight = expectedScrollY + 1;
-
-        global.window = {
-            addEventListener: jest.fn(),
-            scrollY: expectedScrollY
-        };
-
-        global.document = {
-            getElementById: jest.fn({
-                clientHeight: expectedClientHeight
-            })
-        };
-
         expectedProps = {
             actions: {
                 toggleAdminMenu: jest.fn(),
                 setRSVPData: jest.fn(),
                 setMedia: jest.fn()
-            }
+            },
+            location: chance.string()
         };
 
         renderComponent();
@@ -100,7 +89,24 @@ describe('Main', () => {
 
     describe('componentDidMount', () => {
         beforeEach(() => {
+            expectedScrollY = chance.natural();
+
+            expectedClientHeight = expectedScrollY + 1;
+            getElementByIdSpy = jest.fn();
+
+            getElementByIdSpy.mockReturnValue({clientHeight: expectedClientHeight});
+            global.document = {
+                getElementById: getElementByIdSpy,
+            };
+
+            global.window = {
+                addEventListener: jest.fn(),
+                scrollY: expectedScrollY
+            };
+
             renderedInstance.componentDidMount();
+
+            eventListener = window.addEventListener.mock.calls[0][1];
         });
 
         it('should call getElementById', () => {
@@ -110,7 +116,37 @@ describe('Main', () => {
 
         it('should add an event listener', () => {
             expect(window.addEventListener).toHaveBeenCalledTimes(1);
-            expect(window.addEventListener).toHaveBeenCalledWith('scroll',);
+            expect(window.addEventListener).toHaveBeenCalledWith('scroll', expect.anything());
+        });
+
+        it('should set isSticky to true when scrollY is greater than clientHeight', () => {
+            expectedScrollY = expectedClientHeight + 1;
+
+            global.window = {
+                addEventListener: jest.fn(),
+                scrollY: expectedScrollY
+            };
+
+            eventListener();
+            renderedComponent = renderedInstance.render();
+            cacheChildren();
+
+            expect(renderedNavBar.props.isSticky).toBe(true);
+        });
+
+        it('should set isSticky to false when scrollY is less than clientHeight', () => {
+            expectedScrollY = expectedClientHeight - 1;
+
+            global.window = {
+                addEventListener: jest.fn(),
+                scrollY: expectedScrollY
+            };
+
+            eventListener();
+            renderedComponent = renderedInstance.render();
+            cacheChildren();
+
+            expect(renderedNavBar.props.isSticky).toBe(false);
         });
 
         it('should call the actions', () => {
@@ -121,6 +157,7 @@ describe('Main', () => {
 
     it('should render a LoadingScreen wrapper', () => {
         expect(renderedComponent.type).toBe(LoadingScreen);
+        expect(renderedComponent.props.loading).toBe(true);
     });
 
     it('should render a wrapper div', () => {
@@ -129,18 +166,26 @@ describe('Main', () => {
 
     it('should render an inner div', () => {
         expect(renderedDiv.type).toBe('div');
+        expect(renderedDiv.props.id).toBe('headerImageWrapper');
+        expect(renderedDiv.props.className).toBe('Main-wrapper');
     });
 
     it('should render the header image', () => {
         expect(renderedHeaderImage.type).toBe('img');
+        expect(renderedHeaderImage.props.alt).toBe('');
+        expect(renderedHeaderImage.props.className).toBe('Main-image');
+        expect(renderedHeaderImage.props.src).toBe(require('../src/assets/header.jpg'));
     });
 
     it('should render the NavBar component', () => {
         expect(renderedNavBar.type).toBe(NavBar);
+        expect(renderedNavBar.props.isSticky).toBe(false);
+        expect(renderedNavBar.props.location).toBe(expectedProps.location);
     });
 
     it('should render the Routing component', () => {
         expect(renderedRouting.type).toBe(Routing);
+        expect(renderedRouting.props.isSticky).toBe(false);
     });
 
     it('should render the Footer component', () => {
@@ -149,5 +194,6 @@ describe('Main', () => {
 
     it('should render the ModalContainer', () => {
         expect(renderedModalContainer.type).toBe(ModalContainer);
+        expect(renderedModalContainer.props).toEqual(expectedProps);
     });
 });

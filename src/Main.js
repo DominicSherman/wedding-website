@@ -39,7 +39,6 @@ export class Main extends Component {
             } else if (window.scrollY < headerImageRef.clientHeight && this.state.isSticky) {
                 this.setState({isSticky: false});
             }
-
         });
 
         this.props.actions.setRSVPData();
