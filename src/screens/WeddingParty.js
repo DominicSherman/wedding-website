@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import {bridesmaids, groomsmen} from '../constants/bridal-party';
 import Person from '../components/Person';
-import '../css/screens/WeddingParty.css';
+import '../scss/screens/WeddingParty.scss';
 
 export default class WeddingParty extends Component {
     render() {

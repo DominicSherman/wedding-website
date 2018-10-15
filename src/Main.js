@@ -5,8 +5,8 @@ import {connect} from 'react-redux';
 import LoadingScreen from 'react-loading-screen';
 
 import headerImage from './assets/header.jpg';
-import './css/Main.css';
-import './css/Flex.css';
+import './scss/Main.scss';
+import './scss/Flex.scss';
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';
 import {initializeFirebase} from './services/firebase-service';
@@ -78,26 +78,29 @@ export class Main extends Component {
     render() {
         return (
             <LoadingScreen
-                loading={this.state.loading}
                 bgColor={'#ebebeb'}
+                loading={this.state.loading}
             >
                 <div>
                     <div
-                        id={'headerImageWrapper'}
                         className={'Main-wrapper'}
+                        id={'headerImageWrapper'}
                         onClick={this.incrementPresses}
                     >
                         <img
-                            alt=''
+                            alt=""
                             className={'Main-image'}
-                            src={headerImage}
                             onLoad={() => this.setState({loading: false})}
+                            src={headerImage}
                         />
                     </div>
-                    <NavBar isSticky={this.state.isSticky} location={this.props.location}/>
-                    <Routing isSticky={this.state.isSticky}/>
-                    <Footer/>
-                    <ModalContainer {...this.props}/>
+                    <NavBar
+                            isSticky={this.state.isSticky}
+                            location={this.props.location}
+                        />
+                    <Routing isSticky={this.state.isSticky} />
+                    <Footer />
+                    <ModalContainer {...this.props} />
                 </div>
             </LoadingScreen>
         );

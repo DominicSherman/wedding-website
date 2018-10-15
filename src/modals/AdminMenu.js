@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Modal from 'react-responsive-modal';
 import Switch from 'react-switch';
-import '../css/modals/AdminMenu.css';
+import '../scss/modals/AdminMenu.scss';
 import {PROD} from '../constants/constants';
 
 export default class AdminMenu extends Component {

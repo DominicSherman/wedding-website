@@ -3,7 +3,7 @@ import {holyRosaryLink, mcmenaminsLink} from '../constants/constants';
 import church from '../assets/graphics/church.png';
 import cake from '../assets/graphics/cake.png';
 
-import '../css/components/HomeInfo.css';
+import '../scss/components/HomeInfo.scss';
 
 export default class HomeInfo extends Component {
     render() {

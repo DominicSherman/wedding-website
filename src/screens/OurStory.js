@@ -3,7 +3,7 @@ import ImageGallery from 'react-image-gallery';
 
 import bride from '../assets/bride.jpg';
 import groom from '../assets/groom.jpg';
-import '../css/screens/OurStory.css';
+import '../scss/screens/OurStory.scss';
 import loremIpsum from '../constants/lorem-ipsum-text';
 import maryStory from '../constants/mary-story';
 import dominicStory from '../constants/dominic-story';
