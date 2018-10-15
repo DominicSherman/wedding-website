@@ -66,6 +66,9 @@ describe('Main', () => {
                 setRSVPData: jest.fn(),
                 setMedia: jest.fn()
             },
+            config: {
+                env: chance.string()
+            },
             location: chance.string()
         };
 
@@ -152,6 +155,33 @@ describe('Main', () => {
         it('should call the actions', () => {
             expect(expectedProps.actions.setRSVPData).toHaveBeenCalledTimes(1);
             expect(expectedProps.actions.setMedia).toHaveBeenCalledTimes(1);
+        });
+    });
+
+    describe('componentDidUpdate', () => {
+        let expectedPrevProps;
+
+        it('should call scrollTo if the location changes', () => {
+            expectedPrevProps = {
+                ...expectedProps,
+                location: chance.string()
+            };
+
+            global.window = {
+                scrollTo: jest.fn()
+            };
+
+            renderedInstance.componentDidUpdate(expectedPrevProps);
+
+            expect(window.scrollTo).toHaveBeenCalledTimes(1);
+            expect(window.scrollTo).toHaveBeenCalledWith({
+                top: expectedClientHeight,
+                behavior: 'smooth'
+            });
+        });
+
+        it('should call setTimeout ', () => {
+            
         });
     });
 
