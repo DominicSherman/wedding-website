@@ -1,17 +1,17 @@
 import React, {Component} from 'react';
-import {withRouter} from 'react-router-dom';
-import {bindActionCreators} from 'redux';
-import {connect} from 'react-redux';
-import LoadingScreen from 'react-loading-screen';
-
 import headerImage from './assets/header.jpg';
 import './css/Main.css';
 import './css/Flex.css';
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';
+import Routing from './Routing';
+import {withRouter} from 'react-router-dom';
 import {initializeFirebase} from './services/firebase-service';
 import ModalContainer from './modals/ModalContainer';
-import Routing from './Routing';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import LoadingScreen from 'react-loading-screen';
+
 import * as ActionCreators from './actions';
 
 let headerImageRef;
