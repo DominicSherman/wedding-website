@@ -1,14 +1,11 @@
 import React, {Component} from 'react';
 import leftGraphic from '../assets/graphics/rsvpleft.png';
 import rightGraphic from '../assets/graphics/rsvpright.png';
-import * as ActionCreators from '../actions';
-import {bindActionCreators} from 'redux';
-import {connect} from 'react-redux';
 
 import '../css/components/HomeButtons.css';
 import '../css/Buttons.css';
 
-class HomeButtons extends Component {
+export default class HomeButtons extends Component {
     render() {
         return (
             <div className={'HomeButtons-wrapper row spaceBetween'}>
@@ -32,8 +29,4 @@ class HomeButtons extends Component {
             </div>
         );
     }
-}
-
-const mapDispatchToProps = (dispatch) => ({actions: bindActionCreators(ActionCreators, dispatch)});
-
-export default connect(null, mapDispatchToProps)(HomeButtons)
+};

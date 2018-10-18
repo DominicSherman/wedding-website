@@ -14,9 +14,7 @@ export default class HeaderLink extends Component{
             >
                 <p
                     className={'HeaderLink-headerText'}
-                    style={{
-                        color: selected === route ? '#f2ac5e' : null
-                    }}
+                    style={{color: selected === route ? '#f2ac5e' : null}}
                 >
                     {`${text}`}
                 </p>
