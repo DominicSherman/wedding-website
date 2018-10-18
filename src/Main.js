@@ -5,18 +5,13 @@ import './css/Flex.css';
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';
 import Routing from './Routing';
-import {withRouter} from 'react-router-dom';
 import {initializeFirebase} from './services/firebase-service';
 import ModalContainer from './modals/ModalContainer';
-import {bindActionCreators} from 'redux';
-import {connect} from 'react-redux';
 import LoadingScreen from 'react-loading-screen';
-
-import * as ActionCreators from './actions';
 
 let headerImageRef;
 
-export class Main extends Component {
+export default class Main extends Component {
     constructor(props) {
         super(props);
 
@@ -104,9 +99,3 @@ export class Main extends Component {
         );
     }
 }
-
-const mapDispatchToProps = (dispatch) => ({actions: bindActionCreators(ActionCreators, dispatch)});
-
-const mapStateToProps = (state) => state;
-
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));

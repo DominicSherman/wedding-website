@@ -3,7 +3,7 @@ import Chance from 'chance';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import LoadingScreen from 'react-loading-screen';
 
-import {Main} from '../src/Main';
+import Main from '../src/Main';
 import NavBar from '../src/components/NavBar';
 import Routing from '../src/Routing';
 import Footer from '../src/components/Footer';
