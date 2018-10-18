@@ -9,7 +9,7 @@ import '../css/screens/Pictures.css';
 
 class Pictures extends Component {
     render() {
-        const {config: {picturesVisible}, pictures, videos} = this.props;
+        const {config: {picturesVisible}, pictures} = this.props;
 
         if (!picturesVisible) {
             return (
