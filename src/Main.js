@@ -27,6 +27,14 @@ export class Main extends Component {
         };
     }
 
+    incrementPresses = () => this.setState({presses: this.state.presses + 1});
+
+    resetPresses = () => this.setState({presses: 0});
+
+    setIsSticky = (isSticky) => this.setState({isSticky});
+
+    setLoading = (loading) => this.setState({loading});
+
     componentWillMount() {
         initializeFirebase();
     }
@@ -35,9 +43,9 @@ export class Main extends Component {
         headerImageRef = document.getElementById('headerImageWrapper');
         window.addEventListener('scroll', () => {
             if (window.scrollY > headerImageRef.clientHeight && !this.state.isSticky) {
-                this.setState({isSticky: true});
+                this.setIsSticky(true);
             } else if (window.scrollY < headerImageRef.clientHeight && this.state.isSticky) {
-                this.setState({isSticky: false});
+                this.setIsSticky(false);
             }
         });
 
@@ -54,10 +62,7 @@ export class Main extends Component {
         }
 
         if (this.state.presses > 0) {
-            setTimeout(
-                () => this.setState({presses: 0}),
-                5000
-            );
+            setTimeout(this.resetPresses, 5000);
         }
 
         if (this.state.presses === 10) {
@@ -70,10 +75,6 @@ export class Main extends Component {
             this.props.actions.setMedia();
         }
     }
-
-    incrementPresses = () => this.setState({presses: this.state.presses + 1});
-
-    resetPresses = () => this.setState({presses: 0});
 
     render() {
         return (
@@ -91,7 +92,7 @@ export class Main extends Component {
                             alt=''
                             className={'Main-image'}
                             src={headerImage}
-                            onLoad={() => this.setState({loading: false})}
+                            onLoad={() => this.setLoading(false)}
                         />
                     </div>
                     <NavBar isSticky={this.state.isSticky} location={this.props.location}/>
