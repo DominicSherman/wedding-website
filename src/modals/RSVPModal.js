@@ -19,13 +19,13 @@ export default class RSVPModal extends Component {
     };
 
     render() {
-        const {RSVP: {data, count}, env} = this.props;
+        const {actions, RSVP: {data, count}, env, modalVisible} = this.props;
 
         return (
             <Modal
                 classNames={{overlay: 'RSVPModal-Overlay', modal: 'RSVPModal-Modal'}}
-                open={this.props.modalVisible}
-                onClose={this.props.actions.toggleRSVPModal}
+                open={modalVisible}
+                onClose={actions.toggleRSVPModal}
             >
                 {
                     this.state.formVisible ?
