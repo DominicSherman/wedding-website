@@ -12,21 +12,41 @@ export default class Routing extends Component {
             <div style={{
                 marginTop: this.props.isSticky ? '7.68%' : '0'
             }}>
-                <Route exact path='/' render={
-                    ({location}) => <Home location={location}/>
-                }/>
-                <Route exact path='/our-story' render={
-                    ({location}) => <OurStory location={location}/>
-                }/>
-                <Route exact path='/wedding-party' render={
-                    ({location}) => <WeddingParty location={location}/>
-                }/>
-                <Route exact path='/pictures' render={
-                    ({location}) => <Pictures location={location}/>
-                }/>
-                <Route exact path='/registry' render={
-                    ({location}) => <Registry location={location}/>
-                }/>
+                <Route
+                    exact
+                    path='/'
+                    render={({location}) =>
+                        <Home location={location}/>
+                    }
+                />
+                <Route
+                    exact
+                    path='/our-story'
+                    render={({location}) =>
+                        <OurStory location={location}/>
+                    }
+                />
+                <Route
+                    exact
+                    path='/wedding-party'
+                    render={({location}) =>
+                        <WeddingParty location={location}/>
+                    }
+                />
+                <Route
+                    exact
+                    path='/pictures'
+                    render={({location}) =>
+                        <Pictures location={location}/>
+                    }
+                />
+                <Route
+                    exact
+                    path='/registry'
+                    render={({location}) =>
+                        <Registry location={location}/>
+                    }
+                />
             </div>
         );
     }
