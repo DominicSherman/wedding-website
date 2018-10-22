@@ -73,7 +73,11 @@
   "jest": {
     "collectCoverageFrom": [
       "src/*.{js, jsx}",
-      "src/{components,modals,screens,services}/*.{js,jsx}"
+      "src/**/*.{js,jsx}"
+    ],
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/src/other",
+      "<rootDir>/src/constants"
     ],
     "setupFiles": [
       "<rootDir>/config/polyfills.js"
@@ -92,7 +96,7 @@
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"
     ],
     "moduleNameMapper": {
-      "^react-native$": "react-native-web"
+      "^react-redux": "<rootDir>/test/mocks/react-redux-stub.js"
     },
     "moduleFileExtensions": [
       "web.js",

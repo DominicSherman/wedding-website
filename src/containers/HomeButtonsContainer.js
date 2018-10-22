@@ -1,4 +1,4 @@
-import {bindActionCreators} from 'redux/index';
+import {bindActionCreators} from 'redux';
 import * as ActionCreators from '../actions';
 import {connect} from 'react-redux';
 import HomeButtons from '../components/HomeButtons';

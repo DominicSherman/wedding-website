@@ -21,6 +21,18 @@ export const toggleAdminMenu = () => (dispatch, getState) => {
     dispatch(action(SET_ADMIN_MENU_VISIBLE, !adminMenuVisible));
 };
 
+export const toggleEnv = () => (dispatch, getState) => {
+    const {config: {env}} = getState();
+
+    dispatch(action(SET_ENV, reverseEnum[env]));
+};
+
+export const togglePicturesVisible = () => (dispatch, getState) => {
+    const {config: {picturesVisible}} = getState();
+
+    dispatch(action(SET_PICTURES_VISIBLE, !picturesVisible));
+};
+
 export const setRSVPData = () => (dispatch, getState) => {
     const {config: {env}} = getState();
 
@@ -51,56 +63,43 @@ export const setMedia = () => (dispatch, getState) => {
         photos = [],
         videos = [];
 
-    getMedia(env).on('value',
-        (snapshot) => {
-            const media = snapshot.val();
+    getMedia(env).on('value', (snapshot) => {
+        const media = snapshot.val();
 
-            if (media) {
-                const sets = Object.keys(media).map((key) => {
-                    const sessionImages = media[key];
-                    return Object.keys(sessionImages).map((key) => sessionImages[key]);
-                });
-                sets.forEach((set) => set.forEach((item) => all = [...all, item]));
+        if (media) {
+            const sets = Object.keys(media).map((key) => {
+                const sessionImages = media[key];
+                return Object.keys(sessionImages).map((key) => sessionImages[key]);
+            });
+            sets.forEach((set) => set.forEach((item) => all = [...all, item]));
 
-                all.forEach(({url, width, height, isVideo}) => {
-                    if (isVideo) {
-                        videos = [
-                            ...videos,
-                            {
-                                src: url,
-                                width,
-                                height
-                            }
-                        ];
-                    } else {
-                        photos = [
-                            ...photos,
-                            {
-                                src: url,
-                                width,
-                                height
-                            }
-                        ]
-                    }
-                });
+            all.forEach(({url, width, height, isVideo}) => {
+                if (isVideo) {
+                    videos = [
+                        ...videos,
+                        {
+                            src: url,
+                            width,
+                            height
+                        }
+                    ];
+                } else {
+                    photos = [
+                        ...photos,
+                        {
+                            src: url,
+                            width,
+                            height
+                        }
+                    ]
+                }
+            });
 
-                dispatch(action(SET_PICTURES, photos));
-                dispatch(action(SET_VIDEOS, videos));
-            } else {
-                dispatch(action(SET_PICTURES, []));
-                dispatch(action(SET_VIDEOS, []));
-            }
-        });
-};
-
-export const toggleEnv = () => (dispatch, getState) => {
-    const {config: {env}} = getState();
-
-    dispatch(action(SET_ENV, reverseEnum[env]));
-};
-
-export const togglePicturesVisible = () => (dispatch, getState) => {
-    const {config: {picturesVisible}} = getState();
-
-    dispatch(action(SET_PICTURES_VISIBLE, !picturesVisible));
+            dispatch(action(SET_PICTURES, photos));
+            dispatch(action(SET_VIDEOS, videos));
+        } else {
+            dispatch(action(SET_PICTURES, []));
+            dispatch(action(SET_VIDEOS, []));
+        }
+    });
 };

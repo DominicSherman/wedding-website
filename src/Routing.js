@@ -3,8 +3,8 @@ import {Route} from 'react-router-dom';
 import Home from './screens/Home';
 import OurStory from './screens/OurStory';
 import WeddingParty from './screens/WeddingParty';
-import Pictures from './screens/Pictures';
 import Registry from './screens/Registry';
+import PicturesContainer from './containers/PicturesContainer';
 
 export default class Routing extends Component {
     render() {
@@ -37,7 +37,7 @@ export default class Routing extends Component {
                     exact
                     path='/pictures'
                     render={({location}) =>
-                        <Pictures location={location}/>
+                        <PicturesContainer location={location}/>
                     }
                 />
                 <Route

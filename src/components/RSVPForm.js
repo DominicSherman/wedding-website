@@ -18,15 +18,15 @@ export default class RSVPForm extends Component {
 
     resetState = () => this.setState(this.initialState);
 
+    setName = (name) => this.setState({name});
+
+    setNumInParty = (numberInParty) => this.setState({numberInParty});
+
     handleSubmit = async (event) => {
         event.preventDefault();
         await insertRSVP(this.state.name, this.state.numberInParty, this.props.env);
         this.resetState();
     };
-
-    setName = (name) => this.setState({name});
-
-    setNumInParty = (numberInParty) => this.setState({numberInParty});
 
     render() {
         return (

@@ -4,7 +4,7 @@ import '../css/Buttons.css';
 
 export default class RSVPView extends Component {
     render() {
-        const {data, count} = this.props;
+        const {data, count, toggleFormVisible} = this.props;
 
         const renderedNames = Object.keys(data).map((key) =>
             <p key={key}>{data[key].name}</p>
@@ -20,11 +20,16 @@ export default class RSVPView extends Component {
 
         return (
             <div>
-                <button className={'Buttons-smallFont'} onClick={this.props.toggleFormVisible}>{'View Form'}</button>
+                <button
+                    className={'Buttons-smallFont'}
+                    onClick={toggleFormVisible}
+                >
+                    {'View Form'}
+                </button>
                 <div className={'row center'}>
                     <h2>{`Total RSVPs: ${count}`}</h2>
                 </div>
-                < hr
+                <hr
                     className={'RSVPView-divider'}
                     noshade="true"
                 />

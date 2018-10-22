@@ -9,14 +9,14 @@ const chance = new Chance();
 jest.mock('redux');
 jest.mock('../../src/actions');
 jest.mock('../../src/containers/HomeButtonsContainer');
-jest.mock('../../src/containers/PicturesContainer');
+jest.mock('../../src/containers/MainContainer');
 
 describe('MainContainer', () => {
     const getMapStateToProps = () => connect.mock.calls[0][0];
     const getMapDispatchToProps = () => connect.mock.calls[0][1];
 
     beforeAll(() => {
-        require('../../src/containers/MainContainer');
+        require('../../src/containers/PicturesContainer');
     });
 
     it('should call connect', () => {

@@ -59,14 +59,6 @@ export default class OurStory extends Component {
                         showIndex
                     />
                 </div>
-                {/*<hr*/}
-                    {/*className={'OurStory-divider'}*/}
-                    {/*noshade="true"*/}
-                {/*/>*/}
-                {/*<p className={'OurStory-headerText2'}>{'THE BEST MAN'}</p>*/}
-                {/*<div className={'row'}>*/}
-                    {/*<div className={'OurStory-bodyText'}>{loremIpsum}</div>*/}
-                {/*</div>*/}
             </div>
         );
     }

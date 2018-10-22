@@ -4,7 +4,7 @@ import '../css/screens/Home.css';
 import Welcome from '../components/Welcome';
 import WeddingBeginsIn from '../components/WeddingBeginsIn';
 import HomeInfo from '../components/HomeInfo';
-import HomeButtons from '../components/HomeButtons';
+import HomeButtonsContainer from '../containers/HomeButtonsContainer';
 
 export default class Home extends Component {
     render() {
@@ -16,7 +16,7 @@ export default class Home extends Component {
                 </div>
                 <div className={'Home-information column center'}>
                     <HomeInfo/>
-                    <HomeButtons/>
+                    <HomeButtonsContainer/>
                 </div>
             </div>
         );

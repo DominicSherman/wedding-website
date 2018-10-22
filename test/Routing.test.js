@@ -6,8 +6,8 @@ import Routing from '../src/Routing';
 import Home from '../src/screens/Home';
 import OurStory from '../src/screens/OurStory';
 import WeddingParty from '../src/screens/WeddingParty';
-import Pictures from '../src/screens/Pictures';
 import Registry from '../src/screens/Registry';
+import PicturesContainer from '../src/containers/PicturesContainer';
 
 const chance = new Chance();
 
@@ -112,7 +112,7 @@ describe('Routing', () => {
 
         const routeComponent = renderedPicturesRoute.props.render(expectedRenderProps);
 
-        expect(routeComponent.type).toBe(Pictures);
+        expect(routeComponent.type).toBe(PicturesContainer);
         expect(routeComponent.props.location).toBe(expectedRenderProps.location);
     });
 

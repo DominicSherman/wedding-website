@@ -1,13 +1,8 @@
 import React, {Component} from 'react';
 import Gallery from 'react-photo-gallery';
-import {bindActionCreators} from 'redux';
-import {connect} from 'react-redux';
-import ReactPlayer from 'react-player';
-
-import * as ActionCreators from '../actions';
 import '../css/screens/Pictures.css';
 
-class Pictures extends Component {
+export default class Pictures extends Component {
     render() {
         const {config: {picturesVisible}, pictures} = this.props;
 
@@ -25,10 +20,6 @@ class Pictures extends Component {
                     <Gallery
                         photos={pictures}
                     />
-                    <ReactPlayer
-                        url={'https://www.youtube.com/watch?v=l3gaZT9ixk4'}
-                        playing
-                    />
                 </div>
                 :
                 <div className={'Pictures-wrapper'}>
@@ -37,9 +28,3 @@ class Pictures extends Component {
         );
     }
 }
-
-const mapDispatchToProps = (dispatch) => ({actions: bindActionCreators(ActionCreators, dispatch)});
-
-const mapStateToProps = (state) => state;
-
-export default connect(mapStateToProps, mapDispatchToProps)(Pictures);

@@ -6,16 +6,13 @@ import '../css/screens/WeddingParty.css';
 
 export default class WeddingParty extends Component {
     render() {
-        const GroomsmenDisplay = () => groomsmen.map((g) => <Person key={g.name} info={g}/>);
-        const BridesmaidDisplay = () => bridesmaids.map((b) => <Person key={b.name} info={b}/>);
-
         return (
             <div className={'row'}>
                 <div className={'WeddingParty-groomsmen column'}>
-                    <GroomsmenDisplay/>
+                    {groomsmen.map((g) => <Person key={g.name} info={g}/>)}
                 </div>
                 <div className={'WeddingParty-bridesmaids column'}>
-                    <BridesmaidDisplay/>
+                    {bridesmaids.map((b) => <Person key={b.name} info={b}/>)}
                 </div>
             </div>
         );

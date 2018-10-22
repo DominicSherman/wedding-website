@@ -5,7 +5,7 @@ import Home from '../../src/screens/Home';
 import Welcome from '../../src/components/Welcome';
 import WeddingBeginsIn from '../../src/components/WeddingBeginsIn';
 import HomeInfo from '../../src/components/HomeInfo';
-import HomeButtons from '../../src/components/HomeButtons';
+import HomeButtonsContainer from '../../src/containers/HomeButtonsContainer';
 
 describe('Home', () => {
     let renderedComponent,
@@ -75,6 +75,6 @@ describe('Home', () => {
     });
 
     it('should render the HomeButtons component', () => {
-        expect(renderedHomeButtons.type).toBe(HomeButtons);
+        expect(renderedHomeButtons.type).toBe(HomeButtonsContainer);
     });
 });

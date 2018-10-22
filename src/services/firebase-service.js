@@ -1,5 +1,4 @@
-import firebase from 'firebase/app';
-import 'firebase/database';
+import firebase from 'firebase';
 import {config} from '../config';
 import {getCurrentTime} from '../constants/helper-functions';
 

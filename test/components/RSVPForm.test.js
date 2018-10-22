@@ -3,6 +3,9 @@ import Chance from 'chance';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import RSVPForm from '../../src/components/RSVPForm';
 import {DEV, PROD} from '../../src/constants/constants';
+import {insertRSVP} from '../../src/services/firebase-service';
+
+jest.mock('../../src/services/firebase-service');
 
 const chance = new Chance();
 
@@ -74,6 +77,40 @@ describe('RSVPForm', () => {
         };
 
         renderComponent();
+    });
+
+    afterEach(() => {
+        jest.resetAllMocks();
+    });
+
+    describe('handleSubmit', () => {
+        let expectedEvent,
+            preventDefaultSpy;
+
+        beforeEach(() => {
+            preventDefaultSpy = jest.fn();
+            expectedEvent = {
+                preventDefault: preventDefaultSpy
+            };
+        });
+
+        it('should prevent the default event', async () => {
+            await renderedInstance.handleSubmit(expectedEvent);
+
+            expect(preventDefaultSpy).toHaveBeenCalledTimes(1);
+        });
+
+        it('should insert the RSVP', async () => {
+            const name = chance.string();
+            const numInParty = chance.string();
+
+            renderedInstance.setName(name);
+            renderedInstance.setNumInParty(numInParty);
+            await renderedInstance.handleSubmit(expectedEvent);
+
+            expect(insertRSVP).toHaveBeenCalledTimes(1);
+            expect(insertRSVP).toHaveBeenCalledWith(name, numInParty, expectedProps.env);
+        });
     });
 
     it('should render a wrapper div', () => {
