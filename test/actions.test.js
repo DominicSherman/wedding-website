@@ -104,7 +104,7 @@ describe('actions', () => {
             expectedKeys = chance.n(chance.string, chance.d6() + 1);
             expectedKeys.forEach(() => {
                 expectedData = [...expectedData, {
-                    date: chance.string(),
+                    date: chance.date(),
                     numberInParty: chance.natural({max: 100, min: 1}).toString()
                 }];
             });
@@ -149,7 +149,7 @@ describe('actions', () => {
             expect(dispatchSpy).toHaveBeenCalledTimes(1);
             expect(dispatchSpy).toHaveBeenCalledWith(
                 action(SET_RSVPS, {
-                    data: expectedData.sort((a, b) => a.date < b.date ? 1 : -1),
+                    data: expectedData.sort((a, b) => new Date(a.date) < new Date(b.date) ? 1 : -1),
                     count: expectedCount
                 })
             );
