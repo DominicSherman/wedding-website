@@ -8,7 +8,10 @@ import {Provider} from 'react-redux';
 import {applyMiddleware, createStore} from 'redux';
 import thunk from 'redux-thunk';
 import reducer from './reducer';
+import * as reactRedux from 'react-redux';
 
+console.log('reactRedux', reactRedux);
+console.log('Provider', Provider);
 const store = createStore(reducer, applyMiddleware(thunk));
 
 const Main = withRouter(MainContainer);
