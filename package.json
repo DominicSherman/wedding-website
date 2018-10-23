@@ -95,7 +95,7 @@
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"
     ],
     "moduleNameMapper": {
-      "^react-redux": "<rootDir>/test/mocks/react-redux-stub.js"
+      "^react-redux": "<rootDir>/test/stubs/react-redux-stub.js"
     },
     "moduleFileExtensions": [
       "web.js",

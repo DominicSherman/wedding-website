@@ -42,7 +42,7 @@ export const setRSVPData = () => (dispatch, getState) => {
         if (dataObject) {
             const data = Object.keys(dataObject).map((key) => dataObject[key]);
             const count = data.reduce((accum, item) => accum + Number(item.numberInParty), 0);
-            data.sort((a, b) => a.date < b.date ? 1 : -1);
+            data.sort((a, b) => a.date > b.date ? 1 : -1);
 
             dispatch(action(SET_RSVPS, {
                 data,
