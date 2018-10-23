@@ -76,7 +76,6 @@
       "src/**/*.{js,jsx}"
     ],
     "coveragePathIgnorePatterns": [
-      "<rootDir>/src/other",
       "<rootDir>/src/constants"
     ],
     "setupFiles": [
