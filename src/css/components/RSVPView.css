@@ -1,3 +1,9 @@
+.RSVPView-header {
+    align-items: center;
+    padding-right: 5%;
+    padding-left: 1%;
+}
+
 .RSVPView-body {
     width: 90%;
     margin-left: 5%;
@@ -11,4 +17,13 @@
     border-color: lightgrey;
     margin-top: 2%;
     margin-bottom: 2%;
+}
+
+.RSVPView-button {
+    height: 50%;
+    width: 20%;
+}
+
+.RSVPView-headerText {
+    font-family: Lubalin;
 }

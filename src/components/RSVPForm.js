@@ -30,17 +30,11 @@ export default class RSVPForm extends Component {
 
     render() {
         return (
-            <div>
-                <button
-                    className={'Buttons-smallFont'}
-                    onClick={this.props.toggleFormVisible}
-                >
-                    {'View RSVPs'}
-                </button>
+            <div className={'RSVPForm-wrapper'}>
                 <form onSubmit={this.handleSubmit}>
                     <div className={'column center'}>
                         <div className={'RSVPForm spaceBetween'}>
-                            <a>{'Name: '}</a>
+                            <b><a>{'Name: '}</a></b>
                             <input
                                 type={'text'}
                                 value={this.state.name}
@@ -48,19 +42,25 @@ export default class RSVPForm extends Component {
                             />
                         </div>
                         <div className={'RSVPForm spaceBetween'}>
-                            <a>{'# in Party: '}</a>
+                            <b><a>{'# in party: '}</a></b>
                             <input
                                 type={'text'}
                                 value={this.state.numberInParty}
                                 onChange={(event) => this.setNumInParty(event.target.value)}
                             />
                         </div>
-                        <div className={'RSVPForm center'}>
+                        <div className={'RSVPForm spaceEvenly'}>
                             <button
                                 type={'submit'}
                                 className={'Buttons-mediumFont'}
                             >
-                                {'SUBMIT'}
+                                {'Submit'}
+                            </button>
+                            <button
+                                className={'Buttons-mediumFont RSVPForm-rsvpsButton'}
+                                onClick={this.props.toggleFormVisible}
+                            >
+                                {'View RSVPs'}
                             </button>
                         </div>
                     </div>
