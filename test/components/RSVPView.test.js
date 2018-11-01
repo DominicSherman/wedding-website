@@ -11,12 +11,12 @@ describe('RSVPView', () => {
 
         renderedComponent,
 
-        renderedButton,
         renderedTotalDiv,
         renderedDivider,
         renderedBodyDiv,
 
         renderedTotalHeader,
+        renderedButton,
 
         renderedNameDiv,
         renderedCountDiv,
@@ -33,13 +33,15 @@ describe('RSVPView', () => {
 
     const cacheChildren = () => {
         [
-            renderedButton,
             renderedTotalDiv,
             renderedDivider,
             renderedBodyDiv
         ] = renderedComponent.props.children;
 
-        renderedTotalHeader = renderedTotalDiv.props.children;
+        [
+            renderedTotalHeader,
+            renderedButton,
+        ] = renderedTotalDiv.props.children;
 
         [
             renderedNameDiv,
@@ -100,13 +102,13 @@ describe('RSVPView', () => {
 
     it('should render a button to view the form', () => {
         expect(renderedButton.type).toBe('button');
-        expect(renderedButton.props.className).toBe('Buttons-smallFont');
+        expect(renderedButton.props.className).toBe('Buttons-smallFont RSVPView-button');
         expect(renderedButton.props.onClick).toBe(expectedProps.toggleFormVisible);
     });
 
     it('should render a total div', () => {
         expect(renderedTotalDiv.type).toBe('div');
-        expect(renderedTotalDiv.props.className).toBe('row center');
+        expect(renderedTotalDiv.props.className).toBe('RSVPView-header row spaceBetween');
     });
 
     it('should render the total header text', () => {

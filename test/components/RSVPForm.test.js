@@ -15,7 +15,6 @@ describe('RSVPForm', () => {
         renderedInstance,
         renderedComponent,
 
-        renderedButton,
         renderedForm,
 
         renderedFormDiv,
@@ -30,13 +29,11 @@ describe('RSVPForm', () => {
         renderedParty,
         renderedPartyInput,
 
-        renderedSubmitButton;
+        renderedSubmitButton,
+        renderedViewRSVPButton;
 
     const cacheChildren = () => {
-        [
-            renderedButton,
-            renderedForm
-        ] = renderedComponent.props.children;
+        renderedForm = renderedComponent.props.children;
 
         renderedFormDiv = renderedForm.props.children;
 
@@ -56,7 +53,10 @@ describe('RSVPForm', () => {
             renderedPartyInput
         ] = renderedPartyDiv.props.children;
 
-        renderedSubmitButton = renderedButtonDiv.props.children;
+        [
+            renderedSubmitButton,
+            renderedViewRSVPButton
+        ] = renderedButtonDiv.props.children;
     };
 
     const renderComponent = () => {
@@ -117,15 +117,6 @@ describe('RSVPForm', () => {
         expect(renderedComponent.type).toBe('div');
     });
 
-    it('should render a button to View RSVPs', () => {
-        expect(renderedButton.type).toBe('button');
-        expect(renderedButton.props.className).toBe('Buttons-smallFont');
-
-        renderedButton.props.onClick();
-
-        expect(expectedProps.toggleFormVisible).toHaveBeenCalledTimes(1);
-    });
-
     it('should render a form', () => {
         expect(renderedForm.type).toBe('form');
         expect(renderedForm.props.onSubmit).toBe(renderedInstance.handleSubmit);
@@ -142,8 +133,11 @@ describe('RSVPForm', () => {
     });
 
     it('should render text for name', () => {
-        expect(renderedName.type).toBe('a');
-        expect(renderedName.props.children).toBe('Name: ');
+        expect(renderedName.type).toBe('b');
+        const item = renderedName.props.children;
+
+        expect(item.type).toBe('a');
+        expect(item.props.children).toBe('Name: ');
     });
 
     it('should render input for name', () => {
@@ -178,8 +172,11 @@ describe('RSVPForm', () => {
     });
 
     it('should render text for numberInParty', () => {
-        expect(renderedParty.type).toBe('a');
-        expect(renderedParty.props.children).toBe('# in Party: ');
+        expect(renderedParty.type).toBe('b');
+        const item = renderedParty.props.children;
+
+        expect(item.type).toBe('a');
+        expect(item.props.children).toBe('# in party: ');
     });
 
     it('should render input for numberInParty', () => {
@@ -210,12 +207,21 @@ describe('RSVPForm', () => {
 
     it('should render a div for the submit button', () => {
         expect(renderedButtonDiv.type).toBe('div');
-        expect(renderedButtonDiv.props.className).toBe('RSVPForm center');
+        expect(renderedButtonDiv.props.className).toBe('RSVPForm spaceEvenly');
     });
 
     it('should render the submit button', () => {
         expect(renderedSubmitButton.type).toBe('button');
         expect(renderedSubmitButton.props.type).toBe('submit');
         expect(renderedSubmitButton.props.className).toBe('Buttons-mediumFont');
+    });
+
+    it('should render a button to View RSVPs', () => {
+        expect(renderedViewRSVPButton.type).toBe('button');
+        expect(renderedViewRSVPButton.props.className).toBe('Buttons-mediumFont RSVPForm-rsvpsButton');
+
+        renderedViewRSVPButton.props.onClick();
+
+        expect(expectedProps.toggleFormVisible).toHaveBeenCalledTimes(1);
     });
 });

@@ -11,7 +11,7 @@ jest.mock('../../src/actions');
 jest.mock('../../src/containers/HomeButtonsContainer');
 jest.mock('../../src/containers/MainContainer');
 
-describe('MainContainer', () => {
+describe('PicturesContainer', () => {
     const getMapStateToProps = () => connect.mock.calls[0][0];
     const getMapDispatchToProps = () => connect.mock.calls[0][1];
 
