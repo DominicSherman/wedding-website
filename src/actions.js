@@ -96,7 +96,7 @@ export const setMedia = () => (dispatch, getState) => {
                 }
             });
 
-            dispatch(action(SET_PICTURES, photos));
+            dispatch(action(SET_PICTURES, photos.reverse()));
             dispatch(action(SET_VIDEOS, videos));
         } else {
             dispatch(action(SET_PICTURES, []));
