@@ -59,11 +59,12 @@ export const setRSVPData = () => (dispatch, getState) => {
 
 export const setMedia = () => (dispatch, getState) => {
     const {config: {env}} = getState();
-    let all = [],
-        photos = [],
-        videos = [];
 
     getMedia(env).on('value', (snapshot) => {
+        let all = [],
+            photos = [],
+            videos = [];
+
         const media = snapshot.val();
 
         if (media) {
