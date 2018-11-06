@@ -8,8 +8,13 @@ import maryStory from '../constants/mary-story';
 import dominicStory from '../constants/dominic-story';
 import {photos} from '../constants/photo-gallery';
 import BrideGroom from '../components/BrideGroom';
+import {setPageViewed} from '../services/analytics-service';
 
 export default class OurStory extends Component {
+    componentDidMount() {
+        setPageViewed('ourStory')
+    }
+
     getImageStyle = () => {
         if (!window.screenTop && !window.screenY) {
             return {

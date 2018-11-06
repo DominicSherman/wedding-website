@@ -8,6 +8,7 @@ import Routing from './Routing';
 import {initializeFirebase} from './services/firebase-service';
 import ModalContainer from './modals/ModalContainer';
 import LoadingScreen from 'react-loading-screen';
+import {initializeAnalytics} from './services/analytics-service';
 
 let headerImageRef;
 
@@ -32,6 +33,7 @@ export default class Main extends Component {
 
     componentWillMount() {
         initializeFirebase();
+        initializeAnalytics();
     }
 
     componentDidMount() {

@@ -1,8 +1,13 @@
 import React, {Component} from 'react';
 import Gallery from 'react-photo-gallery';
 import '../css/screens/Pictures.css';
+import {setPageViewed} from '../services/analytics-service';
 
 export default class Pictures extends Component {
+    componentDidMount() {
+        setPageViewed('pictures')
+    }
+
     render() {
         const {config: {picturesVisible}, pictures} = this.props;
 

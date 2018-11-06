@@ -30,6 +30,7 @@
     "react": "^16.4.2",
     "react-dev-utils": "^5.0.2",
     "react-dom": "^16.4.2",
+    "react-ga": "^2.5.3",
     "react-image-gallery": "^0.8.11",
     "react-loading-screen": "^0.0.17",
     "react-photo-gallery": "^6.2.1",

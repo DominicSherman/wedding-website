@@ -256,7 +256,7 @@ describe('actions', () => {
             expect(dispatchSpy).toHaveBeenCalledWith(action(SET_VIDEOS, expectedVideos));
         });
 
-        it('should set the pictures and videos to empty lists if media isnt returned', () => {
+        it('should set the pictures and videos to empty lists if media is not returned', () => {
             const snapshotCall = onSpy.mock.calls[0][1];
 
             snapshot = {

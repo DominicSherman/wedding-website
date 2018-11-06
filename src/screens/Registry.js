@@ -4,8 +4,13 @@ import '../css/screens/Registry.css';
 import macy from '../assets/macy.png';
 import crate from '../assets/crateandbarrel.png';
 import {crateAndBarrelLink, macyLink} from '../constants/constants';
+import {setPageViewed} from '../services/analytics-service';
 
 export default class Registry extends Component {
+    componentDidMount() {
+        setPageViewed('registry')
+    }
+
     render() {
         return (
             <div className={'Registry-wrapper column center'}>
