@@ -8,6 +8,8 @@ import HomeInfo from '../../src/components/HomeInfo';
 import HomeButtonsContainer from '../../src/containers/HomeButtonsContainer';
 import {setPageViewed} from '../../src/services/analytics-service';
 
+jest.mock('../../src/services/analytics-service');
+
 describe('Home', () => {
     let renderedComponent,
         renderedInstance,
