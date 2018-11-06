@@ -4,9 +4,13 @@ import ShallowRenderer from 'react-test-renderer/shallow';
 import WeddingParty from '../../src/screens/WeddingParty';
 import {bridesmaids, groomsmen} from '../../src/constants/bridal-party';
 import Person from '../../src/components/Person';
+import {setPageViewed} from '../../src/services/analytics-service';
+
+jest.mock('../../src/services/analytics-service');
 
 describe('WeddingParty', () => {
     let renderedComponent,
+        renderedInstance,
 
         renderedGroomsmenDiv,
         renderedBridesmaidDiv,
@@ -31,12 +35,20 @@ describe('WeddingParty', () => {
         shallowRenderer.render(<WeddingParty/>);
 
         renderedComponent = shallowRenderer.getRenderOutput();
+        renderedInstance = shallowRenderer.getMountedInstance();
 
         cacheChildren();
     };
 
     beforeEach(() => {
         renderComponent();
+    });
+
+    it('should set page viewed on componentDidMount', () => {
+        renderedInstance.componentDidMount();
+
+        expect(setPageViewed).toHaveBeenCalledTimes(1);
+        expect(setPageViewed).toHaveBeenCalledWith('weddingParty');
     });
 
     it('should render a root div', () => {

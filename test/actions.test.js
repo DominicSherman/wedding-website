@@ -189,14 +189,19 @@ describe('actions', () => {
     describe('setMedia', () => {
         let onSpy,
             snapshot,
-            sessionData = {},
+            sessionData,
             expectedSessionKeys,
-            expectedPictures = [],
-            expectedVideos = [],
+            expectedPictures,
+            expectedVideos,
             expectedMedia;
 
         beforeEach(() => {
             expectedSessionKeys = chance.n(chance.string, chance.d6() + 1);
+            sessionData = {};
+            expectedMedia = {};
+            expectedPictures = [];
+            expectedVideos = [];
+
             expectedSessionKeys.forEach((key) => {
                 const innerKeys = chance.n(chance.string, chance.d6() + 1);
                 sessionData = {};
@@ -219,6 +224,7 @@ describe('actions', () => {
                     [key]: sessionData
                 };
             });
+
             snapshot = {
                 val: jest.fn(() => expectedMedia)
             };
@@ -226,15 +232,12 @@ describe('actions', () => {
             getMedia.mockReturnValue({
                 on: onSpy
             });
+
             setMedia()(dispatchSpy, getStateStub);
         });
 
         afterEach(() => {
             jest.resetAllMocks();
-            sessionData = {};
-            expectedMedia = {};
-            expectedPictures = [];
-            expectedVideos = [];
         });
 
         it('should call getMedia', () => {
@@ -252,7 +255,7 @@ describe('actions', () => {
 
             snapshotCall(snapshot);
             expect(dispatchSpy).toHaveBeenCalledTimes(2);
-            expect(dispatchSpy).toHaveBeenCalledWith(action(SET_PICTURES, expectedPictures));
+            expect(dispatchSpy).toHaveBeenCalledWith(action(SET_PICTURES, expectedPictures.reverse()));
             expect(dispatchSpy).toHaveBeenCalledWith(action(SET_VIDEOS, expectedVideos));
         });
 

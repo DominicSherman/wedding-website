@@ -5,8 +5,13 @@ import Welcome from '../components/Welcome';
 import WeddingBeginsIn from '../components/WeddingBeginsIn';
 import HomeInfo from '../components/HomeInfo';
 import HomeButtonsContainer from '../containers/HomeButtonsContainer';
+import {setPageViewed} from '../services/analytics-service';
 
 export default class Home extends Component {
+    componentDidMount() {
+        setPageViewed('home');
+    }
+
     render() {
         return (
             <div className={'column'}>

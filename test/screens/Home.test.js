@@ -6,9 +6,11 @@ import Welcome from '../../src/components/Welcome';
 import WeddingBeginsIn from '../../src/components/WeddingBeginsIn';
 import HomeInfo from '../../src/components/HomeInfo';
 import HomeButtonsContainer from '../../src/containers/HomeButtonsContainer';
+import {setPageViewed} from '../../src/services/analytics-service';
 
 describe('Home', () => {
     let renderedComponent,
+        renderedInstance,
 
         renderedTopDiv,
         renderedBottomDiv,
@@ -42,12 +44,20 @@ describe('Home', () => {
         shallowRenderer.render(<Home/>);
 
         renderedComponent = shallowRenderer.getRenderOutput();
+        renderedInstance = shallowRenderer.getMountedInstance();
 
         cacheChildren();
     };
 
     beforeEach(() => {
         renderComponent();
+    });
+
+    it('should set page viewed on componentDidMount', () => {
+        renderedInstance.componentDidMount();
+
+        expect(setPageViewed).toHaveBeenCalledTimes(1);
+        expect(setPageViewed).toHaveBeenCalledWith('home');
     });
 
     it('should render a root div', () => {

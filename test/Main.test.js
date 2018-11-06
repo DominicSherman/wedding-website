@@ -10,8 +10,10 @@ import Footer from '../src/components/Footer';
 import ModalContainer from '../src/modals/ModalContainer';
 import {initializeFirebase} from '../src/services/firebase-service';
 import {DEV, PROD} from '../src/constants/constants';
+import {initializeAnalytics} from '../src/services/analytics-service';
 
 jest.mock('../src/services/firebase-service');
+jest.mock('../src/services/analytics-service');
 jest.useFakeTimers();
 
 const chance = new Chance();
@@ -104,6 +106,10 @@ describe('Main', () => {
 
         it('should call initializeFirebase', () => {
             expect(initializeFirebase).toHaveBeenCalledTimes(1);
+        });
+
+        it('should call initializeAnalytics', () => {
+            expect(initializeAnalytics).toHaveBeenCalledTimes(1);
         });
     });
 

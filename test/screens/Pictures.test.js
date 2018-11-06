@@ -4,13 +4,17 @@ import ShallowRenderer from 'react-test-renderer/shallow';
 import Gallery from 'react-photo-gallery';
 
 import Pictures from '../../src/screens/Pictures';
+import {setPageViewed} from '../../src/services/analytics-service';
+
+jest.mock('../../src/services/analytics-service');
 
 const chance = new Chance();
 
 describe('Pictures', () => {
     let expectedProps,
 
-        renderedComponent;
+        renderedComponent,
+        renderedInstance;
 
     const renderComponent = () => {
         const shallowRenderer = ShallowRenderer.createRenderer();
@@ -18,6 +22,7 @@ describe('Pictures', () => {
         shallowRenderer.render(<Pictures {...expectedProps}/>);
 
         renderedComponent = shallowRenderer.getRenderOutput();
+        renderedInstance = shallowRenderer.getMountedInstance();
     };
 
     beforeEach(() => {
@@ -31,6 +36,14 @@ describe('Pictures', () => {
                 width: chance.natural()
             }), chance.d6() + 1)
         };
+    });
+
+    it('should set page viewed on componentDidMount', () => {
+        renderComponent();
+        renderedInstance.componentDidMount();
+
+        expect(setPageViewed).toHaveBeenCalledTimes(1);
+        expect(setPageViewed).toHaveBeenCalledWith('pictures');
     });
 
     describe('when picturesVisible is false', () => {

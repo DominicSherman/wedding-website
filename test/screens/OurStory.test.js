@@ -8,11 +8,15 @@ import BrideGroom from '../../src/components/BrideGroom';
 import maryStory from '../../src/constants/mary-story';
 import dominicStory from '../../src/constants/dominic-story';
 import {photos} from '../../src/constants/photo-gallery';
+import {setPageViewed} from '../../src/services/analytics-service';
+
+jest.mock('../../src/services/analytics-service');
 
 const chance = new Chance();
 
 describe('OurStory', () => {
     let renderedComponent,
+        renderedInstance,
 
         renderedTopDiv,
         renderedDivider,
@@ -54,12 +58,20 @@ describe('OurStory', () => {
         shallowRenderer.render(<OurStory/>);
 
         renderedComponent = shallowRenderer.getRenderOutput();
+        renderedInstance = shallowRenderer.getMountedInstance();
 
         cacheChildren();
     };
 
     beforeEach(() => {
         renderComponent();
+    });
+
+    it('should set page viewed on componentDidMount', () => {
+        renderedInstance.componentDidMount();
+
+        expect(setPageViewed).toHaveBeenCalledTimes(1);
+        expect(setPageViewed).toHaveBeenCalledWith('ourStory');
     });
 
     it('should render a root div', () => {
