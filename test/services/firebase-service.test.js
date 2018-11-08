@@ -4,7 +4,7 @@ import Chance from 'chance';
 import {getMedia, getRSVPData, initializeFirebase, insertRSVP} from '../../src/services/firebase-service';
 import {config} from '../../src/config';
 import {DEV, PROD} from '../../src/constants/constants';
-import {getCurrentTime} from '../../src/constants/helper-functions';
+import {getCurrentTime} from '../../src/services/service';
 
 jest.mock('firebase');
 jest.mock('../../src/constants/helper-functions');

@@ -1,6 +1,6 @@
 import firebase from 'firebase';
 import {config} from '../config';
-import {getCurrentTime} from '../constants/helper-functions';
+import {getCurrentTime} from './service';
 
 let isInitialized = false;
 export const initializeFirebase = () => {

@@ -4,6 +4,7 @@ import rightGraphic from '../assets/graphics/rsvpright.png';
 
 import '../css/components/HomeButtons.css';
 import '../css/Buttons.css';
+import {openAppLink} from '../services/service';
 
 export default class HomeButtons extends Component {
     render() {
@@ -20,7 +21,12 @@ export default class HomeButtons extends Component {
                 >
                     {'RSVP'}
                 </button>
-                <button className={'Buttons-mediumFont'}>{'Download the App'}</button>
+                <button
+                    className={'Buttons-mediumFont'}
+                    onClick={openAppLink}
+                >
+                    {'Download the App'}
+                </button>
                 <img
                     alt={''}
                     className={'HomeButtons-graphics'}

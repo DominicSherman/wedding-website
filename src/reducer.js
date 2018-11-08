@@ -3,11 +3,12 @@ import {
     SET_ENV, SET_PICTURES,
     SET_RSVP_MODAL_VISIBLE, SET_RSVPS, SET_PICTURES_VISIBLE, SET_VIDEOS
 } from './constants/action-types';
+import {PROD} from './constants/constants';
 
 const defaultState = {
     adminMenuVisible: false,
     config: {
-        env: 'dev',
+        env: PROD,
         picturesVisible: false
     },
     rsvpModalVisible: false,

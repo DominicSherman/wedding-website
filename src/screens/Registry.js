@@ -25,7 +25,6 @@ export default class Registry extends Component {
                                 alt={''}
                                 className={'Registry-logo'}
                                 src={macy}
-
                             />
                         </a>
                     </div>
