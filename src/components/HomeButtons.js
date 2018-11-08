@@ -4,7 +4,7 @@ import rightGraphic from '../assets/graphics/rsvpright.png';
 
 import '../css/components/HomeButtons.css';
 import '../css/Buttons.css';
-import {openAppLink} from '../services/service';
+import {openAppLink} from '../constants/service';
 
 export default class HomeButtons extends Component {
     render() {

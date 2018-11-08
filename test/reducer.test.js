@@ -6,6 +6,7 @@ import {
     SET_PICTURES_VISIBLE,
     SET_RSVP_MODAL_VISIBLE, SET_RSVPS, SET_VIDEOS
 } from '../src/constants/action-types';
+import {PROD} from '../src/constants/constants';
 
 const chance = new Chance();
 
@@ -13,7 +14,7 @@ describe('reducer', () => {
     const defaultState = {
         adminMenuVisible: false,
         config: {
-            env: 'dev',
+            env: PROD,
             picturesVisible: false
         },
         rsvpModalVisible: false,

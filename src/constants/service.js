@@ -1,5 +1,5 @@
 import {isMobile, isIOS, isAndroid} from 'react-device-detect';
-import {androidAppLink, iosAppLink} from '../constants/constants';
+import {androidAppLink, iosAppLink} from './constants';
 
 export const getCurrentTime = () => {
     const today = new Date();
