@@ -3,7 +3,7 @@ import Chance from 'chance';
 
 import {getMedia, getRSVPData, initializeFirebase, insertRSVP} from '../../src/services/firebase-service';
 import {config} from '../../src/config';
-import {DEV, PROD} from '../../src/constants/constants';
+import {DEV, eventId, PROD} from '../../src/constants/constants';
 import {getCurrentTime} from '../../src/constants/service';
 
 jest.mock('firebase');
@@ -26,7 +26,7 @@ describe('firebase-service', () => {
     afterEach(() => {
         jest.resetAllMocks();
     });
-    
+
     describe('initalizeFirebase', () => {
         it('should initialize firebase', () => {
             initializeFirebase();
@@ -76,18 +76,28 @@ describe('firebase-service', () => {
             refSpy.mockReturnValue({
                 child: childSpy
             });
-
-            await insertRSVP(expectedName, expectedNumberInParty, expectedEnv);
         });
 
-        it('should insert the RSVP', async () => {
+        afterEach(() => {
+            jest.resetAllMocks();
+        });
+
+        it('should insert the RSVP if there is name and numberInParty', async () => {
+            await insertRSVP(expectedName, expectedNumberInParty, expectedEnv);
+
             expect(firebase.database).toHaveBeenCalledTimes(1);
             expect(refSpy).toHaveBeenCalledTimes(1);
-            expect(refSpy).toHaveBeenCalledWith(`${expectedEnv}/rsvps`);
+            expect(refSpy).toHaveBeenCalledWith(`${expectedEnv}/rsvps/${eventId[expectedEnv]}`);
             expect(childSpy).toHaveBeenCalledTimes(1);
             expect(childSpy).toHaveBeenCalledWith(expectedChild);
             expect(setSpy).toHaveBeenCalledTimes(1);
             expect(setSpy).toHaveBeenCalledWith(expectedPayload);
+        });
+
+        it('should not insert the RSVP if there is not a name and numberInParty', async () => {
+            await insertRSVP('', '', expectedEnv);
+
+            expect(firebase.database).not.toHaveBeenCalled();
         });
     });
 
@@ -97,7 +107,7 @@ describe('firebase-service', () => {
 
             expect(firebase.database).toHaveBeenCalledTimes(1);
             expect(refSpy).toHaveBeenCalledTimes(1);
-            expect(refSpy).toHaveBeenCalledWith(`${expectedEnv}/rsvps`);
+            expect(refSpy).toHaveBeenCalledWith(`${expectedEnv}/rsvps/${eventId[expectedEnv]}`);
         });
     });
 
@@ -107,7 +117,7 @@ describe('firebase-service', () => {
 
             expect(firebase.database).toHaveBeenCalledTimes(1);
             expect(refSpy).toHaveBeenCalledTimes(1);
-            expect(refSpy).toHaveBeenCalledWith(`${expectedEnv}/media`);
+            expect(refSpy).toHaveBeenCalledWith(`${expectedEnv}/media/${eventId[expectedEnv]}`);
         });
     });
 });

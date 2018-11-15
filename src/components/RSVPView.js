@@ -7,16 +7,16 @@ export default class RSVPView extends Component {
     render() {
         const {data, count, toggleFormVisible} = this.props;
 
-        const renderedNames = Object.keys(data).map((key) =>
-            <p key={key}>{data[key].name}</p>
+        const renderedNames = data.map((item, index) =>
+            <p key={index}>{item.name}</p>
         );
 
-        const renderedNumbers = Object.keys(data).map((key) =>
-            <p key={key}>{data[key].numberInParty}</p>
+        const renderedNumbers = data.map((item, index) =>
+            <p key={index}>{item.numberInParty}</p>
         );
 
-        const renderedDates = Object.keys(data).map((key) =>
-            <p key={key}>{data[key].date}</p>
+        const renderedDates = data.map((item, index) =>
+            <p key={index}>{item.date}</p>
         );
 
         return (
@@ -34,20 +34,27 @@ export default class RSVPView extends Component {
                     className={'RSVPView-divider'}
                     noshade="true"
                 />
-                <div className={'RSVPView-body row spaceBetween'}>
-                    <div className={'column spaceEvenly'}>
-                        <h3 className={'RSVPView-headerText'}>{'Name'}</h3>
-                        {renderedNames}
-                    </div>
-                    <div className={'column spaceEvenly'}>
-                        <h3 className={'RSVPView-headerText'}>{'Number in Party'}</h3>
-                        {renderedNumbers}
-                    </div>
-                    <div className={'column spaceEvenly'}>
-                        <h3 className={'RSVPView-headerText'}>{'RSVP Date'}</h3>
-                        {renderedDates}
-                    </div>
-                </div>
+                {
+                    data.length ?
+                        <div className={'RSVPView-body row spaceBetween'}>
+                            <div className={'column spaceEvenly'}>
+                                <h3 className={'RSVPView-headerText'}>{'Name'}</h3>
+                                {renderedNames}
+                            </div>
+                            <div className={'column spaceEvenly'}>
+                                <h3 className={'RSVPView-headerText'}>{'Number in Party'}</h3>
+                                {renderedNumbers}
+                            </div>
+                            <div className={'column spaceEvenly'}>
+                                <h3 className={'RSVPView-headerText'}>{'RSVP Date'}</h3>
+                                {renderedDates}
+                            </div>
+                        </div>
+                        :
+                        <div className={'row center'}>
+                            <p>{'No RSVPs yet'}</p>
+                        </div>
+                }
             </div>
         );
     }

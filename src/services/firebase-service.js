@@ -1,6 +1,7 @@
 import firebase from 'firebase';
 import {config} from '../config';
 import {getCurrentTime} from '../constants/service';
+import {eventId} from '../constants/constants';
 
 let isInitialized = false;
 export const initializeFirebase = () => {
@@ -19,9 +20,11 @@ export const insertRSVP = async (name, numberInParty, env) => {
 
     const child = `${name.replace(/[^a-zA-Z0-9]/g, '')}-${Date.now()}`;
 
-    await firebase.database().ref(`${env}/rsvps`).child(child).set(payload);
+    if (name !== '' && numberInParty !== '') {
+        await firebase.database().ref(`${env}/rsvps/${eventId[env]}`).child(child).set(payload);
+    }
 };
 
-export const getRSVPData = (env) => firebase.database().ref(`${env}/rsvps`);
+export const getRSVPData = (env) => firebase.database().ref(`${env}/rsvps/${eventId[env]}`);
 
-export const getMedia = (env) => firebase.database().ref(`${env}/media`);
+export const getMedia = (env) => firebase.database().ref(`${env}/media/${eventId[env]}`);
