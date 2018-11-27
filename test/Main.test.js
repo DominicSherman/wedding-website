@@ -11,9 +11,11 @@ import ModalContainer from '../src/modals/ModalContainer';
 import {initializeFirebase} from '../src/services/firebase-service';
 import {DEV, PROD} from '../src/constants/constants';
 import {initializeAnalytics} from '../src/services/analytics-service';
+import {calculateDaysLeft} from '../src/constants/service';
 
 jest.mock('../src/services/firebase-service');
 jest.mock('../src/services/analytics-service');
+jest.mock('../src/constants/service');
 jest.useFakeTimers();
 
 const chance = new Chance();
@@ -67,6 +69,7 @@ describe('Main', () => {
         expectedProps = {
             actions: {
                 toggleAdminMenu: jest.fn(),
+                togglePicturesVisible: jest.fn(),
                 setRSVPData: jest.fn(),
                 setMedia: jest.fn()
             },
@@ -178,6 +181,20 @@ describe('Main', () => {
         it('should call the actions', () => {
             expect(expectedProps.actions.setRSVPData).toHaveBeenCalledTimes(1);
             expect(expectedProps.actions.setMedia).toHaveBeenCalledTimes(1);
+        });
+
+        it('should toggle pictures visible if calculate days left is 0 or less', () => {
+            calculateDaysLeft.mockReturnValue(chance.natural({max: 0}));
+            renderedInstance.componentDidMount();
+
+            expect(expectedProps.actions.togglePicturesVisible).toHaveBeenCalledTimes(1);
+        });
+
+        it('should not if calculate days left is more than 0', () => {
+            calculateDaysLeft.mockReturnValue(chance.natural({min: 1}));
+            renderedInstance.componentDidMount();
+
+            expect(expectedProps.actions.togglePicturesVisible).not.toHaveBeenCalled();
         });
     });
 

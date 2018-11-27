@@ -1,10 +1,10 @@
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import WeddingBeginsIn from '../../src/components/WeddingBeginsIn';
+import {calculateDaysLeft} from '../../src/constants/service';
 
 describe('WeddingBeginsIn', () => {
     let renderedComponent,
-        renderedInstance,
 
         renderedTopDiv,
         renderedBottomDiv,
@@ -30,7 +30,6 @@ describe('WeddingBeginsIn', () => {
         shallowRenderer.render(<WeddingBeginsIn/>);
 
         renderedComponent = shallowRenderer.getRenderOutput();
-        renderedInstance = shallowRenderer.getMountedInstance();
 
         cacheChildren();
     };
@@ -63,6 +62,6 @@ describe('WeddingBeginsIn', () => {
     it('should render the days text', () => {
         expect(renderedDaysText.type).toBe('p');
         expect(renderedDaysText.props.className).toBe('WeddingBeginsIn-daysLeftText');
-        expect(renderedDaysText.props.children).toBe(`${renderedInstance.calculateDaysLeft()} DAYS`);
+        expect(renderedDaysText.props.children).toBe(`${calculateDaysLeft()} DAYS`);
     });
 });
