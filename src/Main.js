@@ -9,6 +9,7 @@ import {initializeFirebase} from './services/firebase-service';
 import ModalContainer from './modals/ModalContainer';
 import LoadingScreen from 'react-loading-screen';
 import {initializeAnalytics} from './services/analytics-service';
+import {calculateDaysLeft} from './constants/service';
 
 let headerImageRef;
 
@@ -48,6 +49,10 @@ export default class Main extends Component {
 
         this.props.actions.setRSVPData();
         this.props.actions.setMedia();
+
+        if (calculateDaysLeft() <= 0) {
+            this.props.actions.togglePicturesVisible();
+        }
     }
 
     componentDidUpdate(prevProps) {

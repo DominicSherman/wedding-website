@@ -20,3 +20,11 @@ export const openAppLink = () => {
         }
     }
 };
+
+export const calculateDaysLeft = () => {
+    const oneDay = 24 * 60 * 60 * 1000;
+    const weddingDay = new Date("2019-05-28T00:00:00-08:00").getTime();
+    const now = Date.now();
+
+    return Math.floor((weddingDay - now) / (oneDay));
+};
