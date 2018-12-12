@@ -21,12 +21,12 @@ export default class HomeButtons extends Component {
                 >
                     {'RSVP'}
                 </button>
-                {/*<button*/}
-                    {/*className={'Buttons-mediumFont'}*/}
-                    {/*onClick={openAppLink}*/}
-                {/*>*/}
-                    {/*{'Download the App'}*/}
-                {/*</button>*/}
+                <button
+                    className={'Buttons-mediumFont'}
+                    onClick={openAppLink}
+                >
+                    {'Download the App'}
+                </button>
                 <img
                     alt={''}
                     className={'HomeButtons-graphics'}
