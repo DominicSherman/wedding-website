@@ -6,6 +6,7 @@ import groom from '../assets/groom.jpg';
 import '../css/screens/OurStory.css';
 import maryStory from '../constants/mary-story';
 import dominicStory from '../constants/dominic-story';
+import gabeStory from '../constants/gabe-story';
 import {photos} from '../constants/photo-gallery';
 import BrideGroom from '../components/BrideGroom';
 import {setPageViewed} from '../services/analytics-service';
@@ -63,6 +64,14 @@ export default class OurStory extends Component {
                         }
                         showIndex
                     />
+                </div>
+                <hr
+                    className={'OurStory-divider'}
+                    noshade="true"
+                />
+                <p className={'OurStory-headerText2'}>{'THE BEST MAN'}</p>
+                <div className={'row center'}>
+                    <div className={'OurStory-bestManWrapper'}>{gabeStory}</div>
                 </div>
             </div>
         );
