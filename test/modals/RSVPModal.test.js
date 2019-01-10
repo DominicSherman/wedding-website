@@ -50,7 +50,6 @@ describe('RSVPModal', () => {
 
     it('should render a root Modal', () => {
         expect(renderedComponent.type).toBe(Modal);
-        expect(renderedComponent.props.classNames).toEqual({overlay: 'RSVPModal-Overlay', modal: 'RSVPModal-Modal'});
         expect(renderedComponent.props.open).toBe(expectedProps.modalVisible);
         expect(renderedComponent.props.onClose).toBe(expectedProps.actions.toggleRSVPModal);
     });

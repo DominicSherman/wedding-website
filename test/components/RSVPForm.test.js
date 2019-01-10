@@ -15,13 +15,11 @@ describe('RSVPForm', () => {
         renderedInstance,
         renderedComponent,
 
-        renderedForm,
-
-        renderedFormDiv,
+        renderedInputDiv,
+        renderedButtonsDiv,
 
         renderedNameDiv,
         renderedPartyDiv,
-        renderedButtonDiv,
 
         renderedName,
         renderedNameInput,
@@ -33,15 +31,15 @@ describe('RSVPForm', () => {
         renderedViewRSVPButton;
 
     const cacheChildren = () => {
-        renderedForm = renderedComponent.props.children;
-
-        renderedFormDiv = renderedForm.props.children;
+        [
+            renderedInputDiv,
+            renderedButtonsDiv
+        ] = renderedComponent.props.children;
 
         [
             renderedNameDiv,
-            renderedPartyDiv,
-            renderedButtonDiv
-        ] = renderedFormDiv.props.children;
+            renderedPartyDiv
+        ] = renderedInputDiv.props.children;
 
         [
             renderedName,
@@ -56,7 +54,7 @@ describe('RSVPForm', () => {
         [
             renderedSubmitButton,
             renderedViewRSVPButton
-        ] = renderedButtonDiv.props.children;
+        ] = renderedButtonsDiv.props.children;
     };
 
     const renderComponent = () => {
@@ -84,32 +82,49 @@ describe('RSVPForm', () => {
     });
 
     describe('handleSubmit', () => {
-        let expectedEvent,
-            preventDefaultSpy;
+        let name,
+            numInParty;
 
-        beforeEach(() => {
-            preventDefaultSpy = jest.fn();
-            expectedEvent = {
-                preventDefault: preventDefaultSpy
-            };
+        describe('when the name and numberInParty is set', () => {
+            beforeEach(async () => {
+                name = chance.string();
+                numInParty = chance.string();
+
+                renderedInstance.setName(name);
+                renderedInstance.setNumInParty(numInParty);
+                await renderedInstance.handleSubmit();
+            });
+
+            it('should insert the RSVP', async () => {
+                expect(insertRSVP).toHaveBeenCalledTimes(1);
+                expect(insertRSVP).toHaveBeenCalledWith(name, numInParty, expectedProps.env);
+            });
+
+            it('should reset the state', () => {
+                expect(renderedInstance.state).toEqual(renderedInstance.initialState);
+            });
+
+            it('should toggle the formVisible', () => {
+                expect(expectedProps.toggleFormVisible).toHaveBeenCalledTimes(1);
+            });
         });
 
-        it('should prevent the default event', async () => {
-            await renderedInstance.handleSubmit(expectedEvent);
+        describe('when the name is not set', () => {
+            it('should do nothing', async () => {
+                await renderedInstance.handleSubmit();
 
-            expect(preventDefaultSpy).toHaveBeenCalledTimes(1);
+                expect(insertRSVP).not.toHaveBeenCalled();
+            });
         });
 
-        it('should insert the RSVP', async () => {
-            const name = chance.string();
-            const numInParty = chance.string();
+        describe('when the numberInParty is not set', () => {
+            it('should do nothing', async () => {
+                name = chance.string();
+                renderedInstance.setName(name);
+                await renderedInstance.handleSubmit();
 
-            renderedInstance.setName(name);
-            renderedInstance.setNumInParty(numInParty);
-            await renderedInstance.handleSubmit(expectedEvent);
-
-            expect(insertRSVP).toHaveBeenCalledTimes(1);
-            expect(insertRSVP).toHaveBeenCalledWith(name, numInParty, expectedProps.env);
+                expect(insertRSVP).not.toHaveBeenCalled();
+            });
         });
     });
 
@@ -117,97 +132,118 @@ describe('RSVPForm', () => {
         expect(renderedComponent.type).toBe('div');
     });
 
-    it('should render a form', () => {
-        expect(renderedForm.type).toBe('form');
-        expect(renderedForm.props.onSubmit).toBe(renderedInstance.handleSubmit);
-    });
-
-    it('should render a wrapper div for the form', () => {
-        expect(renderedFormDiv.type).toBe('div');
-        expect(renderedFormDiv.props.className).toBe('column center');
+    it('should render a div for the inputs', () => {
+        expect(renderedInputDiv.type).toBe('div');
     });
 
     it('should render a div for the name input', () => {
         expect(renderedNameDiv.type).toBe('div');
-        expect(renderedNameDiv.props.className).toBe('RSVPForm spaceBetween');
     });
 
     it('should render text for name', () => {
-        expect(renderedName.type).toBe('b');
-        const item = renderedName.props.children;
-
-        expect(item.type).toBe('a');
-        expect(item.props.children).toBe('Name: ');
+        expect(renderedName.type).toBe('p');
+        expect(renderedName.props.children).toBe('Name')
     });
 
-    it('should render input for name', () => {
-        const name = chance.string();
+    describe('name input', () => {
+        it('should render input for name', () => {
+            const name = chance.string();
 
-        renderedInstance.setName(name);
-        renderedComponent = renderedInstance.render();
-        cacheChildren();
+            renderedInstance.setName(name);
+            renderedComponent = renderedInstance.render();
+            cacheChildren();
 
-        expect(renderedNameInput.type).toBe('input');
-        expect(renderedNameInput.props.type).toBe('text');
-        expect(renderedNameInput.props.value).toBe(name);
-    });
-
-    it('should set the name onChange', () => {
-        const name = chance.string();
-
-        renderedNameInput.props.onChange({
-            target: {
-                value: name
-            }
+            expect(renderedNameInput.type).toBe('input');
+            expect(renderedNameInput.props.type).toBe('text');
+            expect(renderedNameInput.props.value).toBe(name);
         });
-        renderedComponent = renderedInstance.render();
-        cacheChildren();
 
-        expect(renderedNameInput.props.value).toBe(name);
+        it('should set the name onChange', () => {
+            const name = chance.string();
+
+            renderedNameInput.props.onChange({
+                target: {
+                    value: name
+                }
+            });
+
+            expect(renderedInstance.state.name).toBe(name);
+        });
+
+        it('should set namePlaceholderVisible onFocus', () => {
+            renderedNameInput.props.onFocus();
+
+            expect(renderedInstance.state.namePlaceholderVisible).toBeFalsy();
+        });
+
+        it('should set namePlaceholderVisible onBlur if there is no name', () => {
+            renderedNameInput.props.onBlur();
+
+            expect(renderedInstance.state.namePlaceholderVisible).toBeTruthy();
+        });
+
+        it('should **not** set the namePlaceHolderVisible onBlur if there is a name', () => {
+            renderedInstance.setName(chance.string());
+            renderedInstance.setNamePlaceholderVisible(false);
+            renderedNameInput.props.onBlur();
+
+            expect(renderedInstance.state.namePlaceholderVisible).toBeFalsy();
+        });
     });
 
     it('should render a div for the numberInParty input', () => {
         expect(renderedPartyDiv.type).toBe('div');
-        expect(renderedPartyDiv.props.className).toBe('RSVPForm spaceBetween');
     });
 
-    it('should render text for numberInParty', () => {
-        expect(renderedParty.type).toBe('b');
-        const item = renderedParty.props.children;
+    describe('numberInParty input', () => {
+        it('should render input for numberInParty', () => {
+            const numberInParty = chance.string();
 
-        expect(item.type).toBe('a');
-        expect(item.props.children).toBe('# in party: ');
-    });
+            renderedInstance.setNumInParty(numberInParty);
+            renderedComponent = renderedInstance.render();
+            cacheChildren();
 
-    it('should render input for numberInParty', () => {
-        const numberInParty = chance.string();
-
-        renderedInstance.setNumInParty(numberInParty);
-        renderedComponent = renderedInstance.render();
-        cacheChildren();
-
-        expect(renderedPartyInput.type).toBe('input');
-        expect(renderedPartyInput.props.type).toBe('text');
-        expect(renderedPartyInput.props.value).toBe(numberInParty);
-    });
-
-    it('should set the numberInParty onChange', () => {
-        const numberInParty = chance.string();
-
-        renderedPartyInput.props.onChange({
-            target: {
-                value: numberInParty
-            }
+            expect(renderedPartyInput.type).toBe('input');
+            expect(renderedPartyInput.props.type).toBe('text');
+            expect(renderedPartyInput.props.value).toBe(numberInParty);
         });
-        renderedComponent = renderedInstance.render();
-        cacheChildren();
 
-        expect(renderedPartyInput.props.value).toBe(numberInParty);
+        it('should set the numberInParty onChange', () => {
+            const numberInParty = chance.string();
+
+            renderedPartyInput.props.onChange({
+                target: {
+                    value: numberInParty
+                }
+            });
+
+            expect(renderedInstance.state.numberInParty).toBe(numberInParty);
+        });
+
+        it('should set numberInPartyPlaceholderVisible onFocus', () => {
+            renderedPartyInput.props.onFocus();
+
+            expect(renderedInstance.state.numberInPartyPlaceholderVisible).toBeFalsy();
+        });
+
+        it('should set numberInPartyPlaceholderVisible onBlur if there is no numberInParty', () => {
+            renderedPartyInput.props.onBlur();
+
+            expect(renderedInstance.state.numberInPartyPlaceholderVisible).toBeTruthy();
+        });
+
+        it('should **not** set the numberInPartyPlaceHolderVisible onBlur if there is a numberInParty', () => {
+            renderedInstance.setNumInParty(chance.string());
+            renderedInstance.setNumberInPartyPlaceholderVisible(false);
+            renderedPartyInput.props.onBlur();
+
+            expect(renderedInstance.state.numberInPartyPlaceholderVisible).toBeFalsy();
+        });
     });
 
     it('should render a div for the submit button', () => {
-        expect(renderedButtonDiv.type).toBe('div');
-        expect(renderedButtonDiv.props.className).toBe('RSVPForm spaceEvenly');
+        expect(renderedButtonsDiv.type).toBe('div');
+        expect(renderedButtonsDiv.props.className).toBe('RSVPForm spaceEvenly');
     });
 
     it('should render the submit button', () => {

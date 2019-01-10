@@ -1,14 +1,10 @@
-.RSVPForm {
-    display: flex;
-    flex-direction: row;
-    padding-top: 2%;
-    margin-left: 13%;
-    width: 80%;
-    font-size: 1.6vw;
-}
-
 .RSVPForm-wrapper {
     margin: 2%;
+}
+
+.RSVPForm-inputWrapper {
+    align-items: center;
+    width: 100%;
 }
 
 .RSVPForm-rsvpsButton {
@@ -17,4 +13,30 @@
     padding-bottom: 1.5%;
     width: 30%;
     font-size: 1.25vw;
+}
+
+.RSVPForm-singleInputWrapper {
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.RSVPForm-label {
+    position: absolute;
+    left: 10%;
+    top: 5%;
+    color: #bbb;
+}
+
+input {
+    color: #8a8a8a;
+    width: 80%;
+    padding: 2%;
+    border: 1px solid #ccc;
+    border-radius: 27px;
+    background-color: #fff;
+    font-family: 'Avenir';
+    font-size: 105%;
+    letter-spacing: 0.8px;
+    outline: none;
 }

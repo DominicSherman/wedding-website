@@ -6,3 +6,11 @@
     background: white;
     width: 50%;
 }
+
+.RSVPModal-closeIcon {
+    outline: none;
+}
+
+.RSVPModal-closeIcon:hover {
+    cursor: pointer;
+}

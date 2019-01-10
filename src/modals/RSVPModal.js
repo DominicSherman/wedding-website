@@ -23,7 +23,11 @@ export default class RSVPModal extends Component {
 
         return (
             <Modal
-                classNames={{overlay: 'RSVPModal-Overlay', modal: 'RSVPModal-Modal'}}
+                classNames={{
+                    closeIcon: 'RSVPModal-closeIcon',
+                    overlay: 'RSVPModal-Overlay',
+                    modal: 'RSVPModal-Modal'
+                }}
                 open={modalVisible}
                 onClose={actions.toggleRSVPModal}
             >
