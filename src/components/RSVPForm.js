@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {insertRSVP} from '../services/firebase-service';
+import {isMobile} from 'react-device-detect';
 
 import '../css/components/RSVPForm.css';
 import '../css/Buttons.css';
@@ -10,9 +11,7 @@ export default class RSVPForm extends Component {
 
         this.initialState = {
             name: '',
-            numberInParty: '',
-            namePlaceholderVisible: true,
-            numberInPartyPlaceholderVisible: true
+            numberInParty: ''
         };
 
         this.state = this.initialState;
@@ -23,10 +22,6 @@ export default class RSVPForm extends Component {
     setName = (name) => this.setState({name});
 
     setNumInParty = (numberInParty) => this.setState({numberInParty});
-
-    setNamePlaceholderVisible = (namePlaceholderVisible) => this.setState({namePlaceholderVisible});
-
-    setNumberInPartyPlaceholderVisible = (numberInPartyPlaceholderVisible) => this.setState({numberInPartyPlaceholderVisible});
 
     handleSubmit = async () => {
         if (this.state.name !== '' && this.state.numberInParty !== '') {
@@ -41,37 +36,29 @@ export default class RSVPForm extends Component {
             <div className={'RSVPForm-wrapper column center'}>
                 <div className={'RSVPForm-inputWrapper column spaceBetween'}>
                     <div className={'RSVPForm-singleInputWrapper center'}>
-                        {
-                            this.state.namePlaceholderVisible &&
-                            <p className={'RSVPForm-label'}>{'Name'}</p>
-                        }
                         <input
                             type={'text'}
                             value={this.state.name}
                             onChange={(event) => this.setName(event.target.value)}
-                            onFocus={() => this.setNamePlaceholderVisible(false)}
-                            onBlur={() => {
-                                if (this.state.name === '') {
-                                    this.setNamePlaceholderVisible(true);
-                                }
-                            }}
+                            placeholder={'Name'}
+                            style={isMobile ? {
+                                maxWidth: '500px',
+                                boxSizing: 'border-box',
+                                fontSize: 8
+                            } : {}}
                         />
                     </div>
                     <div className={'RSVPForm-singleInputWrapper center'}>
-                        {
-                            this.state.numberInPartyPlaceholderVisible &&
-                            <p className={'RSVPForm-label'}>{'Number in party'}</p>
-                        }
                         <input
                             type={'text'}
                             value={this.state.numberInParty}
                             onChange={(event) => this.setNumInParty(event.target.value)}
-                            onFocus={() => this.setNumberInPartyPlaceholderVisible(false)}
-                            onBlur={() => {
-                                if (this.state.numberInParty === '') {
-                                    this.setNumberInPartyPlaceholderVisible(true);
-                                }
-                            }}
+                            placeholder={'Number in party'}
+                            style={isMobile ? {
+                                maxWidth: '500px',
+                                boxSizing: 'border-box',
+                                fontSize: 8
+                            } : {}}
                         />
                     </div>
                 </div>

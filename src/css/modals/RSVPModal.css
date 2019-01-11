@@ -7,10 +7,11 @@
     width: 50%;
 }
 
-.RSVPModal-closeIcon {
+.RSVPModal-closeButton {
     outline: none;
+    font-size: 1px;
 }
 
-.RSVPModal-closeIcon:hover {
+.RSVPModal-closeButton:hover {
     cursor: pointer;
 }

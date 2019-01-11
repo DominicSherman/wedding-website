@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Modal from 'react-responsive-modal';
 import RSVPForm from '../components/RSVPForm';
 import RSVPView from '../components/RSVPView';
+import {isMobile} from 'react-device-detect';
 
 import '../css/modals/RSVPModal.css';
 
@@ -24,10 +25,11 @@ export default class RSVPModal extends Component {
         return (
             <Modal
                 classNames={{
-                    closeIcon: 'RSVPModal-closeIcon',
+                    closeButton: 'RSVPModal-closeButton',
                     overlay: 'RSVPModal-Overlay',
                     modal: 'RSVPModal-Modal'
                 }}
+                closeIconSize={isMobile ? 10 : 28}
                 open={modalVisible}
                 onClose={actions.toggleRSVPModal}
             >

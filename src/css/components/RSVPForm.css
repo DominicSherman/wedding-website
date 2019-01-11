@@ -37,6 +37,10 @@ input {
     background-color: #fff;
     font-family: 'Avenir';
     font-size: 105%;
-    letter-spacing: 0.8px;
     outline: none;
+    -webkit-appearance: none;
+}
+
+input::placeholder {
+    color: lightgrey;
 }
