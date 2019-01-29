@@ -11,7 +11,6 @@ import August2017 from '../assets/gallery/August2017.jpg';
 import June20182 from '../assets/gallery/June2018-2.jpg';
 import October2017 from '../assets/gallery/October2017.jpg';
 import August20182 from '../assets/gallery/August2018-2.jpg';
-import January2019 from '../assets/gallery/January2019.jpg';
 import January20192 from '../assets/gallery/January2019-2.jpg';
 import July2013 from '../assets/gallery/July2013.jpg';
 
@@ -80,11 +79,6 @@ export const photos = [
         original: August20182,
         thumbnail: August20182,
         description: 'August 2018'
-    },
-    {
-        original: January2019,
-        thumbnail: January2019,
-        description: 'January 2019'
     },
     {
         original: January20192,
