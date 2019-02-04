@@ -14,7 +14,7 @@ export default class Pictures extends Component {
         if (!picturesVisible) {
             return (
                 <div className={'Pictures-wrapper'}>
-                    <p className={'Pictures-text'}>{'🎉 Pictures from the wedding day can be viewed here starting on May 28th! 🎉'}</p>
+                    <p className={'Pictures-text'}>{'🎉 Pictures uploaded using the app can be viewed here starting on May 28th! 🎉'}</p>
                 </div>
             );
         }
