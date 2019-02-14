@@ -36,6 +36,7 @@ export default class RSVPModal extends Component {
                 {
                     this.state.formVisible ?
                         <RSVPForm
+                            count={count}
                             env={env}
                             toggleFormVisible={this.toggleFormVisible}
                         />

@@ -4,6 +4,7 @@ import {isMobile} from 'react-device-detect';
 
 import '../css/components/RSVPForm.css';
 import '../css/Buttons.css';
+import {sendEmail} from '../services/email-service';
 
 export default class RSVPForm extends Component {
     constructor(props) {
@@ -23,9 +24,10 @@ export default class RSVPForm extends Component {
 
     setNumInParty = (numberInParty) => this.setState({numberInParty});
 
-    handleSubmit = async () => {
+    handleSubmit = () => {
         if (this.state.name !== '' && this.state.numberInParty !== '') {
-            await insertRSVP(this.state.name, this.state.numberInParty, this.props.env);
+            insertRSVP(this.state.name, this.state.numberInParty, this.props.env);
+            sendEmail(this.state.name, this.state.numberInParty, this.props.count, this.props.env);
             this.resetState();
             this.props.toggleFormVisible();
         }
