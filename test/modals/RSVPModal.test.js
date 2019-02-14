@@ -6,6 +6,9 @@ import Modal from 'react-responsive-modal';
 import RSVPModal from '../../src/modals/RSVPModal';
 import RSVPForm from '../../src/components/RSVPForm';
 import RSVPView from '../../src/components/RSVPView';
+import {getIsMobile} from '../../src/constants/service';
+
+jest.mock('../../src/constants/service');
 
 const chance = new Chance();
 
@@ -52,6 +55,15 @@ describe('RSVPModal', () => {
         expect(renderedComponent.type).toBe(Modal);
         expect(renderedComponent.props.open).toBe(expectedProps.modalVisible);
         expect(renderedComponent.props.onClose).toBe(expectedProps.actions.toggleRSVPModal);
+        expect(renderedComponent.props.closeIconSize).toBe(28);
+    });
+
+    it('should change the size depending on whether it is mobile', () => {
+        getIsMobile.mockReturnValue(true);
+        renderComponent();
+
+        expect(renderedComponent.type).toBe(Modal);
+        expect(renderedComponent.props.closeIconSize).toBe(10);
     });
 
     it('should render the RSVP form initially', () => {

@@ -73,7 +73,7 @@ describe('Pictures', () => {
         it('should render text', () => {
             expect(renderedText.type).toBe('p');
             expect(renderedText.props.className).toBe('Pictures-text');
-            expect(renderedText.props.children).toBe('🎉 Pictures from the wedding day can be viewed here starting on May 28th! 🎉');
+            expect(renderedText.props.children).toBe('🎉 Pictures uploaded using the app can be viewed here starting on May 28th! 🎉');
         });
     });
 

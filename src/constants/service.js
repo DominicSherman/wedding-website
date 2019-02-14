@@ -28,3 +28,5 @@ export const calculateDaysLeft = () => {
 
     return Math.floor((weddingDay - now) / (oneDay));
 };
+
+export const getIsMobile = () => isMobile;

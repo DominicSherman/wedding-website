@@ -4,8 +4,12 @@ import ShallowRenderer from 'react-test-renderer/shallow';
 import RSVPForm from '../../src/components/RSVPForm';
 import {DEV, PROD} from '../../src/constants/constants';
 import {insertRSVP} from '../../src/services/firebase-service';
+import {sendEmail} from '../../src/services/email-service';
+import {getIsMobile} from '../../src/constants/service';
 
 jest.mock('../../src/services/firebase-service');
+jest.mock('../../src/services/email-service');
+jest.mock('../../src/constants/service');
 
 const chance = new Chance();
 
@@ -62,6 +66,7 @@ describe('RSVPForm', () => {
 
     beforeEach(() => {
         expectedProps = {
+            count: chance.natural(),
             env: chance.pickone([DEV, PROD]),
             toggleFormVisible: jest.fn()
         };
@@ -90,6 +95,11 @@ describe('RSVPForm', () => {
             it('should insert the RSVP', async () => {
                 expect(insertRSVP).toHaveBeenCalledTimes(1);
                 expect(insertRSVP).toHaveBeenCalledWith(name, numInParty, expectedProps.env);
+            });
+
+            it('should send the email', () => {
+                expect(sendEmail).toHaveBeenCalledTimes(1);
+                expect(sendEmail).toHaveBeenCalledWith(name, numInParty, expectedProps.count, expectedProps.env);
             });
 
             it('should reset the state', () => {
@@ -130,6 +140,14 @@ describe('RSVPForm', () => {
 
     it('should render a div for the name input', () => {
         expect(renderedNameDiv.type).toBe('div');
+    });
+
+    it('should render different styles when isMobile', () => {
+        getIsMobile.mockReturnValue(true);
+        renderComponent();
+
+        expect(renderedNameInput.props.style.fontSize).toBe(8);
+        expect(renderedPartyInput.props.style.fontSize).toBe(8);
     });
 
     it('should render input for name', () => {

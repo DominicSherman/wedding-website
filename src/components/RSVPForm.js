@@ -5,6 +5,7 @@ import {isMobile} from 'react-device-detect';
 import '../css/components/RSVPForm.css';
 import '../css/Buttons.css';
 import {sendEmail} from '../services/email-service';
+import {getIsMobile} from '../constants/service';
 
 export default class RSVPForm extends Component {
     constructor(props) {
@@ -43,7 +44,7 @@ export default class RSVPForm extends Component {
                             value={this.state.name}
                             onChange={(event) => this.setName(event.target.value)}
                             placeholder={'Name'}
-                            style={isMobile ? {
+                            style={getIsMobile() ? {
                                 maxWidth: '500px',
                                 boxSizing: 'border-box',
                                 fontSize: 8
@@ -56,7 +57,7 @@ export default class RSVPForm extends Component {
                             value={this.state.numberInParty}
                             onChange={(event) => this.setNumInParty(event.target.value)}
                             placeholder={'Number in party'}
-                            style={isMobile ? {
+                            style={getIsMobile() ? {
                                 maxWidth: '500px',
                                 boxSizing: 'border-box',
                                 fontSize: 8
