@@ -43,7 +43,6 @@
     "react-switch": "^3.0.4",
     "redux": "^4.0.0",
     "redux-thunk": "^2.3.0",
-    "request-promise": "^4.2.2",
     "resolve": "1.6.0",
     "simple-flexbox": "^1.2.0",
     "style-loader": "0.19.0",
