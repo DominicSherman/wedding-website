@@ -15,8 +15,11 @@
 
 .Welcome-bells {
     width: 15%;
-    height: 15%;
+    height: auto;
     z-index: 1;
+    position: absolute;
+    right: 5%;
+    top: 6%;
 }
 
 .Welcome-bellBorder {
