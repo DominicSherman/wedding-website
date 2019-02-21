@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 
 import '../css/screens/Registry.css';
-import macy from '../assets/macy.png';
-import crate from '../assets/crateandbarrel.png';
+import macy from '../assets/registry/macy.png';
+import crate from '../assets/our-story/crateandbarrel.png';
 import {crateAndBarrelLink, macyLink} from '../constants/constants';
 import {setPageViewed} from '../services/analytics-service';
 

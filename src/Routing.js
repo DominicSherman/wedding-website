@@ -9,9 +9,7 @@ import PicturesContainer from './containers/PicturesContainer';
 export default class Routing extends Component {
     render() {
         return (
-            <div style={{
-                marginTop: this.props.isSticky ? '7.68%' : '0'
-            }}>
+            <div>
                 <Route
                     exact
                     path='/'

@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {insertRSVP} from '../services/firebase-service';
-import {isMobile} from 'react-device-detect';
 
 import '../css/components/RSVPForm.css';
 import '../css/Buttons.css';

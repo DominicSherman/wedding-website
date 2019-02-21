@@ -89,7 +89,7 @@ describe('OurStory', () => {
 
     it('should render a component for the bride', () => {
         expect(renderedBrideComponent.type).toBe(BrideGroom);
-        expect(renderedBrideComponent.props.image).toBe(require('../../src/assets/bride.jpg'));
+        expect(renderedBrideComponent.props.image).toBe(require('../../src/assets/our-story/bride.jpg'));
         expect(renderedBrideComponent.props.header).toBe('THE BRIDE');
         expect(renderedBrideComponent.props.story).toBe(maryStory);
     });
@@ -101,7 +101,7 @@ describe('OurStory', () => {
 
     it('should render a component for the groom', () => {
         expect(renderedGroomComponent.type).toBe(BrideGroom);
-        expect(renderedGroomComponent.props.image).toBe(require('../../src/assets/groom.jpg'));
+        expect(renderedGroomComponent.props.image).toBe(require('../../src/assets/our-story/groom.jpg'));
         expect(renderedGroomComponent.props.header).toBe('THE GROOM');
         expect(renderedGroomComponent.props.story).toBe(dominicStory);
     });

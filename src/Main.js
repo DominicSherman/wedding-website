@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import headerImage from './assets/header.jpg';
 import './css/Main.css';
 import './css/Flex.css';
 import Footer from './components/Footer';
@@ -10,6 +9,7 @@ import ModalContainer from './modals/ModalContainer';
 import LoadingScreen from 'react-loading-screen';
 import {initializeAnalytics} from './services/analytics-service';
 import {calculateDaysLeft} from './constants/service';
+import {headerImages} from './constants/header-images';
 
 let headerImageRef;
 
@@ -56,13 +56,6 @@ export default class Main extends Component {
     }
 
     componentDidUpdate(prevProps) {
-        if (prevProps.location !== this.props.location) {
-            window.scrollTo({
-                top: headerImageRef.clientHeight,
-                behavior: 'smooth'
-            });
-        }
-
         if (this.state.presses > 0) {
             setTimeout(this.resetPresses, 5000);
         }
@@ -93,12 +86,12 @@ export default class Main extends Component {
                         <img
                             alt=''
                             className={'Main-image'}
-                            src={headerImage}
+                            src={headerImages[this.props.location.pathname]}
                             onLoad={() => this.setLoading(false)}
                         />
                     </div>
                     <NavBar isSticky={this.state.isSticky} location={this.props.location}/>
-                    <Routing isSticky={this.state.isSticky}/>
+                    <Routing />
                     <Footer/>
                     <ModalContainer {...this.props}/>
                 </div>

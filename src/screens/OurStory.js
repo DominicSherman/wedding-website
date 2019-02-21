@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import ImageGallery from 'react-image-gallery';
 
-import bride from '../assets/bride.jpg';
-import groom from '../assets/groom.jpg';
+import bride from '../assets/our-story/bride.jpg';
+import groom from '../assets/our-story/groom.jpg';
 import '../css/screens/OurStory.css';
 import maryStory from '../constants/mary-story';
 import dominicStory from '../constants/dominic-story';
