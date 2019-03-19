@@ -20,7 +20,8 @@ export default class Main extends Component {
         this.state = {
             isSticky: false,
             presses: 0,
-            loading: true
+            loading: true,
+            loadedImages: []
         };
     }
 
@@ -32,6 +33,8 @@ export default class Main extends Component {
 
     setLoading = (loading) => this.setState({loading});
 
+    addRouteToLoadedImages = (route) => this.setState({loadedImages: [...this.state.loadedImages, route]});
+
     componentWillMount() {
         initializeFirebase();
         initializeAnalytics();
@@ -40,7 +43,7 @@ export default class Main extends Component {
     componentDidMount() {
         headerImageRef = document.getElementById('headerImageWrapper');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > headerImageRef.clientHeight - 85 && !this.state.isSticky) {
+            if (window.scrollY > headerImageRef.clientHeight - 85 && !this.state.idsSticky) {
                 this.setIsSticky(true);
             } else if (window.scrollY < headerImageRef.clientHeight - 85 && this.state.isSticky) {
                 this.setIsSticky(false);
@@ -53,11 +56,23 @@ export default class Main extends Component {
         if (calculateDaysLeft() <= 0) {
             this.props.actions.togglePicturesVisible();
         }
+
+        this.addRouteToLoadedImages(this.props.location.pathname);
     }
 
     componentDidUpdate(prevProps) {
-        if (prevProps.location !== this.props.location) {
-            this.setLoading(true);
+        if (prevProps.location.pathname !== this.props.location.pathname) {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+
+            if (!this.state.loadedImages.includes(this.props.location.pathname)) {
+                console.log('this.state.loadedImages', this.state.loadedImages);
+                console.log('this.props.location', this.props.location);
+                this.setLoading(true);
+                this.addRouteToLoadedImages(this.props.location.pathname);
+            }
         }
 
         if (this.state.presses > 0) {
@@ -93,7 +108,10 @@ export default class Main extends Component {
                             alt=''
                             className={'Main-image'}
                             src={headerImages[this.props.location.pathname]}
-                            onLoad={() => this.setLoading(false)}
+                            onLoad={() => {
+                                this.setLoading(false);
+                                this.setIsSticky(false);
+                            }}
                         />
                     </div>
                     <NavBar isSticky={this.state.isSticky} location={this.props.location}/>
