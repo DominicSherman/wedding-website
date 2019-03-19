@@ -40,9 +40,9 @@ export default class Main extends Component {
     componentDidMount() {
         headerImageRef = document.getElementById('headerImageWrapper');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > headerImageRef.clientHeight && !this.state.isSticky) {
+            if (window.scrollY > headerImageRef.clientHeight - 85 && !this.state.isSticky) {
                 this.setIsSticky(true);
-            } else if (window.scrollY < headerImageRef.clientHeight && this.state.isSticky) {
+            } else if (window.scrollY < headerImageRef.clientHeight - 85 && this.state.isSticky) {
                 this.setIsSticky(false);
             }
         });
