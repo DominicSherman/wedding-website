@@ -56,6 +56,10 @@ export default class Main extends Component {
     }
 
     componentDidUpdate(prevProps) {
+        if (prevProps.location !== this.props.location) {
+            this.setLoading(true);
+        }
+
         if (this.state.presses > 0) {
             setTimeout(this.resetPresses, 5000);
         }
@@ -74,8 +78,10 @@ export default class Main extends Component {
     render() {
         return (
             <LoadingScreen
-                loading={this.state.loading}
-                bgColor={'#ebebeb'}
+                loading={true}
+                bgColor='#f1f1f1'
+                spinnerColor='#5F5D62'
+                logoSrc="https://firebasestorage.googleapis.com/v0/b/wedding-website-46644.appspot.com/o/D%26M-logo.png?alt=media&token=a6b6d521-fe5f-4ff3-976a-158d245b88fa"
             >
                 <div>
                     <div
