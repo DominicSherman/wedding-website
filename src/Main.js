@@ -78,7 +78,7 @@ export default class Main extends Component {
     render() {
         return (
             <LoadingScreen
-                loading={true}
+                loading={this.state.loading}
                 bgColor='#f1f1f1'
                 spinnerColor='#5F5D62'
                 logoSrc="https://firebasestorage.googleapis.com/v0/b/wedding-website-46644.appspot.com/o/D%26M-logo.png?alt=media&token=a6b6d521-fe5f-4ff3-976a-158d245b88fa"
