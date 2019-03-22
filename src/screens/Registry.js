@@ -2,8 +2,9 @@ import React, {Component} from 'react';
 
 import '../css/screens/Registry.css';
 import macy from '../assets/registry/macy.png';
-import crate from '../assets/our-story/crateandbarrel.png';
-import {crateAndBarrelLink, macyLink} from '../constants/constants';
+import crate from '../assets/registry/crateandbarrel.png';
+import target from '../assets/registry/target.png';
+import {crateAndBarrelLink, macyLink, targetLink} from '../constants/constants';
 import {setPageViewed} from '../services/analytics-service';
 
 export default class Registry extends Component {
@@ -37,6 +38,19 @@ export default class Registry extends Component {
                                 alt={''}
                                 className={'Registry-logo'}
                                 src={crate}
+
+                            />
+                        </a>
+                    </div>
+                    <div className={'Registry-logoWrapper2'}>
+                        <a
+                            href={targetLink}
+                            target={'_blank'}
+                        >
+                            <img
+                                alt={''}
+                                className={'Registry-logo2'}
+                                src={target}
 
                             />
                         </a>
