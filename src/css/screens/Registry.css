@@ -1,18 +1,18 @@
 .Registry-wrapper {
-    width: 94%;
-    margin-left: 3%;
-    margin-right: 3%;
+    width: 98%;
+    margin-left: 1%;
+    margin-right: 1%;
     align-items: center;
 }
 
 .Registry-logoWrapper {
-    width: 35%;
+    width: 41%;
     height: auto;
     padding-top: 3%;
 }
 
 .Registry-logoWrapper2 {
-    width: 12%;
+    width: 13%;
     height: auto;
     padding-top: 3%;
 }

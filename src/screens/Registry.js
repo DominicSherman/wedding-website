@@ -49,7 +49,7 @@ export default class Registry extends Component {
                         >
                             <img
                                 alt={''}
-                                className={'Registry-logo2'}
+                                className={'Registry-logo'}
                                 src={target}
 
                             />

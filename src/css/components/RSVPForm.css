@@ -2,9 +2,15 @@
     margin: 2%;
 }
 
+.RSVPForm-headerText {
+    font-size: 0.8vw;
+    width: 100%;
+}
+
 .RSVPForm-inputWrapper {
     align-items: center;
     width: 100%;
+    padding-top: 5%;
 }
 
 .RSVPForm-rsvpsButton {
