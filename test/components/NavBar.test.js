@@ -56,20 +56,6 @@ describe('NavBar', () => {
         expect(renderedComponent.props.className).toBe('NavBar-wrapper center');
     });
 
-    it('should have fixed position if isSticky', () => {
-        expectedProps.isSticky = true;
-        renderComponent();
-
-        expect(renderedComponent.props.style.position).toBe('fixed');
-    });
-
-    it('should have relative position if it is not sticky', () => {
-        expectedProps.isSticky = false;
-        renderComponent();
-
-        expect(renderedComponent.props.style.position).toBe('relative');
-    });
-
     it('should render a wrapper div', () => {
         expect(renderedWrapper.type).toBe('div');
         expect(renderedWrapper.props.className).toBe('NavBar-body spaceBetween');

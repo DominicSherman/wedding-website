@@ -76,7 +76,9 @@ describe('Main', () => {
             config: {
                 env: chance.pickone([DEV, PROD]),
             },
-            location: chance.string()
+            location: {
+                pathname: chance.string()
+            }
         };
 
         expectedScrollY = chance.natural();
@@ -149,7 +151,7 @@ describe('Main', () => {
         });
 
         it('should set isSticky to false when scrollY is less than clientHeight and isSticky is true', () => {
-            expectedScrollY = expectedClientHeight - 1;
+            expectedScrollY = expectedClientHeight - 86;
             global.window = {
                 addEventListener: jest.fn(),
                 scrollY: expectedScrollY
@@ -164,7 +166,7 @@ describe('Main', () => {
         });
 
         it('should do nothing when scrollY is less than clientHeight and isSticky is false', () => {
-            expectedScrollY = expectedClientHeight - 1;
+            expectedScrollY = expectedClientHeight - 86;
             global.window = {
                 addEventListener: jest.fn(),
                 scrollY: expectedScrollY
@@ -210,14 +212,16 @@ describe('Main', () => {
 
             expectedPrevProps = {
                 ...expectedProps,
-                location: chance.string()
+                location: {
+                    pathname: chance.string()
+                }
             };
 
             renderedInstance.componentDidUpdate(expectedPrevProps);
 
             expect(window.scrollTo).toHaveBeenCalledTimes(1);
             expect(window.scrollTo).toHaveBeenCalledWith({
-                top: expectedClientHeight,
+                top: 0,
                 behavior: 'smooth'
             });
         });
@@ -289,14 +293,12 @@ describe('Main', () => {
 
     it('should render the header image', () => {
         expect(renderedHeaderImage.type).toBe('img');
-        expect(renderedHeaderImage.props.alt).toBe('');
-        expect(renderedHeaderImage.props.className).toBe('Main-image');
-        expect(renderedHeaderImage.props.src).toBe(require('../src/assets/header.jpg'));
 
         renderedHeaderImage.props.onLoad();
         renderedComponent = renderedInstance.render();
 
-        expect(renderedComponent.props.loading).toBe(false);
+        expect(renderedInstance.state.loading).toBe(false);
+        expect(renderedInstance.state.isSticky).toBe(false);
     });
 
     it('should render the NavBar component', () => {
@@ -307,7 +309,6 @@ describe('Main', () => {
 
     it('should render the Routing component', () => {
         expect(renderedRouting.type).toBe(Routing);
-        expect(renderedRouting.props.isSticky).toBe(false);
     });
 
     it('should render the Footer component', () => {

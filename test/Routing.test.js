@@ -44,9 +44,6 @@ describe('Routing', () => {
     };
 
     beforeEach(() => {
-        expectedProps = {
-            isSticky: chance.bool()
-        };
         expectedRenderProps = {
             location: chance.string()
         };
@@ -56,20 +53,6 @@ describe('Routing', () => {
 
     it('should render a root div', () => {
         expect(renderedComponent.type).toBe('div');
-    });
-
-    it('should render the root div with marginTop of 7.68% if isSticky', () => {
-        expectedProps.isSticky = true;
-        renderComponent();
-
-        expect(renderedComponent.props.style.marginTop).toBe('7.68%');
-    });
-
-    it('should render the root div with marginTop of 0 if not isSticky', () => {
-        expectedProps.isSticky = false;
-        renderComponent();
-
-        expect(renderedComponent.props.style.marginTop).toBe('0');
     });
 
     it('should render a route for Home', () => {

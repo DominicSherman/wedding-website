@@ -43,7 +43,7 @@ export default class Main extends Component {
     componentDidMount() {
         headerImageRef = document.getElementById('headerImageWrapper');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > headerImageRef.clientHeight - 85 && !this.state.idsSticky) {
+            if (window.scrollY > headerImageRef.clientHeight - 85 && !this.state.isSticky) {
                 this.setIsSticky(true);
             } else if (window.scrollY < headerImageRef.clientHeight - 85 && this.state.isSticky) {
                 this.setIsSticky(false);
@@ -68,8 +68,6 @@ export default class Main extends Component {
             });
 
             if (!this.state.loadedImages.includes(this.props.location.pathname)) {
-                console.log('this.state.loadedImages', this.state.loadedImages);
-                console.log('this.props.location', this.props.location);
                 this.setLoading(true);
                 this.addRouteToLoadedImages(this.props.location.pathname);
             }

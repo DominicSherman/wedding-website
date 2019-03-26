@@ -19,9 +19,11 @@ describe('RSVPForm', () => {
         renderedInstance,
         renderedComponent,
 
+        renderedInfoTextDiv,
         renderedInputDiv,
         renderedButtonsDiv,
 
+        renderedInfoText,
         renderedNameDiv,
         renderedPartyDiv,
 
@@ -34,10 +36,13 @@ describe('RSVPForm', () => {
 
     const cacheChildren = () => {
         [
+            renderedInfoTextDiv,
             renderedInputDiv,
             renderedButtonsDiv
         ] = renderedComponent.props.children;
 
+        renderedInfoText = renderedInfoTextDiv.props.children;
+        
         [
             renderedNameDiv,
             renderedPartyDiv
@@ -132,6 +137,14 @@ describe('RSVPForm', () => {
 
     it('should render a wrapper div', () => {
         expect(renderedComponent.type).toBe('div');
+    });
+
+    it('should render a div for the information text', () => {
+        expect(renderedInfoTextDiv.type).toBe('div');
+    });
+
+    it('should render the information text', () => {
+        expect(renderedInfoText.type).toBe('p');
     });
 
     it('should render a div for the inputs', () => {
