@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import moment from 'moment';
 
 import '../css/Buttons.css';
 import '../css/components/RSVPView.css';
@@ -8,15 +9,36 @@ export default class RSVPView extends Component {
         const {data, count, toggleFormVisible} = this.props;
 
         const renderedNames = data.map((item, index) =>
-            <p key={index}>{item.name}</p>
+            <p
+                key={index}
+                style={{
+                    paddingBottom: 4
+                }}
+            >
+                {item.name}
+            </p>
         );
 
         const renderedNumbers = data.map((item, index) =>
-            <p key={index}>{item.numberInParty}</p>
+            <p
+                key={index}
+                style={{
+                    paddingBottom: 4
+                }}
+            >
+                {item.numberInParty}
+            </p>
         );
 
         const renderedDates = data.map((item, index) =>
-            <p key={index}>{item.date}</p>
+            <p
+                key={index}
+                style={{
+                    paddingBottom: 4
+                }}
+            >
+                {moment(item.date).format('MMM D YYYY, h:mm a')}
+            </p>
         );
 
         return (
@@ -37,15 +59,15 @@ export default class RSVPView extends Component {
                 {
                     data.length ?
                         <div className={'RSVPView-body row spaceBetween'}>
-                            <div className={'column spaceEvenly'}>
+                            <div className={'RSVPView-wrapper column spaceEvenly'}>
                                 <h3 className={'RSVPView-headerText'}>{'Name'}</h3>
                                 {renderedNames}
                             </div>
-                            <div className={'column spaceEvenly'}>
+                            <div className={'RSVPView-wrapper column spaceEvenly'}>
                                 <h3 className={'RSVPView-headerText'}>{'Number in Party'}</h3>
                                 {renderedNumbers}
                             </div>
-                            <div className={'column spaceEvenly'}>
+                            <div className={'RSVPView-wrapper column spaceEvenly'}>
                                 <h3 className={'RSVPView-headerText'}>{'RSVP Date'}</h3>
                                 {renderedDates}
                             </div>

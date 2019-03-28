@@ -5,8 +5,11 @@
 }
 
 .RSVPView-body {
-    width: 90%;
-    margin-left: 5%;
+    width: 100%;
+}
+
+.RSVPView-wrapper {
+    align-items: center;
 }
 
 .RSVPView-divider {

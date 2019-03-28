@@ -8,6 +8,7 @@ import {
 } from './constants/action-types';
 import {reverseEnum} from './constants/constants';
 import {getMedia, getRSVPData} from './services/firebase-service';
+import moment from 'moment';
 
 export const toggleRSVPModal = () => (dispatch, getState) => {
     const {rsvpModalVisible} = getState();
@@ -42,7 +43,7 @@ export const setRSVPData = () => (dispatch, getState) => {
         if (dataObject) {
             const data = Object.keys(dataObject).map((key) => dataObject[key]);
             const count = data.reduce((accum, item) => accum + Number(item.numberInParty), 0);
-            data.sort((a, b) => new Date(a.date) < new Date(b.date) ? 1 : -1);
+            data.sort((a, b) => moment(b.date).diff(moment(a.date)));
 
             dispatch(action(SET_RSVPS, {
                 data,
