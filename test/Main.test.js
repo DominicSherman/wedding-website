@@ -226,6 +226,24 @@ describe('Main', () => {
             });
         });
 
+        it('should set loading to true and add route to loaded images if it has not been loading yet and the location changes', () => {
+            global.window = {
+                scrollTo: jest.fn()
+            };
+
+            expectedPrevProps = {
+                ...expectedProps,
+                location: {
+                    pathname: chance.string()
+                }
+            };
+
+            renderedInstance.componentDidUpdate(expectedPrevProps);
+
+            expect(renderedInstance.state.loading).toBeTruthy();
+            expect(renderedInstance.state.loadedImages).toEqual([expectedProps.location.pathname]);
+        });
+
         it('should call setTimeout once incrementPresses have been called', () => {
             renderedInstance.incrementPresses();
             renderedInstance.componentDidUpdate(expectedProps);

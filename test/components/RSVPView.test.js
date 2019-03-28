@@ -2,6 +2,7 @@ import React from 'react';
 import Chance from 'chance';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import RSVPView from '../../src/components/RSVPView';
+import moment from 'moment';
 
 const chance = new Chance();
 
@@ -124,7 +125,6 @@ it('should render the body div', () => {
 
 it('should render a div for a div for the names', () => {
     expect(renderedNameDiv.type).toBe('div');
-    expect(renderedNameDiv.props.className).toBe('column spaceEvenly');
 });
 
 it('should render header text for Name', () => {
@@ -141,7 +141,6 @@ it('should render all of the names', () => {
 
 it('should render a div for a div for the numbers', () => {
     expect(renderedCountDiv.type).toBe('div');
-    expect(renderedCountDiv.props.className).toBe('column spaceEvenly');
 });
 
 it('should render header text for Name', () => {
@@ -158,7 +157,6 @@ it('should render all of the numbers', () => {
 
 it('should render a div for a div for the dates', () => {
     expect(renderedDateDiv.type).toBe('div');
-    expect(renderedDateDiv.props.className).toBe('column spaceEvenly');
 });
 
 it('should render header text for Date', () => {
@@ -169,7 +167,7 @@ it('should render header text for Date', () => {
 it('should render all of the dates', () => {
     renderedDates.forEach((renderedDate) => {
         expect(renderedDate.type).toBe('p');
-        expect(renderedDate.props.children).toBe(expectedData[renderedDate.key].date)
+        expect(renderedDate.props.children).toBe(moment(expectedData[renderedDate.key].date).format('MMM D YYYY, h:mm a'))
     });
 });
 
