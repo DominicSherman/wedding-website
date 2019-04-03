@@ -11,6 +11,7 @@ export default class RSVPForm extends Component {
         super(props);
 
         this.initialState = {
+            error: '',
             name: '',
             numberInParty: ''
         };
@@ -24,12 +25,31 @@ export default class RSVPForm extends Component {
 
     setNumInParty = (numberInParty) => this.setState({numberInParty});
 
+    setError = (error) => this.setState({error});
+
+    validateNumberInParty = () => {
+        const n = Math.floor(Number(this.state.numberInParty));
+
+        return n !== Infinity && n > 0;
+    };
+
+    submissionIsValid = () => this.state.name !== '' && this.state.numberInParty !== '' && this.validateNumberInParty();
+
     handleSubmit = () => {
-        if (this.state.name !== '' && this.state.numberInParty !== '') {
+        if (this.submissionIsValid()) {
             insertRSVP(this.state.name, this.state.numberInParty, this.props.env);
             sendEmail(this.state.name, this.state.numberInParty, this.props.count, this.props.env);
             this.resetState();
             this.props.toggleFormVisible();
+        } else {
+            console.log('this.state', this.state);
+            if (this.state.name === '') {
+                this.setError('Must enter a name.');
+            } else if (this.state.numberInParty === '') {
+                this.setError('Must enter a number in party.');
+            } else if (!this.validateNumberInParty()) {
+                this.setError('Number in party must be an integer.')
+            }
         }
     };
 
@@ -65,6 +85,9 @@ export default class RSVPForm extends Component {
                                 fontSize: 8
                             } : {}}
                         />
+                    </div>
+                    <div className={'RSVPForm-headerText row center bold'}>
+                        <a style={{color: 'red'}}>{this.state.error}</a>
                     </div>
                 </div>
                 <div className={'RSVPForm spaceEvenly'}>

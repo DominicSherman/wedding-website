@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './css/index.css';
+import 'react-table/react-table.css';
 import MainContainer from './containers/MainContainer';
 import {BrowserRouter as Router, withRouter} from 'react-router-dom';
 import {Provider} from 'react-redux';
