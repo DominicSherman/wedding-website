@@ -5,7 +5,9 @@
 }
 
 .RSVPView-body {
-    width: 100%;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .RSVPView-wrapper {
@@ -29,4 +31,11 @@
 
 .RSVPView-headerText {
     font-family: Lubalin;
+}
+
+.RSVPView-text {
+    padding-bottom: 4px;
+    letter-spacing: 1.5px;
+    font-family: Lubalin;
+    font-size: 1.3vw;
 }
