@@ -9,5 +9,5 @@ export const sendEmail = (name, numberInParty, count, env) => {
         to = `${to}, mary.edson03@gmail.com, jmjedson@gmail.com`;
     }
 
-    fetch(`${ENDPOINT}?to=${to}&subject=${name} has RSVP'd!&text=Number in party: ${numberInParty} \t Total count: ${Number(numberInParty) + Number(count)}`);
+    fetch(`${ENDPOINT}?to=${to}&subject=${encodeURIComponent(name)} has RSVP'd!&text=Number in party: ${numberInParty} \t Total count: ${Number(numberInParty) + Number(count)}`);
 };
