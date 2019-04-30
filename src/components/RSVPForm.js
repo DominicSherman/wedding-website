@@ -57,7 +57,10 @@ export default class RSVPForm extends Component {
         return (
             <div className={'RSVPForm-wrapper column center'}>
                 <div className={'RSVPForm-headerText row center'}>
-                    <p>{'Please include your first and last name. If you make a mistake, you can contact us at dominic.sherman98@gmail.com.'}</p>
+                    <p>
+                        {'Please include your first and last name. If you make a mistake or are unable to come, please contact us at '}
+                        <a href={'mailto:dominic.sherman98@gmail.com'}>{'dominic.sherman98@gmail.com'}</a>
+                    </p>
                 </div>
                 <div className={'RSVPForm-inputWrapper column spaceBetween'}>
                     <div className={'RSVPForm-singleInputWrapper center'}>
