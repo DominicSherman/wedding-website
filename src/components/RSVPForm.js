@@ -42,7 +42,6 @@ export default class RSVPForm extends Component {
             this.resetState();
             this.props.toggleFormVisible();
         } else {
-            console.log('this.state', this.state);
             if (this.state.name === '') {
                 this.setError('Must enter a name.');
             } else if (this.state.numberInParty === '') {
